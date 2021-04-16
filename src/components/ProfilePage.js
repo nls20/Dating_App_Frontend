@@ -1,36 +1,43 @@
 import {useState} from 'react';
 
-const ProfilePage = ({onSubmitForm}) => {
+const ProfilePage = ({getFormInformation}) => {
 
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
     const [location, setLocation] = useState("");
     const [hobbies, setHobbies] = useState("");
-    // const [gender, setGender] = useState(null);
-    // const [preference, setPreference] = useState(null);
-    const [vaccinated, setVaccinated] = useState(0);
+    const [vaccinated, setVaccinated] = useState(false);
 
-    const handelName = (evt) => {
+    const handleName = (evt) => {
         setName(evt.target.value)
     }
 
-    const handelAge = (evt) => {
+    const handleAge = (evt) => {
         setAge(evt.target.value)
     }
 
-    const handelLocation = (evt) => {
+    const handleLocation = (evt) => {
         setLocation(evt.target.value)
     }
-    const handelHobbies = (evt) => {
+    const handleHobbies = (evt) => {
         setHobbies(evt.target.value)
     }
 
-    const handelVaccinated = (evt) => {
+    const handleVaccinated = (evt) => {
         setVaccinated(evt.target.value)
     }
 
-    const handelSubmitForm = (evt) => {
+    const handleSubmitForm = (evt) => {
         evt.preventDefault()
+        console.log("Start up From");
+
+        getFormInformation({
+            name: name,
+            age: age,
+            location: location,
+            hobbies: hobbies,
+            vaccinated: vaccinated
+        })
     }
 
     // const selectGenderOptions = gender.map(({gender, id}) => (
@@ -46,12 +53,13 @@ const ProfilePage = ({onSubmitForm}) => {
     // ))
 
     return (
-        <form className="setUp-input" onSubmit={handelSubmitForm}>
+        <>
+        <form className="setUp-input" onSubmit={handleSubmitForm}>
 
-            <input type="text" placeholder="Name" value={name} onChange={handelName}/>
-            <input type="number" placeholder="Age" value={age} onChange={handelAge}/>
-            <input type="text" placeholder="location" value={location} onChange={handelLocation}/>
-             <textarea type="text" placeholder="Hobbies & Interests" value={hobbies} onChange={handelHobbies}/>
+            <input type="text" placeholder="Name" value={name} onChange={handleName}/>
+            <input type="number" placeholder="Age" value={age} onChange={handleAge}/>
+            <input type="text" placeholder="location" value={location} onChange={handleLocation}/>
+             <textarea type="text" placeholder="Hobbies & Interests" value={hobbies} onChange={handleHobbies}/>
              {/* <select>
                  <option value="gender" disabled selected hidden>Choose a gender</option>
                  {selectGenderOptions}
@@ -60,19 +68,24 @@ const ProfilePage = ({onSubmitForm}) => {
                  <option value="gender" disabled selected hidden>Choose a Preference</option>
                  {selectGenderPreference}
              </select> */}
-
              <p>vaccinated</p>
              <input type="radio" id="Choice1"
-               name="vaccinated" value={1} onChange={handelVaccinated}/>
-             <label for="Choice1">yes</label>
+               name="vaccinated" value={true} onChange={handleVaccinated}/>
+             <label htmlFor="Choice1">yes</label>
 
             <input type="radio" id="Choice2"
-            name="vaccinated" value={2} onChange={handelVaccinated}/>
-           <label for="Choice2">no</label>
+            name="vaccinated" value={false} onChange={handleVaccinated}/>
+           <label htmlFor="Choice2">no</label>
 
-           <input id="button" type="submit" value="Submit"></input>
+           <input id="button" type="submit" value="Submit"/>
         </form>
+         
+        <h4>{name}</h4>
+        <p>{age}</p>
+        <p>{location}</p>
+        <p>{hobbies}</p>
 
+        </>
     )
 }
 export default ProfilePage
