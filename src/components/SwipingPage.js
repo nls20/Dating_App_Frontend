@@ -14,8 +14,7 @@ const SwipingPage = ({potentialMatches}) => {
         console.log(evt.target.value);
         const addMatch = potentialMatches.filter(match => match.name == evt.target.value)
         if (matches.length) {
-            console.log(matches);
-            setMatches([...matches] + addMatch)
+            setMatches(matches.concat(addMatch))
         } else {
             setMatches(addMatch)
         }
