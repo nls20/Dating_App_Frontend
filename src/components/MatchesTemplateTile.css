@@ -1,4 +1,15 @@
 
+#tile-template-section{
+    width: 80px;
+    height: 80px;
+}
+
 #tile-template-section>p{
     margin: 10px;
+}
+
+#tile-template-section>img{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
 }

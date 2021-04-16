@@ -2,3 +2,21 @@
 #tile-section {
     padding: 10px;
 }
+
+#tile-section >* {
+    text-align: start;
+    margin: 0px;
+}
+
+#tile-picture-section>img{
+    height: 90px;
+    width: 90px;
+    border-radius: 45px;
+}
+
+#total-tile-section{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    align-items: center;
+    padding: 10px;
+}

@@ -7,7 +7,7 @@ const MessagesPreview = ({matches}) => {
     })
 
     return( 
-        <section>
+        <section id="preview-section">
             {preview}
         </section>
     )
