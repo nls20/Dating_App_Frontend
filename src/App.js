@@ -6,7 +6,7 @@ import {BrowserRouter  as Router, Route, Switch} from 'react-router-dom'
 import SwipingPage from './components/SwipingPage'
 import NavBar from './components/NavBar'
 import MatchesPage from './components/Matches/MatchesPage'
-import ProfilePage from './components/ProfilePage'
+import ProfilePage from './components/Profile/ProfilePage'
 
 function App() {
   return (

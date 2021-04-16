@@ -3,8 +3,13 @@ import {BrowserRouter  as Router, Route, Switch} from 'react-router-dom'
 import SwipingPage from '../components/SwipingPage'
 import NavBar from '../components/NavBar'
 import MatchesPage from '../components/Matches/MatchesPage'
+<<<<<<< HEAD
 import ProfilePage from '../components/ProfilePage'
 import Chatroom from '../components/Conversation/Chatroom'
+=======
+import ProfilePage from '../components/Profile/ProfilePage'
+import DisplayInformation from '../components/Profile/DisplayInformation'
+>>>>>>> develop
 
 const VinderContainer = () => {
 
@@ -24,7 +29,14 @@ const VinderContainer = () => {
       {name: "david", picture: "https://i.redd.it/v0caqchbtn741.jpg", messageHistory: "this is a message"},
       {name: "mark", picture: "https://i.redd.it/v0caqchbtn741.jpg", messageHistory: "this is a message"},
       {name: "nicola", picture: "https://i.redd.it/v0caqchbtn741.jpg", messageHistory: "this is a message"}
-  ]
+    ]
+
+
+    const potentialMatches = [
+      {name: "john", age: 30, location: "Inverness", hobbies: "running", picture:"https://i.redd.it/v0caqchbtn741.jpg"},
+      {name: "bill", age: 50, location: "Glasgow", hobbies: "swimming", picture:"https://i.redd.it/v0caqchbtn741.jpg"},
+      {name: "mike", age: 45, location: "Edinburgh", hobbies: "cycling", picture:"https://i.redd.it/v0caqchbtn741.jpg"}
+    ]
 
 
     const getFormInformation = (details) => {
@@ -40,7 +52,7 @@ const VinderContainer = () => {
         <NavBar/>
           <Switch>
             <Route exact path="/">
-              <SwipingPage />
+              <SwipingPage potentialMatches={potentialMatches} />
             </Route>
 
             <Route exact path="/matches">
