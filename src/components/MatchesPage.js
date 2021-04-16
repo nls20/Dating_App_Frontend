@@ -1,8 +1,19 @@
-
+import {useState} from 'react'
+import MatchesPreviewTiles from './MatchesPreviewTiles'
+import MessagesPreview from './MessagesPreview'
 const MatchesPage = () => {
+
+
+
+
     
     return (
-        <h2>matches</h2>
+        <> 
+            <MatchesPreviewTiles/>
+
+            <MessagesPreview/>
+
+        </>
     )
 }
 export default MatchesPage
