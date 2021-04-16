@@ -3,13 +3,8 @@ import {BrowserRouter  as Router, Route, Switch} from 'react-router-dom'
 import SwipingPage from '../components/SwipingPage'
 import NavBar from '../components/NavBar'
 import MatchesPage from '../components/Matches/MatchesPage'
-<<<<<<< HEAD
-import ProfilePage from '../components/ProfilePage'
-import Chatroom from '../components/Conversation/Chatroom'
-=======
 import ProfilePage from '../components/Profile/ProfilePage'
-import DisplayInformation from '../components/Profile/DisplayInformation'
->>>>>>> develop
+import Chatroom from '../components/Conversation/Chatroom'
 
 const VinderContainer = () => {
 
