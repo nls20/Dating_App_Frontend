@@ -48,10 +48,10 @@ const Form = ({submitted, hasBeenSubmitted}) => {
     return (
       <form className="setUp-input" onSubmit={handleSubmitForm}>
 
-      <input type="text" placeholder="Name" value={name} onChange={handleName}/>
-      <input type="number" placeholder="Age" value={age} onChange={handleAge}/>
-      <input type="text" placeholder="location" value={location} onChange={handleLocation}/>
-       <textarea type="text" placeholder="Hobbies & Interests" value={hobbies} onChange={handleHobbies}/>
+      <input type="text" placeholder="Name" value={name} onChange={handleName} required/>
+      <input type="number" placeholder="Age" value={age} onChange={handleAge} required/>
+      <input type="text" placeholder="location" value={location} onChange={handleLocation} required/>
+       <textarea type="text" placeholder="Hobbies & Interests" value={hobbies} onChange={handleHobbies} required/>
        {/* <select>
            <option value="gender" disabled selected hidden>Choose a gender</option>
            {selectGenderOptions}
@@ -62,7 +62,7 @@ const Form = ({submitted, hasBeenSubmitted}) => {
        </select> */}
        <p>vaccinated</p>
        <input type="radio" id="Choice1"
-         name="vaccinated" value={true} onChange={handleVaccinated}/>
+         name="vaccinated" value={true} onChange={handleVaccinated} required/>
        <label htmlFor="Choice1">yes</label>
 
       <input type="radio" id="Choice2"
