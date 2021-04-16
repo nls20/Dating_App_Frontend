@@ -31,3 +31,13 @@
 #Choice{
   padding: 0px 0px;
 }
+
+.option-bar{
+  display: flex;
+  flex-flow: column wrap;
+  margin: 20px auto;
+  border: none;
+  color: gray;
+  border-bottom: 1px gray solid;
+}
+

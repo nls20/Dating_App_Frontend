@@ -86,18 +86,18 @@ const Form = ({submitted, hasBeenSubmitted}) => {
        value={hobbies} 
        onChange={handleHobbies} required/>
        
-       <select className="option-bar" value={gender} onChange={handleGender}>
-           <option className="option" value="gender" disabled selected hidden>Choose a gender</option>
-           <option className="option" value="male" >Male</option>
-           <option className="option" value="female" >Female</option>
-           <option className="option" value="non-binary" >non-binary</option>
+       <select className="option-bar" onSelect={handleGender}>
+           <option value="gender" disabled selected hidden>Choose a gender --</option>
+           <option value="male" >Male</option>
+           <option value="female" >Female</option>
+           <option value="non-binary" >non-binary</option>
        </select>
-       <select className="option-bar" value={preference} onChange={handlePreference}>
-           <option className="option" value="gender" disabled selected hidden>Choose a Preference</option>
-           <option className="option" value="male" >Male</option>
-           <option className="option" value="female" >Female</option>
-           <option className="option" value="non-binary" >non-binary</option>
-           <option className="option" value="all" >All</option> 
+       <select className="option-bar" onSelect={handlePreference}>
+           <option value="gender" disabled selected hidden>Choose a Preference</option>
+           <option value="male" >Male</option>
+           <option value="female" >Female</option>
+           <option value="non-binary" >non-binary</option>
+           <option value="all" >All</option> 
        </select>
        <p id="vaccinated">vaccinated</p>
        <input type="radio" id="Choice"

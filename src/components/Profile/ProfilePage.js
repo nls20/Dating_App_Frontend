@@ -26,19 +26,6 @@ const ProfilePage = ({getFormInformation}) => {
         
     }
 
-
-    // const selectGenderOptions = gender.map(({gender, id}) => (
-    //     <option key={id} value={id}>{gender}</option>
-    // ))
-
-    //  const handleSelectedGender = (evt) => {
-    //      onGenderSelect(evt.target.value)
-    //  }
-
-    // const selectGenderPreference = preference.map(({preference, id}) => (
-    //     <option key={id} value={id}>{preference}</option>
-    // ))
-
     return (
         <>
         <Form submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} />
