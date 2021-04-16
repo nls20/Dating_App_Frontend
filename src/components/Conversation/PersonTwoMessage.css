@@ -1,0 +1,10 @@
+#player-two-message>p{
+    background-color: red;
+    margin: 10px;
+    padding: 5px;
+}
+
+#player-two-message{
+    display: flex;
+    justify-content: flex-start;
+}

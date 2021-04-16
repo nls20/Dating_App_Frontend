@@ -1,0 +1,10 @@
+#player-one-message>p{
+    background-color: lime;
+    margin: 10px;
+    padding: 5px;
+}
+
+#player-one-message {
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,9 +1,11 @@
-
+import './PersonOneMessage.css'
 
 const PersonOneMessage = ({message}) => {
 
     return (
-        <p>{message}</p>
+        <section id="player-one-message">
+            <p>{message}</p>
+        </section>
     )
 
 }
