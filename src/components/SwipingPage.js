@@ -1,9 +1,24 @@
+import {useState, useEffect} from 'react'
 
+const SwipingPage = ({potentialMatches}) => {
 
-const SwipingPage = () => {
+    // const [potentialMatches, setPotentialMatches] = useState(potentialMatches)
+    const [matches, setMatches] = useState([])
+    const [notMatched, setNotMatched] = useState([])
+
+    const handleMatchYes = (evt) => {
+
+    }
+
+    const handleMatchNo = (evt) => {
+        
+    }
 
     return (
-        <h1>swiping</h1>
+        <>
+        <button onClick={handleMatchYes}>YES</button>
+        <button onClick={handleMatchNo}>NO</button>
+        </>
     )
 }
 export default SwipingPage
