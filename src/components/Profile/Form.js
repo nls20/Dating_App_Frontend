@@ -10,6 +10,7 @@ const Form = ({submitted, hasBeenSubmitted}) => {
   const [gender, setGender] = useState("");
   const [preference, setPreference] = useState("");
   const [vaccinated, setVaccinated] = useState(false);
+  const [picture, setPicture] = useState(null)
 
   const handleGender = (evt) => {
     setGender(evt.target.value)
@@ -38,6 +39,10 @@ const Form = ({submitted, hasBeenSubmitted}) => {
       setVaccinated(evt.target.value)
   }
 
+  const handleFileSelected = (evt) => {
+    setPicture(evt.target.value)
+  }
+
   const handleSubmitForm = (evt) => {
       evt.preventDefault()
       console.log("Start up From");
@@ -47,7 +52,8 @@ const Form = ({submitted, hasBeenSubmitted}) => {
           age: age,
           location: location,
           hobbies: hobbies,
-          vaccinated: vaccinated
+          vaccinated: vaccinated,
+          picture : picture
       })
 
   }
@@ -57,6 +63,11 @@ const Form = ({submitted, hasBeenSubmitted}) => {
   }else{
     return (
       <form className="form" onSubmit={handleSubmitForm}>
+
+      <input 
+       type="file"
+       onChange={handleFileSelected}
+      />
 
       <input 
       className="setUp-input"
