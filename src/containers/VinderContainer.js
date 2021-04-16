@@ -2,7 +2,7 @@ import {useState} from 'react'
 import {BrowserRouter  as Router, Route, Switch} from 'react-router-dom'
 import SwipingPage from '../components/SwipingPage'
 import NavBar from '../components/NavBar'
-import MatchesPage from '../components/MatchesPage'
+import MatchesPage from '../components/Matches/MatchesPage'
 import ProfilePage from '../components/ProfilePage'
 
 const VinderContainer = () => {

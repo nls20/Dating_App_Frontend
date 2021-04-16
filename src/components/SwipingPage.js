@@ -6,41 +6,42 @@ const SwipingPage = ({potentialMatches}) => {
     const [notMatched, setNotMatched] = useState([])
 
     const selectOption = () => {
-        const option = potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
+        // const option = potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
     }
 
-    const handleMatchYes = (evt) => {
-        setMatches([...matches] + evt.target.value)
-        removePotentialMatches(option.id)
-        selectOption()
-    }
+    // const handleMatchYes = (evt) => {
+    //     setMatches([...matches] + evt.target.value)
+    //     removePotentialMatches(option.id)
+    //     selectOption()
+    // }
 
-    const removePotentialMatches = (idToRemove) => {
-        setPotentialMatches(potentialMatches.filter(({ id }) => id !== idToRemove))
-      }
+    // const removePotentialMatches = (idToRemove) => {
+    //     setPotentialMatches(potentialMatches.filter(({ id }) => id !== idToRemove))
+    //   }
 
-    const handleMatchNo = (evt) => {
-        removePotentialMatches(option.id)
-        setNotMatched([...notMatched] + evt.target.value)
-        selectOption()
-    }
+    // const handleMatchNo = (evt) => {
+    //     removePotentialMatches(option.id)
+    //     setNotMatched([...notMatched] + evt.target.value)
+    //     selectOption()
+    // }
 
-    useEffect(() => {
-        selectOption()
-    }, [potentialMatches])
+    // useEffect(() => {
+    //     selectOption()
+    // }, [potentialMatches])
 
     return (
-        <>
-        <div>
-            <p>{option.img}</p>
-            <p>{option.name}</p>
-            <p>{option.hobbies}</p>
-        </div>
+        null
+        // <>
+        // <div>
+        //     <p>{option.img}</p>
+        //     <p>{option.name}</p>
+        //     <p>{option.hobbies}</p>
+        // </div>
 
-        <button onClick={handleMatchYes}>YES</button>
+        // <button onClick={handleMatchYes}>YES</button>
         
-        <button onClick={handleMatchNo}>NO</button>
-        </>
+        // <button onClick={handleMatchNo}>NO</button>
+        // </>
     )
 }
 export default SwipingPage
