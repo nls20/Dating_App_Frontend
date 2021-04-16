@@ -1,10 +1,15 @@
+import MessageTemplateTile from "./MessageTemplateTile"
 
-const MessagesPreview = () => {
+const MessagesPreview = ({matches}) => {
 
-    
+    const preview = matches.map((match, index) => {
+         return <MessageTemplateTile match={match} key={index} />
+    })
 
     return( 
-        <h3>preview</h3>
+        <>
+            {preview}
+        </>
     )
 }
 export default MessagesPreview
