@@ -1,4 +1,5 @@
 import MatchesTemplateTile from "./MatchesTemplateTile"
+import './MatchesPreviewTiles.css'
 
 const MatchesPreviewTiles = ({matches}) => {
 
@@ -9,7 +10,7 @@ const MatchesPreviewTiles = ({matches}) => {
     })
 
     return(
-        <section>
+        <section id="template-section">
             {previews}
         </section>
     )
