@@ -7,9 +7,9 @@ const MessagesPreview = ({matches}) => {
     })
 
     return( 
-        <>
+        <section>
             {preview}
-        </>
+        </section>
     )
 }
 export default MessagesPreview
