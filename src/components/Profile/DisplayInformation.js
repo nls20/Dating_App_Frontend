@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const DisplayInformation = ({name, age, location, hobbies, vaccinated, hasBeenSubmitted}) => {
+const DisplayInformation = ({name, age, location, hobbies, vaccinated, gender, preference, hasBeenSubmitted}) => {
 
   if (!hasBeenSubmitted && !vaccinated){
     return null 
@@ -11,6 +11,8 @@ const DisplayInformation = ({name, age, location, hobbies, vaccinated, hasBeenSu
       <p> age - {age}</p>
       <p>location - {location}</p>
       <p>hobbies - {hobbies}</p>
+      <p>Gender - {gender}</p>
+      <p>preference - {preference}</p>
     </article>
   )}
 }

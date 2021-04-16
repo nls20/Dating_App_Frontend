@@ -7,7 +7,17 @@ const Form = ({submitted, hasBeenSubmitted}) => {
   const [age, setAge] = useState(0);
   const [location, setLocation] = useState("");
   const [hobbies, setHobbies] = useState("");
+  const [gender, setGender] = useState("");
+  const [preference, setPreference] = useState("");
   const [vaccinated, setVaccinated] = useState(false);
+
+  const handleGender = (evt) => {
+    setGender(evt.target.value)
+  }
+
+  const handlePreference = (evt) => {
+    setPreference(evt.target.value)
+  }
 
   const handleName = (evt) => {
       setName(evt.target.value)
@@ -76,14 +86,19 @@ const Form = ({submitted, hasBeenSubmitted}) => {
        value={hobbies} 
        onChange={handleHobbies} required/>
        
-       {/* <select>
-           <option value="gender" disabled selected hidden>Choose a gender</option>
-           {selectGenderOptions}
+       <select className="option-bar" value={gender} onChange={handleGender}>
+           <option className="option" value="gender" disabled selected hidden>Choose a gender</option>
+           <option className="option" value="male" >Male</option>
+           <option className="option" value="female" >Female</option>
+           <option className="option" value="non-binary" >non-binary</option>
        </select>
-       <select>
-           <option value="gender" disabled selected hidden>Choose a Preference</option>
-           {selectGenderPreference}
-       </select> */}
+       <select className="option-bar" value={preference} onChange={handlePreference}>
+           <option className="option" value="gender" disabled selected hidden>Choose a Preference</option>
+           <option className="option" value="male" >Male</option>
+           <option className="option" value="female" >Female</option>
+           <option className="option" value="non-binary" >non-binary</option>
+           <option className="option" value="all" >All</option> 
+       </select>
        <p id="vaccinated">vaccinated</p>
        <input type="radio" id="Choice"
          name="vaccinated" value={true} onChange={handleVaccinated} required/>
