@@ -1,3 +1,4 @@
+
 import logo from './logo.svg';
 import './App.css';
 import VinderContainer from './containers/VinderContainer';
@@ -10,7 +11,7 @@ import ProfilePage from './components/ProfilePage'
 function App() {
   return (
     <div className="App">
-      <Router>
+      {/* <Router>
         <NavBar/>
           <Switch>
             <Route exact path="/">
@@ -27,7 +28,7 @@ function App() {
           
           </Switch>
 
-      </Router>
+      </Router> */}
       <VinderContainer/>
     </div>
   );
