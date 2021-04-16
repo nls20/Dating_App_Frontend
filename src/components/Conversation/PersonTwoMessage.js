@@ -1,9 +1,10 @@
 
 
-const PersonTwoMessage = () => {
+const PersonTwoMessage = ({message}) => {
 
     return (
-        null
+        <p>{message}</p>
+
     )
 
 }

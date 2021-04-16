@@ -4,6 +4,7 @@ import SwipingPage from '../components/SwipingPage'
 import NavBar from '../components/NavBar'
 import MatchesPage from '../components/Matches/MatchesPage'
 import ProfilePage from '../components/ProfilePage'
+import Chatroom from '../components/Conversation/Chatroom'
 
 const VinderContainer = () => {
 
@@ -42,12 +43,16 @@ const VinderContainer = () => {
               <SwipingPage />
             </Route>
 
-            <Route path="/matches">
+            <Route exact path="/matches">
               <MatchesPage matches={matches}/>
             </Route>
 
             <Route path="/profile">
               <ProfilePage getFormInformation={getFormInformation} />
+            </Route>
+
+            <Route path="/matches/conversation">
+              <Chatroom/>
             </Route>
           
           </Switch>

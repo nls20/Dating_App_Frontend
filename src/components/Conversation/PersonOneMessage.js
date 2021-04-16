@@ -1,9 +1,9 @@
 
 
-const PersonOneMessage = () => {
+const PersonOneMessage = ({message}) => {
 
     return (
-        null
+        <p>{message}</p>
     )
 
 }
