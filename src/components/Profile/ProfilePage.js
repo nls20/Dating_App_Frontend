@@ -39,7 +39,7 @@ const ProfilePage = ({getFormInformation}) => {
     return (
         <>
         <Form submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} />
-        <DisplayInformation name={name} age={age} location={location} hobbies={hobbies} hasBeenSubmitted={hasBeenSubmitted}/>
+        <DisplayInformation name={name} age={age} location={location} hobbies={hobbies} vaccinated={vaccinated} hasBeenSubmitted={hasBeenSubmitted}/>
         </>
     )
 }

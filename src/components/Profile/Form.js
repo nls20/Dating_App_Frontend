@@ -1,4 +1,4 @@
-import DisplayInformation from "./DisplayInformation"
+import './FromStyling.css'
 import {useState} from 'react'
 
 const Form = ({submitted, hasBeenSubmitted}) => {
@@ -46,12 +46,36 @@ const Form = ({submitted, hasBeenSubmitted}) => {
     return null
   }else{
     return (
-      <form className="setUp-input" onSubmit={handleSubmitForm}>
+      <form className="form" onSubmit={handleSubmitForm}>
 
-      <input type="text" placeholder="Name" value={name} onChange={handleName} required/>
-      <input type="number" placeholder="Age" value={age} onChange={handleAge} required/>
-      <input type="text" placeholder="location" value={location} onChange={handleLocation} required/>
-       <textarea type="text" placeholder="Hobbies & Interests" value={hobbies} onChange={handleHobbies} required/>
+      <input 
+      className="setUp-input"
+       type="text" 
+       placeholder="Name" 
+       value={name} 
+       onChange={handleName} required/>
+
+      <input 
+      className="setUp-input"
+      type="number" 
+      placeholder="Age" 
+      value={age} 
+      onChange={handleAge} required/>
+
+      <input 
+      className="setUp-input" 
+      type="text" 
+      placeholder="location" 
+      value={location} 
+      onChange={handleLocation} required/>
+
+       <input 
+       className="setUp-input" 
+       type="text" 
+       placeholder="Hobbies & Interests" 
+       value={hobbies} 
+       onChange={handleHobbies} required/>
+       
        {/* <select>
            <option value="gender" disabled selected hidden>Choose a gender</option>
            {selectGenderOptions}
@@ -60,12 +84,12 @@ const Form = ({submitted, hasBeenSubmitted}) => {
            <option value="gender" disabled selected hidden>Choose a Preference</option>
            {selectGenderPreference}
        </select> */}
-       <p>vaccinated</p>
-       <input type="radio" id="Choice1"
+       <p id="vaccinated">vaccinated</p>
+       <input type="radio" id="Choice"
          name="vaccinated" value={true} onChange={handleVaccinated} required/>
        <label htmlFor="Choice1">yes</label>
 
-      <input type="radio" id="Choice2"
+      <input type="radio" id="Choice"
       name="vaccinated" value={false} onChange={handleVaccinated}/>
      <label htmlFor="Choice2">no</label>
 

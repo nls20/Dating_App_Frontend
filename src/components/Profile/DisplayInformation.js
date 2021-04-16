@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-const DisplayInformation = ({name, age, location, hobbies, hasBeenSubmitted}) => {
+const DisplayInformation = ({name, age, location, hobbies, vaccinated, hasBeenSubmitted}) => {
 
-  if (!hasBeenSubmitted){
-    return null
+  if (!hasBeenSubmitted && !vaccinated){
+    return null 
   }else{
   return (
     <article>
