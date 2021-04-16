@@ -11,24 +11,6 @@ import ProfilePage from './components/ProfilePage'
 function App() {
   return (
     <div className="App">
-      {/* <Router>
-        <NavBar/>
-          <Switch>
-            <Route exact path="/">
-              <SwipingPage />
-            </Route>
-
-            <Route path="/matches">
-              <MatchesPage/>
-            </Route>
-
-            <Route path="/profile">
-              <ProfilePage/>
-            </Route>
-          
-          </Switch>
-
-      </Router> */}
       <VinderContainer/>
     </div>
   );
