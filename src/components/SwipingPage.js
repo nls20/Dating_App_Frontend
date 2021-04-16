@@ -6,9 +6,9 @@ const SwipingPage = ({potentialMatches}) => {
     const [notMatched, setNotMatched] = useState([])
     const [option, setOption] = useState(potentialMatches[Math.floor(Math.random() * potentialMatches.length)])
 
-    // const selectOption = () => {
-    //     return setOption(potentialMatches[0])
-    // }
+    const selectOption = () => {
+        return setOption(potentialMatches[Math.floor(Math.random() * potentialMatches.length)])
+    }
 
     const handleMatchYes = (evt) => {
         console.log(evt.target.value);
@@ -18,9 +18,7 @@ const SwipingPage = ({potentialMatches}) => {
         } else {
             setMatches(addMatch)
         }
-        // setMatches(addMatch + [...matches])
-        // removePotentialMatches(option.id)
-        // selectOption()
+        selectOption()
     }
 
     // const removePotentialMatches = (idToRemove) => {
@@ -30,12 +28,8 @@ const SwipingPage = ({potentialMatches}) => {
     const handleMatchNo = (evt) => {
         // removePotentialMatches(option.id)
         setNotMatched([...notMatched] + evt.target.value)
-        // selectOption()
+        selectOption()
     }
-
-    // useEffect(() => {
-    //     selectOption()
-    // }, [potentialMatches])
 
     return (
         <>
