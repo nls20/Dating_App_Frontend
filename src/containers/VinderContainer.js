@@ -28,9 +28,9 @@ const VinderContainer = () => {
 
 
     const potentialMatches = [
-      {name: "john", age: 30, location: "Inverness", hobbies: "running", picture:"https://i.redd.it/v0caqchbtn741.jpg"},
-      {name: "bill", age: 50, location: "Glasgow", hobbies: "swimming", picture:"https://i.redd.it/v0caqchbtn741.jpg"},
-      {name: "mike", age: 45, location: "Edinburgh", hobbies: "cycling", picture:"https://i.redd.it/v0caqchbtn741.jpg"}
+      {name: "John", age: 30, location: "Inverness", hobbies: "Running", picture:"https://i.redd.it/v0caqchbtn741.jpg"},
+      {name: "Bill", age: 50, location: "Glasgow", hobbies: "Swimming", picture:"https://i.redd.it/v0caqchbtn741.jpg"},
+      {name: "Mike", age: 45, location: "Edinburgh", hobbies: "Cycling", picture:"https://i.redd.it/v0caqchbtn741.jpg"}
     ]
 
 
