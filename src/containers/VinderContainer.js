@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {BrowserRouter  as Router, Route, Switch} from 'react-router-dom'
 import SwipingPage from '../components/SwipingPage'
-import NavBar from '../components/NavBar'
+import NavBar from '../components/NavBar/NavBar'
 import MatchesPage from '../components/Matches/MatchesPage'
 import ProfilePage from '../components/Profile/ProfilePage'
 import Chatroom from '../components/Conversation/Chatroom'

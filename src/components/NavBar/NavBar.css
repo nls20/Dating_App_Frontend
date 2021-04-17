@@ -1,0 +1,27 @@
+#nav-bar-section>ul{
+    list-style: none;
+    display: grid;
+    padding-inline-start: 0px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#nav-bar-section>ul>li>a{
+    text-decoration: none;
+    color: black;
+}
+
+#nav-bar-section>ul>li{
+    margin: 10px;
+}
+
+#nav-bar-section{
+    
+}
+
+.highlighted-button{
+    background-color: red;
+}
+
+.unhighlighted-button{
+    background-color: green;
+}
