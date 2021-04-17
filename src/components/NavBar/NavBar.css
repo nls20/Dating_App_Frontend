@@ -3,6 +3,7 @@
     display: grid;
     padding-inline-start: 0px;
     grid-template-columns: 1fr 1fr 1fr;
+    margin: 0px;
 }
 
 .nav-bar-section>ul>li>a{
@@ -11,11 +12,12 @@
 }
 
 .nav-bar-section>ul>li{
-    margin: 10px;
+    padding: 0px;
 }
 
-.nav-bar-section{
-    
+.nav-bar-section>ul>li>a>p{
+    padding: 0px;
+    margin: 0px;
 }
 
 .highlighted-button{
