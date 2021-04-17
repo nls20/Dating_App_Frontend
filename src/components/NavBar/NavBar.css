@@ -1,20 +1,20 @@
-#nav-bar-section>ul{
+.nav-bar-section>ul{
     list-style: none;
     display: grid;
     padding-inline-start: 0px;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-#nav-bar-section>ul>li>a{
+.nav-bar-section>ul>li>a{
     text-decoration: none;
     color: black;
 }
 
-#nav-bar-section>ul>li{
+.nav-bar-section>ul>li{
     margin: 10px;
 }
 
-#nav-bar-section{
+.nav-bar-section{
     
 }
 

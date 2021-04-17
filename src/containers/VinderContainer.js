@@ -44,8 +44,8 @@ const VinderContainer = () => {
 
     return (
         <Router>
-        <NavBar/>
-          <Switch>
+        
+          <Switch id="">
             <Route exact path="/">
               <SwipingPage potentialMatches={potentialMatches} />
             </Route>
@@ -63,7 +63,7 @@ const VinderContainer = () => {
             </Route>
           
           </Switch>
-
+          <NavBar/>
       </Router>
     )
 }

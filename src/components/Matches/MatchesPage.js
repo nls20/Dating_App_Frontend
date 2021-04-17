@@ -1,20 +1,20 @@
-import {useState} from 'react'
-import MatchesPreviewTiles from './MatchesPreviewTiles'
-import MessagesPreview from './MessagesPreview'
-const MatchesPage = ({matches}) => {
+import { useState } from "react";
+import MatchesPreviewTiles from "./MatchesPreviewTiles";
+import MessagesPreview from "./MessagesPreview";
+import './MatchesPage.css'
 
-    
+const MatchesPage = ({ matches }) => {
+  return (
+    <>
+      <section></section>
+      <h2>Matches</h2>
+      <MatchesPreviewTiles matches={matches} />
 
-
-    
-    return (
-        <> 
-            <h2>Matches</h2>
-            <MatchesPreviewTiles matches={matches}/>
-
-            <h2>Messages</h2>
-            <MessagesPreview matches={matches}/>
-        </>
-    )
-}
-export default MatchesPage
+      <section id="message-section">
+        <h2>Messages</h2>
+        <MessagesPreview matches={matches} />
+      </section>
+    </>
+  );
+};
+export default MatchesPage;
