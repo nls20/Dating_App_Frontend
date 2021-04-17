@@ -11,7 +11,7 @@ import { useState } from "react"
      
     const formSubmit = (evt)=> {
         evt.preventDefault()
-        newMessage = message
+        newMessage(message)
     }
 
     return (

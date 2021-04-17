@@ -1,17 +1,19 @@
+import { useState } from "react"
 import NewChat from "./NewChat"
 import PersonOneMessage from "./PersonOneMessage"
 import PersonTwoMessage from "./PersonTwoMessage"
 
 const Chatroom = () => {
 
-    const messageHistory = [
+    const [messageHistory, setMessageHistory] = useState([
         {person: 1, message: "first message"},
         {person: 2, message: "person 2 first message"},
         {person: 1, message: "second message"},
         {person: 2, message: "person 2 second message"},
         {person: 1, message: "third message"},
         {person: 2, message: "person 2 third message"},
-    ]
+    ])
+
 
     const messageList = messageHistory.map((message, index) => {
         let newPerson
@@ -24,10 +26,11 @@ const Chatroom = () => {
     })
 
     const addNewMessage = (newMessage) => {
-        messageHistory.push({
+        const totalMessages = messageHistory.concat(messageHistory.push({
             person: 1,
             message: newMessage
-        })
+        }))
+        setMessageHistory(totalMessages)
     }
 
     return (
