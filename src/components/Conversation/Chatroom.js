@@ -1,3 +1,4 @@
+import NewChat from "./NewChat"
 import PersonOneMessage from "./PersonOneMessage"
 import PersonTwoMessage from "./PersonTwoMessage"
 
@@ -22,9 +23,18 @@ const Chatroom = () => {
         return newPerson
     })
 
+    const addNewMessage = (newMessage) => {
+        messageHistory.push({
+            person: 1,
+            message: newMessage
+        })
+    }
+
     return (
         <> 
             {messageList}
+            <NewChat newMessage={addNewMessage}/>
+            
         </>
     )
 }
