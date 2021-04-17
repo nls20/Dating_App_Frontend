@@ -11,8 +11,8 @@ const SwipingPage = ({potentialMatches}) => {
     }
 
     const handleMatchYes = (evt) => {
-        console.log(evt.target.value);
         const addMatch = potentialMatches.filter(match => match.name == evt.target.value)
+        // console.log(addMatch);
         if (matches.length) {
             setMatches(matches.concat(addMatch))
         } else {
@@ -26,8 +26,12 @@ const SwipingPage = ({potentialMatches}) => {
     //   }
 
     const handleMatchNo = (evt) => {
-        // removePotentialMatches(option.id)
-        setNotMatched([...notMatched] + evt.target.value)
+        const addNotMatched = potentialMatches.filter(match => match.name == evt.target.value)
+        if (notMatched.length) {
+            setNotMatched(notMatched.concat(addNotMatched))
+        } else {
+            setNotMatched(addNotMatched)
+        }
         selectOption()
     }
 
@@ -39,7 +43,7 @@ const SwipingPage = ({potentialMatches}) => {
 
         <button value={option.name} onClick={handleMatchYes}>YES</button>
         
-        <button value={option} onClick={handleMatchNo}>NO</button>
+        <button value={option.name} onClick={handleMatchNo}>NO</button>
         </>
     )
 }
