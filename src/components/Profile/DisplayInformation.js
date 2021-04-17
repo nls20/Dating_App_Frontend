@@ -3,14 +3,29 @@ import './style/InformationSyling.css'
 import './Form'
 import Form from './Form';
 
-const DisplayInformation = ({name, age, location, hobbies, vaccinated, gender, preference, image, hasBeenSubmitted}) => {
+const DisplayInformation = ({name, age, location, hobbies, typeFile, gender, preference, image, hasBeenSubmitted}) => {
 
   if (!hasBeenSubmitted){
     return null; 
   }else{
     return (
       <article className="display-profile-content">
-       <img src={image} alt="image" />
+        {typeFile.includes("video") ? (
+            <video
+            id="uploaded-image"
+            src={image}
+            draggable={false}
+            controls
+            autoPlay
+            alt="uploaded-img"
+          />
+         ) : (
+            <img
+            id="uploaded-image"
+            src={image}
+            alt="uploaded-img"
+            />
+          )}
         <h4>name - {name}</h4>
         <p> age - {age}</p>
         <p>location - {location}</p>

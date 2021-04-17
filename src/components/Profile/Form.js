@@ -176,8 +176,6 @@ const Form = ({submitted, hasBeenSubmitted}) => {
        <p id="vaccinated">vaccinated</p>
 
        <HandleRadioButtons vaccinated={vaccinated}/>
-
-       {/* {showSubmit} */}
   </form>
     )
   }
