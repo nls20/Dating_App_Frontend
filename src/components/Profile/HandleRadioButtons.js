@@ -14,7 +14,7 @@ const HandleRadioButtons = ({vaccinated}) => {
   }
 
   if (vaccinatedNo){
-    return <h1>Stop stop stop, Go and get a vaccine!</h1>
+    return <p>Stop stop stop, Go and get a vaccine!</p>
   }
   return (
     <>
