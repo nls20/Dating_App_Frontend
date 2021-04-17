@@ -8,8 +8,11 @@ const ProfilePage = ({getFormInformation}) => {
     const [age, setAge] = useState(0);
     const [location, setLocation] = useState("");
     const [hobbies, setHobbies] = useState("");
+    const [gender, setGender] = useState("");
+    const [preference, setPreference] = useState("");
     const [vaccinated, setVaccinated] = useState(false);
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
+    const [image, setImage] = useState("")
 
     const submitted = (details) => {
 
@@ -18,28 +21,26 @@ const ProfilePage = ({getFormInformation}) => {
         setLocation(details.location)
         setHobbies(details.hobbies)
         setVaccinated(details.vaccinated)
-
+        setGender(details.gender)
+        setPreference(details.preference)
+        setImage(details.image)
         setHasBeenSubmitted(true)
         
     }
 
-
-    // const selectGenderOptions = gender.map(({gender, id}) => (
-    //     <option key={id} value={id}>{gender}</option>
-    // ))
-
-    //  const handleSelectedGender = (evt) => {
-    //      onGenderSelect(evt.target.value)
-    //  }
-
-    // const selectGenderPreference = preference.map(({preference, id}) => (
-    //     <option key={id} value={id}>{preference}</option>
-    // ))
-
     return (
         <>
         <Form submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} />
-        <DisplayInformation name={name} age={age} location={location} hobbies={hobbies} hasBeenSubmitted={hasBeenSubmitted}/>
+        <DisplayInformation 
+        name={name} 
+        age={age} 
+        location={location} 
+        hobbies={hobbies} 
+        vaccinated={vaccinated}
+        gender={gender} 
+        preference={preference}
+        image={image}
+        hasBeenSubmitted={hasBeenSubmitted}/>
         </>
     )
 }

@@ -1,5 +1,7 @@
-import DisplayInformation from "./DisplayInformation"
-import {useState} from 'react'
+import './style/FromStyling.css'
+import React, {useState} from 'react'
+import FolderIcon from "./assets/folder_icon_transparent.png";
+import CloseIcon from "./assets/CloseIcon.svg";
 
 const Form = ({submitted, hasBeenSubmitted}) => {
 
@@ -7,7 +9,20 @@ const Form = ({submitted, hasBeenSubmitted}) => {
   const [age, setAge] = useState(0);
   const [location, setLocation] = useState("");
   const [hobbies, setHobbies] = useState("");
+  const [gender, setGender] = useState("");
+  const [preference, setPreference] = useState("");
   const [vaccinated, setVaccinated] = useState(false);
+  const [image, setImage] = useState("");
+  const [isUploaded, setIsUploaded] = useState(false);
+  const [typeFile, setTypeFile] = useState("");
+
+  const handleGender = (evt) => {
+    setGender(evt.target.value)
+  }
+
+  const handlePreference = (evt) => {
+    setPreference(evt.target.value)
+  }
 
   const handleName = (evt) => {
       setName(evt.target.value)
@@ -28,44 +43,140 @@ const Form = ({submitted, hasBeenSubmitted}) => {
       setVaccinated(evt.target.value)
   }
 
+  const handleFileSelected = (evt) => {
+    if (evt.target.files && evt.target.files[0]) {
+      setTypeFile(evt.target.files[0].type);
+      let reader = new FileReader();
+
+      reader.onload = (evt) => {
+        setImage(evt.target.result);
+        setIsUploaded(true);
+      };
+
+      reader.readAsDataURL(evt.target.files[0]);
+    }
+  }
+
+  
+
   const handleSubmitForm = (evt) => {
       evt.preventDefault()
-      console.log("Start up From");
-
       submitted({
           name: name,
           age: age,
           location: location,
           hobbies: hobbies,
-          vaccinated: vaccinated
+          vaccinated: vaccinated,
+          gender: gender,
+          preference : preference,
+          image: image
       })
-
   }
 
   if (hasBeenSubmitted){
     return null
   }else{
     return (
-      <form className="setUp-input" onSubmit={handleSubmitForm}>
+      <form className="form" onSubmit={handleSubmitForm}>
 
-      <input type="text" placeholder="Name" value={name} onChange={handleName}/>
-      <input type="number" placeholder="Age" value={age} onChange={handleAge}/>
-      <input type="text" placeholder="location" value={location} onChange={handleLocation}/>
-       <textarea type="text" placeholder="Hobbies & Interests" value={hobbies} onChange={handleHobbies}/>
-       {/* <select>
-           <option value="gender" disabled selected hidden>Choose a gender</option>
-           {selectGenderOptions}
+        <div className="image-upload"> 
+            {!isUploaded ? (
+              <>
+                <label htmlFor="upload-input">
+                  <img
+                    src={FolderIcon}
+                    draggable={"false"}
+                    alt="placeholder"
+                    style={{ width: 50, height: 50 }}
+                  />
+                  <p id="add-image">Add Image</p>
+                </label>
+
+                <input
+                  id="upload-input"
+                  type="file"
+                  accept=".jpg,.jpeg,.gif,.png,.mov,.mp4"
+                  onChange={handleFileSelected}
+                />
+              </>
+            ) : (
+              <>
+                <img
+                  className="close-icon"
+                  src={CloseIcon}
+                  alt="CloseIcon"
+                  onClick={() => {
+                    setIsUploaded(false);
+                    setImage(null);
+                  }}
+                />
+                {typeFile.includes("video") ? (
+                  <video
+                    id="uploaded-image"
+                    src={image}
+                    draggable={false}
+                    controls
+                    autoPlay
+                    alt="uploaded-img"
+                  />
+                ) : (
+                  <img
+                    id="uploaded-image"
+                    src={image}
+                    draggable={false}
+                    alt="uploaded-img"
+                  />
+                )}
+                </>
+            )}
+        </div>
+      <input 
+      className="setUp-input"
+       type="text" 
+       placeholder="Name" 
+       value={name} 
+       onChange={handleName} required/>
+
+      <input 
+      className="setUp-input"
+      type="number" 
+      placeholder="Age" 
+      value={age} 
+      onChange={handleAge} required/>
+
+      <input 
+      className="setUp-input" 
+      type="text" 
+      placeholder="location" 
+      value={location} 
+      onChange={handleLocation} required/>
+
+       <input 
+       className="setUp-input" 
+       type="text" 
+       placeholder="Hobbies & Interests" 
+       value={hobbies} 
+       onChange={handleHobbies} required/>
+       
+       <select className="option-bar" onChange={handleGender}>
+           <option value="gender" disabled selected hidden>Choose a gender --</option>
+           <option value="male" >Male</option>
+           <option value="female" >Female</option>
+           <option value="non-binary" >non-binary</option>
        </select>
-       <select>
+       <select className="option-bar" onChange={handlePreference}>
            <option value="gender" disabled selected hidden>Choose a Preference</option>
-           {selectGenderPreference}
-       </select> */}
-       <p>vaccinated</p>
-       <input type="radio" id="Choice1"
-         name="vaccinated" value={true} onChange={handleVaccinated}/>
+           <option value="male" >Male</option>
+           <option value="female" >Female</option>
+           <option value="non-binary" >non-binary</option>
+           <option value="all" >All</option> 
+       </select>
+       <p id="vaccinated">vaccinated</p>
+       <input type="radio" id="Choice"
+         name="vaccinated" value={true} onChange={handleVaccinated} required/>
        <label htmlFor="Choice1">yes</label>
 
-      <input type="radio" id="Choice2"
+      <input type="radio" id="Choice"
       name="vaccinated" value={false} onChange={handleVaccinated}/>
      <label htmlFor="Choice2">no</label>
 

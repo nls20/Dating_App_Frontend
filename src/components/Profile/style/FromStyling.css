@@ -1,0 +1,73 @@
+.setUp-input{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  border: none;
+  border-bottom: 1px gray solid;
+  margin: 20px auto;
+}
+
+#button{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding: 10px 60px;
+  border: none;
+  background-color: #fff;
+  box-shadow: gray 0 0 2px;
+  border-radius: 6px;
+  margin: 15px auto;
+}
+
+#button:hover{
+  background-color: indianred;
+  color: white;
+}
+
+#vaccinated{
+  color: slategray;
+}
+
+#Choice{
+  padding: 0px 0px;
+}
+
+.option-bar{
+  display: flex;
+  flex-flow: column wrap;
+  margin: 20px auto;
+  border: none;
+  color: gray;
+  border-bottom: 1px gray solid;
+}
+
+.image-upload {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  margin: 0px;
+}
+
+.image-upload > input {
+  display: none;
+}
+
+#uploaded-image{
+  height: 180px;
+  width: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.close-icon{
+  background-color: #0571a3;
+  border-radius: 50%;
+  z-index: 10;
+  width: 20px;
+  height: 20px;
+}
+
+#add-image{
+  color: slategray;
+  margin: 0px 0px;
+}

@@ -13,6 +13,8 @@ const VinderContainer = () => {
     const [location, setLocation] = useState("");
     const [hobbies, setHobbies] = useState("");
     const [vaccinated, setVaccinated] = useState(false);
+    const [gender, setGender] = useState("");
+    const [preference, setPreference] = useState("");
 
     const matches = [
       {name: "andrew", picture: "https://i.redd.it/v0caqchbtn741.jpg", messageHistory: "this is andrew message this is andrew message this is andrew message this is andrew message this is andrew message this is andrew message "},
@@ -43,30 +45,32 @@ const VinderContainer = () => {
         setLocation(details.location)
         setHobbies(details.hobbies)
         setVaccinated(details.vaccinated)
+        setGender(details.gender)
+        setPreference(details.preference)
     }
 
     return (
         <Router>
-        <NavBar/>
-          <Switch>
-            <Route exact path="/">
-              <SwipingPage potentialMatches={potentialMatches} />
-            </Route>
+          <NavBar/>
+            <Switch>
 
-            <Route exact path="/matches">
-              <MatchesPage matches={matches}/>
-            </Route>
+              <Route exact path="/">
+                <SwipingPage potentialMatches={potentialMatches} />
+              </Route>
 
-            <Route path="/profile">
-              <ProfilePage getFormInformation={getFormInformation} />
-            </Route>
+              <Route exact path="/matches">
+                <MatchesPage matches={matches}/>
+              </Route>
 
-            <Route path="/matches/conversation">
-              <Chatroom/>
-            </Route>
-          
-          </Switch>
+              <Route path="/profile">
+                <ProfilePage getFormInformation={getFormInformation} />
+              </Route>
 
+              <Route path="/matches/conversation">
+                <Chatroom/>
+              </Route>
+            
+            </Switch>
       </Router>
     )
 }
