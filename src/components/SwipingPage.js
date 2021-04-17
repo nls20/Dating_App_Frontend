@@ -12,18 +12,14 @@ const SwipingPage = ({potentialMatches}) => {
 
     const handleMatchYes = (evt) => {
         const addMatch = potentialMatches.filter(match => match.name == evt.target.value)
-        // console.log(addMatch);
         if (matches.length) {
             setMatches(matches.concat(addMatch))
         } else {
             setMatches(addMatch)
         }
+        potentialMatches.splice(potentialMatches.indexOf(addMatch), 1)
         selectOption()
     }
-
-    // const removePotentialMatches = (idToRemove) => {
-    //     setPotentialMatches(potentialMatches.filter(({ id }) => id !== idToRemove))
-    //   }
 
     const handleMatchNo = (evt) => {
         const addNotMatched = potentialMatches.filter(match => match.name == evt.target.value)
@@ -32,6 +28,7 @@ const SwipingPage = ({potentialMatches}) => {
         } else {
             setNotMatched(addNotMatched)
         }
+        potentialMatches.splice(potentialMatches.indexOf(addNotMatched), 1)
         selectOption()
     }
 
