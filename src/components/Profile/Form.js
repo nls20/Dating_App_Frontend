@@ -61,18 +61,17 @@ const Form = ({submitted, hasBeenSubmitted}) => {
 
   const handleSubmitForm = (evt) => {
       evt.preventDefault()
-      console.log("Start up From");
-
       submitted({
           name: name,
           age: age,
           location: location,
           hobbies: hobbies,
           vaccinated: vaccinated,
+          gender: gender,
+          preference : preference,
           image: image
       })
-    }
-
+  }
 
   if (hasBeenSubmitted){
     return null
@@ -159,13 +158,13 @@ const Form = ({submitted, hasBeenSubmitted}) => {
        value={hobbies} 
        onChange={handleHobbies} required/>
        
-       <select className="option-bar" onSelect={handleGender}>
+       <select className="option-bar" onChange={handleGender}>
            <option value="gender" disabled selected hidden>Choose a gender --</option>
            <option value="male" >Male</option>
            <option value="female" >Female</option>
            <option value="non-binary" >non-binary</option>
        </select>
-       <select className="option-bar" onSelect={handlePreference}>
+       <select className="option-bar" onChange={handlePreference}>
            <option value="gender" disabled selected hidden>Choose a Preference</option>
            <option value="male" >Male</option>
            <option value="female" >Female</option>

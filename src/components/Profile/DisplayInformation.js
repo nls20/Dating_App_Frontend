@@ -3,7 +3,7 @@ import './style/InformationSyling.css'
 
 const DisplayInformation = ({name, age, location, hobbies, vaccinated, gender, preference, image, hasBeenSubmitted}) => {
 
-  if (!hasBeenSubmitted && !vaccinated){
+  if (!hasBeenSubmitted){
     return null; 
   }else{
     return (
