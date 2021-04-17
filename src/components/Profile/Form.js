@@ -62,7 +62,7 @@ const Form = ({submitted, hasBeenSubmitted}) => {
 
   const handleSubmitForm = (evt) => {
       evt.preventDefault()
-      
+
       submitted({
           name: name,
           age: age,
@@ -177,7 +177,7 @@ const Form = ({submitted, hasBeenSubmitted}) => {
 
        <HandleRadioButtons vaccinated={vaccinated}/>
 
-     <input id="button" type="submit" value="Submit"/>
+       {/* {showSubmit} */}
   </form>
     )
   }

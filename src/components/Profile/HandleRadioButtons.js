@@ -35,6 +35,8 @@ const HandleRadioButtons = ({vaccinated}) => {
       onChange={handleVaccinatedNo}
        />
      <label htmlFor="Choice2">no</label>
+
+     <input  id="button" type="submit" value="Submit"/>
      </>
   )
 }

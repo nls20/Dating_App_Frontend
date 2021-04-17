@@ -5,13 +5,6 @@ import Form from './Form';
 
 const DisplayInformation = ({name, age, location, hobbies, vaccinated, gender, preference, image, hasBeenSubmitted}) => {
 
-  // const [update, setUpdate] = useState("");
-
-  // const handleUpdate = (evt) => {
-  //   setUpdate(evt.target.value)
-
-  // }
-
   if (!hasBeenSubmitted){
     return null; 
   }else{
@@ -28,8 +21,6 @@ const DisplayInformation = ({name, age, location, hobbies, vaccinated, gender, p
        type="submit" 
        value="update profile"  
       onClick={<Form />}/>
-
-        <p>{vaccinated}</p>
       </article>
     )}
 }
