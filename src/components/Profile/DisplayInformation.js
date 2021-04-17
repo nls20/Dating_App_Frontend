@@ -11,21 +11,21 @@ const DisplayInformation = ({name, age, location, hobbies, typeFile, gender, pre
     return (
       <article className="display-profile-content">
         {typeFile.includes("video") ? (
-            <video
-            id="uploaded-image"
-            src={image}
-            draggable={false}
-            controls
-            autoPlay
-            alt="uploaded-img"
-          />
-         ) : (
-            <img
-            id="uploaded-image"
-            src={image}
-            alt="uploaded-img"
-            />
-          )}
+        <video
+        id="uploaded-image"
+        src={image}
+        draggable={false}
+        controls
+        autoPlay
+        alt="uploaded-img"
+        />
+      ) : (
+        <img
+          id="uploaded-image"
+          src={image}
+          alt="uploaded-img"
+        />
+        )}
         <h4>name - {name}</h4>
         <p> age - {age}</p>
         <p>location - {location}</p>
