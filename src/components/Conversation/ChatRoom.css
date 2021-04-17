@@ -1,12 +1,8 @@
-#nav-bar{
+#new-message{
     position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    padding-bottom: 20px;
-}
-
-#page-body{
     margin-bottom: 50px;
     padding-bottom: 10px;
 }

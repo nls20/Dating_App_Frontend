@@ -159,7 +159,7 @@ const VinderContainer = () => {
     <>
       <section id="router">
         <Router forceRefresh={true}>
-          <div>
+          <div id="page-body">
             <Switch id="switch">
               <Route exact path="/">
                 <SwipingPage potentialMatches={potentialMatches} />
