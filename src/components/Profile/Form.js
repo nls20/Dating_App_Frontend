@@ -1,6 +1,7 @@
 import './FromStyling.css'
-import {useState} from 'react'
-import e from 'express';
+import React, {useState} from 'react'
+import FolderIcon from "./assets/folder_icon_transparent.png";
+import CloseIcon from "./assets/CloseIcon.svg";
 
 const Form = ({submitted, hasBeenSubmitted}) => {
 
@@ -44,9 +45,9 @@ const Form = ({submitted, hasBeenSubmitted}) => {
 
   const handleFileSelected = (evt) => {
     if(evt.target.file && evt.target.files[0]){
-      setTypeFile.(evt.target.files[0].type);
-      let reader = new FileReader();
+      setTypeFile(evt.target.files[0].type);
 
+      let reader = new FileReader();
       reader.onload = function (evt) {
         setImage(evt.target.result);
         setIsUploaded(true);
@@ -65,7 +66,7 @@ const Form = ({submitted, hasBeenSubmitted}) => {
           location: location,
           hobbies: hobbies,
           vaccinated: vaccinated,
-          picture : picture
+          image: image
       })
     }
 
@@ -76,53 +77,35 @@ const Form = ({submitted, hasBeenSubmitted}) => {
     return (
       <form className="form" onSubmit={handleSubmitForm}>
 
-        {!isUploaded ? (
-        <>
-          <label htmlFor="upload-input">
-            <img
-              src={FolderIcon}
-              draggable={"false"}
-              alt="placeholder"
-              style={{ width: 100, height: 100 }}
-            />
-              <p style={{ color: "#444" }}>Click to upload image</p>
-          </label>
-          <input
-            id="upload-input"
-            type="file"
-            accept=".jpg,.jpeg,.gif,.png,.mov,.mp4"
-            onChange={handleFileSelected}
-          />
-        </>
-        ) : (
-          <img
-            className="close-icon"
-            src={CloseIcon}
-            alt="CloseIcon"
-            onClick={() => {
-              setIsUploaded(false);
-              setImage(null);
-           }}
-           />
-            {typeFile.includes("video") ? (
-              <video
-                id="uploaded-image"
-                src={image}
-                draggable={false}
-                controls
-                autoPlay
-                alt="uploaded-img"
+            {!isUploaded ? (
+              <>
+                <label htmlFor="upload-input">
+                  <img
+                    src={FolderIcon}
+                    draggable={"false"}
+                    alt="placeholder"
+                    style={{ width: 50, height: 50 }}
                   />
-            ) : (
-              <img
-              id="uploaded-image"
-              src={image}
-              draggable={false}
-              alt="uploaded-img"
-           />
-        )}
-      )}
+                  <p style={{ color: "#444" }}>Click to upload image</p>
+                </label>
 
+                <input
+                  id="upload-input"
+                  type="file"
+                  accept=".jpg,.jpeg,.gif,.png,.mov,.mp4"
+                  onChange={handleFileSelected }
+                />
+              </>
+            ) : (
+                  <img
+                    id="uploaded-image"
+                    src={image}
+                    draggable={false}
+                    alt="uploaded-img"
+                  />
+                )}
+
+        {isUploaded ? <h2>Type is {typeFile}</h2> : null}
       <input 
       className="setUp-input"
        type="text" 
