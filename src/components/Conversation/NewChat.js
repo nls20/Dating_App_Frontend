@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import './NewChat.css'
 
  const NewChat = ({newMessage}) => {
 
@@ -12,13 +12,15 @@ import { useState } from "react"
     const formSubmit = (evt)=> {
         evt.preventDefault()
         newMessage(message)
+
+        setMessage("")
     }
 
     return (
         <>
             <section>
                 <form onSubmit={formSubmit} action="">
-                    <input type="text" onChange={textChange}/>
+                    <input type="text" value={message} onChange={textChange}/>
 
                     <input type="submit" value="Send"/>
                 </form>
