@@ -12,7 +12,7 @@ const ProfilePage = ({getFormInformation}) => {
     const [preference, setPreference] = useState("");
     const [vaccinated, setVaccinated] = useState(false);
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
-    const [picture, setPicture] = useState(null)
+    const [image, setImage] = useState("")
 
     const submitted = (details) => {
 
@@ -23,7 +23,7 @@ const ProfilePage = ({getFormInformation}) => {
         setVaccinated(details.vaccinated)
         setGender(details.gender)
         setPreference(details.preference)
-        setPicture(details.picture)
+        setImage(details.image)
         setHasBeenSubmitted(true)
         
     }
@@ -39,7 +39,7 @@ const ProfilePage = ({getFormInformation}) => {
         vaccinated={vaccinated}
         gender={gender} 
         preference={preference}
-        picture={picture}
+        image={image}
         hasBeenSubmitted={hasBeenSubmitted}/>
         </>
     )

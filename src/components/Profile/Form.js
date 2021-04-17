@@ -1,4 +1,4 @@
-import './FromStyling.css'
+import './style/FromStyling.css'
 import React, {useState} from 'react'
 import FolderIcon from "./assets/folder_icon_transparent.png";
 import CloseIcon from "./assets/CloseIcon.svg";
@@ -44,17 +44,20 @@ const Form = ({submitted, hasBeenSubmitted}) => {
   }
 
   const handleFileSelected = (evt) => {
-    if(evt.target.file && evt.target.files[0]){
+    if (evt.target.files && evt.target.files[0]) {
       setTypeFile(evt.target.files[0].type);
-
       let reader = new FileReader();
-      reader.onload = function (evt) {
+
+      reader.onload = (evt) => {
         setImage(evt.target.result);
         setIsUploaded(true);
       };
-      reader.readAsDataURL(evt.target.files[0])
+
+      reader.readAsDataURL(evt.target.files[0]);
     }
   }
+
+  
 
   const handleSubmitForm = (evt) => {
       evt.preventDefault()
@@ -77,6 +80,7 @@ const Form = ({submitted, hasBeenSubmitted}) => {
     return (
       <form className="form" onSubmit={handleSubmitForm}>
 
+        <div className="image-upload"> 
             {!isUploaded ? (
               <>
                 <label htmlFor="upload-input">
@@ -86,17 +90,37 @@ const Form = ({submitted, hasBeenSubmitted}) => {
                     alt="placeholder"
                     style={{ width: 50, height: 50 }}
                   />
-                  <p style={{ color: "#444" }}>Click to upload image</p>
+                  <p id="add-image">Add Image</p>
                 </label>
 
                 <input
                   id="upload-input"
                   type="file"
                   accept=".jpg,.jpeg,.gif,.png,.mov,.mp4"
-                  onChange={handleFileSelected }
+                  onChange={handleFileSelected}
                 />
               </>
             ) : (
+              <>
+                <img
+                  className="close-icon"
+                  src={CloseIcon}
+                  alt="CloseIcon"
+                  onClick={() => {
+                    setIsUploaded(false);
+                    setImage(null);
+                  }}
+                />
+                {typeFile.includes("video") ? (
+                  <video
+                    id="uploaded-image"
+                    src={image}
+                    draggable={false}
+                    controls
+                    autoPlay
+                    alt="uploaded-img"
+                  />
+                ) : (
                   <img
                     id="uploaded-image"
                     src={image}
@@ -104,8 +128,9 @@ const Form = ({submitted, hasBeenSubmitted}) => {
                     alt="uploaded-img"
                   />
                 )}
-
-        {isUploaded ? <h2>Type is {typeFile}</h2> : null}
+                </>
+            )}
+        </div>
       <input 
       className="setUp-input"
        type="text" 

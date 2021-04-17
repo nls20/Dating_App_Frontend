@@ -41,3 +41,33 @@
   border-bottom: 1px gray solid;
 }
 
+.image-upload {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  margin: 0px;
+}
+
+.image-upload > input {
+  display: none;
+}
+
+#uploaded-image{
+  height: 180px;
+  width: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.close-icon{
+  background-color: #0571a3;
+  border-radius: 50%;
+  z-index: 10;
+  width: 20px;
+  height: 20px;
+}
+
+#add-image{
+  color: slategray;
+  margin: 0px 0px;
+}
