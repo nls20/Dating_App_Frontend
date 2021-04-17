@@ -1,5 +1,6 @@
 import './FromStyling.css'
 import {useState} from 'react'
+import e from 'express';
 
 const Form = ({submitted, hasBeenSubmitted}) => {
 
@@ -10,7 +11,9 @@ const Form = ({submitted, hasBeenSubmitted}) => {
   const [gender, setGender] = useState("");
   const [preference, setPreference] = useState("");
   const [vaccinated, setVaccinated] = useState(false);
-  const [picture, setPicture] = useState(null)
+  const [image, setImage] = useState("");
+  const [isUploaded, setIsUploaded] = useState(false);
+  const [typeFile, setTypeFile] = useState("");
 
   const handleGender = (evt) => {
     setGender(evt.target.value)
@@ -40,7 +43,16 @@ const Form = ({submitted, hasBeenSubmitted}) => {
   }
 
   const handleFileSelected = (evt) => {
-    setPicture(evt.target.value)
+    if(evt.target.file && evt.target.files[0]){
+      setTypeFile.(evt.target.files[0].type);
+      let reader = new FileReader();
+
+      reader.onload = function (evt) {
+        setImage(evt.target.result);
+        setIsUploaded(true);
+      };
+      reader.readAsDataURL(evt.target.files[0])
+    }
   }
 
   const handleSubmitForm = (evt) => {
@@ -55,17 +67,8 @@ const Form = ({submitted, hasBeenSubmitted}) => {
           vaccinated: vaccinated,
           picture : picture
       })
+    }
 
-      var me=this;
-      if (this.state.value.length>0){
-          var upload_file = this.state.value;
-          const request = JSON.post(this.props.cfg_url+'/upload', {upload_file})
-              .then(function(response){
-              console.log('successfully uploaded', upload_file);
-          })
-
-      }
-  }
 
   if (hasBeenSubmitted){
     return null
@@ -73,10 +76,52 @@ const Form = ({submitted, hasBeenSubmitted}) => {
     return (
       <form className="form" onSubmit={handleSubmitForm}>
 
-      <input 
-       type="file"
-       onChange={handleFileSelected}
-      />
+        {!isUploaded ? (
+        <>
+          <label htmlFor="upload-input">
+            <img
+              src={FolderIcon}
+              draggable={"false"}
+              alt="placeholder"
+              style={{ width: 100, height: 100 }}
+            />
+              <p style={{ color: "#444" }}>Click to upload image</p>
+          </label>
+          <input
+            id="upload-input"
+            type="file"
+            accept=".jpg,.jpeg,.gif,.png,.mov,.mp4"
+            onChange={handleFileSelected}
+          />
+        </>
+        ) : (
+          <img
+            className="close-icon"
+            src={CloseIcon}
+            alt="CloseIcon"
+            onClick={() => {
+              setIsUploaded(false);
+              setImage(null);
+           }}
+           />
+            {typeFile.includes("video") ? (
+              <video
+                id="uploaded-image"
+                src={image}
+                draggable={false}
+                controls
+                autoPlay
+                alt="uploaded-img"
+                  />
+            ) : (
+              <img
+              id="uploaded-image"
+              src={image}
+              draggable={false}
+              alt="uploaded-img"
+           />
+        )}
+      )}
 
       <input 
       className="setUp-input"
