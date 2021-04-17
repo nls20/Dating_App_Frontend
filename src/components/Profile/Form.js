@@ -2,6 +2,7 @@ import './style/FromStyling.css'
 import React, {useState} from 'react'
 import FolderIcon from "./assets/folder_icon_transparent.png";
 import CloseIcon from "./assets/CloseIcon.svg";
+import HandleRadioButtons from './HandleRadioButtons';
 
 const Form = ({submitted, hasBeenSubmitted}) => {
 
@@ -11,7 +12,7 @@ const Form = ({submitted, hasBeenSubmitted}) => {
   const [hobbies, setHobbies] = useState("");
   const [gender, setGender] = useState("");
   const [preference, setPreference] = useState("");
-  const [vaccinated, setVaccinated] = useState(false);
+  const [vaccinated, setVaccinated] = useState(true);
   const [image, setImage] = useState("");
   const [isUploaded, setIsUploaded] = useState(false);
   const [typeFile, setTypeFile] = useState("");
@@ -61,6 +62,7 @@ const Form = ({submitted, hasBeenSubmitted}) => {
 
   const handleSubmitForm = (evt) => {
       evt.preventDefault()
+      
       submitted({
           name: name,
           age: age,
@@ -172,23 +174,8 @@ const Form = ({submitted, hasBeenSubmitted}) => {
            <option value="all" >All</option> 
        </select>
        <p id="vaccinated">vaccinated</p>
-       <input 
-       type="radio" 
-       id="Choice"
-       name="vaccinated" 
-       value={true} 
-       onChange={handleVaccinated} 
-       required/>
-       <label htmlFor="Choice1">yes</label>
 
-      <input 
-      type="radio" 
-      id="Choice"
-      name="vaccinated" 
-      value={false} 
-      onChange={handleVaccinated}
-       />
-     <label htmlFor="Choice2">no</label>
+       <HandleRadioButtons vaccinated={vaccinated}/>
 
      <input id="button" type="submit" value="Submit"/>
   </form>
