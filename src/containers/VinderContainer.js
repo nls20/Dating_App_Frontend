@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {BrowserRouter  as Router, Route, Switch} from 'react-router-dom'
-import SwipingPage from '../components/SwipingPage'
+import SwipingPage from '../components/Swiping/SwipingPage'
 import NavBar from '../components/NavBar'
 import MatchesPage from '../components/Matches/MatchesPage'
 import ProfilePage from '../components/Profile/ProfilePage'
@@ -29,8 +29,11 @@ const VinderContainer = () => {
 
     const potentialMatches = [
       {name: "John", age: 30, location: "Inverness", hobbies: "Running", picture:"https://i.redd.it/v0caqchbtn741.jpg"},
-      {name: "Bill", age: 50, location: "Glasgow", hobbies: "Swimming", picture:"https://i.redd.it/v0caqchbtn741.jpg"},
-      {name: "Mike", age: 45, location: "Edinburgh", hobbies: "Cycling", picture:"https://i.redd.it/v0caqchbtn741.jpg"}
+      {name: "Bill", age: 50, location: "Glasgow", hobbies: "Swimming", picture:"https://www.google.com/search?q=images+free+profile&tbm=isch&ved=2ahUKEwjDroG3jIXwAhUM-BoKHTeEAugQ2-cCegQIABAA&oq=images+free+profile&gs_lcp=CgNpbWcQAzIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeOgQIIxAnOgUIABCxAzoCCAA6BwgAELEDEEM6BAgAEEM6BAgAEB46BggAEAUQHlCBqQNY3coDYJ_OA2gCcAB4AIABS4gB5wmSAQIxOZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=-7t6YIPFFozwa7eIisAO&bih=944&biw=829#imgrc=jRy1X87aruZZfM"},
+      {name: "Mike", age: 45, location: "Edinburgh", hobbies: "Cycling", picture:"https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"},
+      {name: "Doug", age: 25, location: "Inverness", hobbies: "Running", picture:"https://i.redd.it/v0caqchbtn741.jpg"},
+      {name: "Barry", age: 20, location: "Inverness", hobbies: "Running", picture:"https://i.redd.it/v0caqchbtn741.jpg"},
+      {name: "James", age: 18, location: "Inverness", hobbies: "Running", picture:"https://i.redd.it/v0caqchbtn741.jpg"},
     ]
 
 
