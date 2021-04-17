@@ -56,6 +56,15 @@ const Form = ({submitted, hasBeenSubmitted}) => {
           picture : picture
       })
 
+      var me=this;
+      if (this.state.value.length>0){
+          var upload_file = this.state.value;
+          const request = JSON.post(this.props.cfg_url+'/upload', {upload_file})
+              .then(function(response){
+              console.log('successfully uploaded', upload_file);
+          })
+
+      }
   }
 
   if (hasBeenSubmitted){
