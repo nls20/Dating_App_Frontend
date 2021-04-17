@@ -1,8 +1,6 @@
-import SwipingPage from "./components/SwipingPage"
+import SwipingPage from "./SwipingPage"
 
-const DisplayInfo = () => {
-
-
+const DisplayInfo = ({option}) => {
 
 return (
     <div>
@@ -13,7 +11,6 @@ return (
         <p>{option.hobbies}</p>
     </div>
 )
-
 }
 
 export default DisplayInfo
