@@ -13,9 +13,9 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <NavLink to="/matches">
+            <Link to="/matches">
               <p class="unhighlighted-button">Matches</p>
-            </NavLink>
+            </Link>
           </li>
           <li>
             <Link to="/profile">
