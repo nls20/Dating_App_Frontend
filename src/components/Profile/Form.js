@@ -172,12 +172,22 @@ const Form = ({submitted, hasBeenSubmitted}) => {
            <option value="all" >All</option> 
        </select>
        <p id="vaccinated">vaccinated</p>
-       <input type="radio" id="Choice"
-         name="vaccinated" value={true} onChange={handleVaccinated} required/>
+       <input 
+       type="radio" 
+       id="Choice"
+       name="vaccinated" 
+       value={true} 
+       onChange={handleVaccinated} 
+       required/>
        <label htmlFor="Choice1">yes</label>
 
-      <input type="radio" id="Choice"
-      name="vaccinated" value={false} onChange={handleVaccinated}/>
+      <input 
+      type="radio" 
+      id="Choice"
+      name="vaccinated" 
+      value={false} 
+      onChange={handleVaccinated}
+       />
      <label htmlFor="Choice2">no</label>
 
      <input id="button" type="submit" value="Submit"/>
