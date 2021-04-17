@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import "./NavBar.css";
 
@@ -13,9 +13,9 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/matches">
+            <NavLink to="/matches">
               <p class="unhighlighted-button">Matches</p>
-            </Link>
+            </NavLink>
           </li>
           <li>
             <Link to="/profile">

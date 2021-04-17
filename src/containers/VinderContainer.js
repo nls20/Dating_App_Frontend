@@ -97,7 +97,7 @@ const VinderContainer = () => {
   };
 
   return (
-    <Router>
+    <Router forceRefresh={true}>
       <section id="router">
         <div>
           <Switch id="switch">
