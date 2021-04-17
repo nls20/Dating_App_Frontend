@@ -1,0 +1,9 @@
+.display-container {
+    padding-top: 30px;
+}
+
+.swipe-buttons {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
