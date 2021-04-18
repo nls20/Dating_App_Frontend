@@ -1,11 +1,19 @@
 .display-profile-content{
-
-
+  padding: 30px 30px;
+  margin: 0px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px gray;
 }
+
+
 img{
   height: 300px;
   width: 300px;
   object-fit: cover;
   border-radius: 8px;
+}
+
+#button-update{
+  
 }
 

@@ -18,9 +18,10 @@ const HandleRadioButtons = ({vaccinated}) => {
   }
   return (
     <>
+    <div className="Choice">
     <input 
        type="radio" 
-       id="Choice"
+       id="Choice1"
        name="vaccinated" 
        value={true} 
        onChange={handVaccinatedYes} 
@@ -29,14 +30,17 @@ const HandleRadioButtons = ({vaccinated}) => {
 
       <input 
       type="radio" 
-      id="Choice"
+      id="Choice2"
       name="vaccinated" 
       value={false} 
       onChange={handleVaccinatedNo}
        />
      <label htmlFor="Choice2">no</label>
+     </div>
 
-     <input  id="button" type="submit" value="Submit"/>
+     <div>
+        <input  id="button" type="submit" value="Submit"/>
+     </div>
      </>
   )
 }

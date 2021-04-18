@@ -1,3 +1,4 @@
+
 .setUp-input{
   display: flex;
   flex-flow: column wrap;
@@ -5,6 +6,14 @@
   border: none;
   border-bottom: 1px gray solid;
   margin: 20px auto;
+  padding: 5px;
+}
+
+#header{
+  padding: 20px 20px;
+  margin-top: 0;
+  color: white;
+  background-color: rgb(66, 136, 130);
 }
 
 #button{
@@ -13,14 +22,15 @@
   justify-content: center;
   padding: 10px 60px;
   border: none;
-  background-color: #fff;
-  box-shadow: gray 0 0 2px;
+  color: white;
+  background-color: rgb(66, 136, 130);
+  box-shadow: gray 0 0 1px;
   border-radius: 6px;
   margin: 15px auto;
 }
 
 #button:hover{
-  background-color: indianred;
+  box-shadow: 0 0 7px gray;
   color: white;
 }
 
@@ -28,8 +38,9 @@
   color: slategray;
 }
 
-#Choice{
-  padding: 0px 0px;
+.Choice{
+  padding: 10px 10px;
+  margin: 10px 10px; 
 }
 
 .option-bar{
@@ -39,6 +50,7 @@
   border: none;
   color: gray;
   border-bottom: 1px gray solid;
+  padding: 5px;
 }
 
 .image-upload {
