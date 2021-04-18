@@ -38,7 +38,11 @@ const DisplayInfo = ({potentialMatches}) => {
         )
     } else {
         return (
-            <h2>No matches left</h2>
+            <div>
+            <h2>Nobody left in your area!</h2>
+            <p>Congratulations you've completed Vinder</p>
+            </div>
+
         )
     }
 }
