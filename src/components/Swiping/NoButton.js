@@ -12,13 +12,13 @@ const NoButton = ({option, potentialMatches, selectOption}) => {
         } else {
             setNotMatched(addNotMatched)
         }
-        potentialMatches.splice(potentialMatches.indexOf(addNotMatched), 1)
+        potentialMatches.splice(potentialMatches.indexOf(addNotMatched[0]), 1)
         selectOption()
     }
 
 return (
-    <div class="button">
-        <button class="swipe-btn-no" value={option.name} onClick={handleMatchNo}>NO</button>
+    <div className="button">
+        <button className="swipe-btn-no" value={option.name} onClick={handleMatchNo}>NO</button>
     </div>
 )
 

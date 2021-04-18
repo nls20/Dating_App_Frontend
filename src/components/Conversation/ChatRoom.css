@@ -1,0 +1,8 @@
+#new-message{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}

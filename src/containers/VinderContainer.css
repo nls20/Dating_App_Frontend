@@ -1,8 +1,27 @@
 #nav-bar{
     position: fixed;
-    background-color: pink;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    
+}
+
+#page-body{
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}
+
+.header {
+    font-family: 'Cookie', cursive;
+    font-size: 30px;
+}
+
+.header > h1 {
+    margin-block-start: 10px;
+    margin-block-end: 0px;
+}
+
+#router {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }

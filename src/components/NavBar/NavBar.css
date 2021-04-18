@@ -13,11 +13,19 @@
 
 .nav-bar-section>ul>li{
     padding: 0px;
+    margin: 0px 5px;
+
+}
+
+.nav-bar-section{
+    background-color: blue;
+    padding: 10px;
 }
 
 .nav-bar-section>ul>li>a>p{
-    padding: 0px;
+    padding: 10px 20px;
     margin: 0px;
+    border-radius: 10px;
 }
 
 .highlighted-button{
