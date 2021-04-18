@@ -104,7 +104,8 @@ const VinderContainer = () => {
       age: 23,
       location: "Alderran",
       hobbies: "Killing bad guys",
-      picture: "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg",
+      picture:
+        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg",
     },
     {
       name: "Bill",
@@ -157,7 +158,7 @@ const VinderContainer = () => {
 
   return (
     <>
-      <div class="header">
+      <div id="header">
         <h1>Vinder</h1>
       </div>
       <section id="router">
