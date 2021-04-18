@@ -12,13 +12,13 @@ const handleMatchYes = (evt) => {
     } else {
         setMatches(addMatch)
     }
-    potentialMatches.splice(potentialMatches.indexOf(addMatch), 1)
+    potentialMatches.splice(potentialMatches.indexOf(addMatch[0]), 1)
     selectOption()
 }
 
 return (
-    <div class="button">
-        <button class="swipe-btn-yes" value={option.name} onClick={handleMatchYes}>YES</button>
+    <div className="button">
+        <button className="swipe-btn-yes" value={option.name} onClick={handleMatchYes}>YES</button>
     </div>
 )
 

@@ -7,4 +7,8 @@
 #player-two-message{
     display: flex;
     justify-content: flex-start;
+    background-color: brown;
+    margin: 3px 10px;
+    width: 80%;
+    border-radius: 8px;
 }

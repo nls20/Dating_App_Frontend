@@ -100,11 +100,11 @@ const VinderContainer = () => {
 
   const potentialMatches = [
     {
-      name: "John",
-      age: 30,
-      location: "Inverness",
-      hobbies: "Running",
-      picture: "https://i.redd.it/v0caqchbtn741.jpg",
+      name: "Harrison",
+      age: 23,
+      location: "Alderran",
+      hobbies: "Killing bad guys",
+      picture: "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg",
     },
     {
       name: "Bill",
@@ -157,6 +157,9 @@ const VinderContainer = () => {
 
   return (
     <>
+      <div class="header">
+        <h1>Vinder</h1>
+      </div>
       <section id="router">
         <Router forceRefresh={true}>
           <div id="page-body">
@@ -184,7 +187,6 @@ const VinderContainer = () => {
           </div>
         </Router>
       </section>
-
     </>
   );
 };

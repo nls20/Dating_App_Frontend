@@ -20,9 +20,9 @@ import './NewChat.css'
         <>
             <section>
                 <form onSubmit={formSubmit} action="">
-                    <input type="text" value={message} onChange={textChange}/>
+                    <input id="input-box" type="text" value={message} onChange={textChange}/>
 
-                    <input type="submit" value="Send"/>
+                    <input id="submit-button" type="submit" value="Send"/>
                 </form>
             </section>
         </>
