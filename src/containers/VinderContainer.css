@@ -9,3 +9,13 @@
     margin-bottom: 50px;
     padding-bottom: 10px;
 }
+
+.header {
+    font-family: 'Cookie', cursive;
+    font-size: 30px;
+}
+
+.header > h1 {
+    margin-block-start: 10px;
+    margin-block-end: 0px;
+}

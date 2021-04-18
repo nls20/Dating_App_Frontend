@@ -157,6 +157,9 @@ const VinderContainer = () => {
 
   return (
     <>
+      <div class="header">
+        <h1>Vinder</h1>
+      </div>
       <section id="router">
         <Router forceRefresh={true}>
           <div id="page-body">
@@ -184,7 +187,6 @@ const VinderContainer = () => {
           </div>
         </Router>
       </section>
-
     </>
   );
 };
