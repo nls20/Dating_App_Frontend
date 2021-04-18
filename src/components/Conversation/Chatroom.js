@@ -2,7 +2,7 @@ import { useState } from "react";
 import NewChat from "./NewChat";
 import PersonOneMessage from "./PersonOneMessage";
 import PersonTwoMessage from "./PersonTwoMessage";
-import './ChatRoom.css'
+import "./ChatRoom.css";
 
 const Chatroom = () => {
   const [messageHistory, setMessageHistory] = useState([
@@ -36,7 +36,9 @@ const Chatroom = () => {
 
   return (
     <>
-      <div id="message-list">{messageList}</div>
+      <div id="message-list">
+        {messageList}
+      </div>
 
       <div id="new-message">
         <NewChat newMessage={addNewMessage} />

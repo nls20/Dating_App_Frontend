@@ -6,3 +6,7 @@
     margin-bottom: 50px;
     padding-bottom: 10px;
 }
+
+#message-list{
+    height: 80vh;
+}
