@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import './YesButton.css'
+import { ImHeart } from "react-icons/im";
 
 const YesButton = ({option, potentialMatches, selectOption}) => {
 
@@ -18,8 +19,11 @@ const handleMatchYes = (evt) => {
 
 return (
     <div className="button">
-        <button className="swipe-btn-yes" value={option.name} onClick={handleMatchYes}>YES</button>
+        <button className="swipe-btn-yes" value={option.name} onClick={handleMatchYes}>
+            <div class="heart"><ImHeart/></div>
+        </button>
     </div>
+
 )
 
 }
