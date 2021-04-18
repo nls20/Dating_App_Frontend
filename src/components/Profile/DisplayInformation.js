@@ -28,18 +28,18 @@ const DisplayInformation = ({name, age, location, hobbies, typeFile, gender, pre
         />
       ) : ( */}
         <img
-          id="uploaded-image"
+          id="image"
           src={image}
           alt="uploaded-img"
         />
         {/* )} */}
-        <h4 id="name">name - {name}</h4>
-        <p id="age"> age - {age}</p>
-        <p id="location">location - {location}</p>
-        <p id="hobbies">hobbies - {hobbies}</p>
-        <p id="Gender">Gender - {gender}</p>
-        <p id="preference">preference - {preference}</p>
-       <Link to="/profile"><button id="button-update" value={true} onClick={handleUpdateButton}>Update</button></Link>
+        <p id="name"><span id="name1">name - </span> {name}</p>
+        <p id="age"><span id="name1">age - </span> {age}</p>
+        <p id="location"><span id="name1">location - </span>{location}</p>
+        <p id="hobbies"><span id="name1">hobbies - </span>{hobbies}</p>
+        <p id="Gender"><span id="name1">gender - </span>{gender}</p>
+        <p id="preference"><span id="name1">preference - </span> {preference}</p>
+       <Link to="/profile"><button id="button-update" value={true} onClick={handleUpdateButton}><i class="fa fa-user-edit"></i></button></Link>
       </article>
     )}
 }
