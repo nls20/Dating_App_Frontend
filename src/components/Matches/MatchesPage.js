@@ -1,18 +1,19 @@
 import { useState } from "react";
 import MatchesPreviewTiles from "./MatchesPreviewTiles";
 import MessagesPreview from "./MessagesPreview";
-import './MatchesPage.css'
+import "./MatchesPage.css";
 
 const MatchesPage = ({ matches }) => {
   return (
     <>
-      <section></section>
-      <h2>Matches</h2>
-      <MatchesPreviewTiles matches={matches} />
-
+      <section>
+        <h2>Matches</h2>
+        <MatchesPreviewTiles matches={matches} />
+      </section>
+      
       <section id="message-section">
         <h2>Messages</h2>
-        <MessagesPreview matches={matches} />
+        <MessagesPreview id="messages-preview" matches={matches} />
       </section>
     </>
   );

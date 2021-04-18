@@ -1,4 +1,5 @@
 import MessageTemplateTile from "./MessageTemplateTile"
+import './MessagesPreview.css'
 
 const MessagesPreview = ({matches}) => {
 
