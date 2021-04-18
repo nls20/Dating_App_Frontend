@@ -10,9 +10,9 @@ const ProfilePage = ({getFormInformation}) => {
     const [hobbies, setHobbies] = useState("");
     const [gender, setGender] = useState("");
     const [preference, setPreference] = useState("");
-    const [vaccinated, setVaccinated] = useState(false);
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
     const [image, setImage] = useState("")
+    const [typeFile, setTypeFile] = useState("");
 
     const submitted = (details) => {
 
@@ -20,26 +20,28 @@ const ProfilePage = ({getFormInformation}) => {
         setAge(details.age)
         setLocation(details.location)
         setHobbies(details.hobbies)
-        setVaccinated(details.vaccinated)
         setGender(details.gender)
         setPreference(details.preference)
         setImage(details.image)
         setHasBeenSubmitted(true)
+        setTypeFile(details.typeFile)
         
     }
 
     return (
         <>
-        <Form submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"></link>
+        <Form 
+        submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} />
         <DisplayInformation 
         name={name} 
         age={age} 
         location={location} 
         hobbies={hobbies} 
-        vaccinated={vaccinated}
         gender={gender} 
         preference={preference}
         image={image}
+        typeFile={typeFile}
         hasBeenSubmitted={hasBeenSubmitted}/>
         </>
     )

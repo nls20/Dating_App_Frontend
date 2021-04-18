@@ -8,6 +8,6 @@
 }
 
 #message-list{
-    height: 85vh;
+    height: 75vh;
     overflow-y: auto;
 }

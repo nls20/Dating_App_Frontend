@@ -12,7 +12,7 @@ const NoButton = ({option, potentialMatches, selectOption}) => {
         } else {
             setNotMatched(addNotMatched)
         }
-        potentialMatches.splice(potentialMatches.indexOf(addNotMatched), 1)
+        potentialMatches.splice(potentialMatches.indexOf(addNotMatched[0]), 1)
         selectOption()
     }
 
