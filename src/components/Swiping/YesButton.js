@@ -11,7 +11,7 @@ const handleMatchYes = (evt) => {
     if (matches.length) {
         setMatches(matches.concat(addMatch[0]))
     } else {
-        setMatches(addMatch[0])
+        setMatches(addMatch)
     }
     potentialMatches.splice(potentialMatches.indexOf(addMatch[0]), 1)
     selectOption()
