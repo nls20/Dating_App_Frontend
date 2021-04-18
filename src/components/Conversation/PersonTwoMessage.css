@@ -3,6 +3,7 @@
     margin: 10px;
     padding: 8px;
     border-radius: 8px;
+    text-align: start;
 }
 
 #player-two-message{
