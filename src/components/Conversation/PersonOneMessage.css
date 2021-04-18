@@ -7,4 +7,13 @@
 #player-one-message {
     display: flex;
     justify-content: flex-end;
+    background-color: yellowgreen;
+    margin: 3px;
+    width: 80%;
+    border-radius: 8px;
+}
+
+#player-one-container{
+    display: flex;
+    justify-content: flex-end;
 }
