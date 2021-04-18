@@ -1,6 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import "./NavBar.css";
+import { AiFillHome } from "react-icons/ai";
+import { ImHeart } from "react-icons/im";
+import { GoPerson } from "react-icons/go";
 
 const NavBar = () => {
   if (window.location.pathname === "/") {
@@ -9,17 +12,17 @@ const NavBar = () => {
         <ul>
           <li>
             <Link to="/">
-              <p className="highlighted-button">Home</p>
+              <p className="highlighted-button"><AiFillHome /><br></br>Home</p>
             </Link>
           </li>
           <li>
             <Link to="/matches">
-              <p className="unhighlighted-button">Matches</p>
+              <p className="unhighlighted-button"><ImHeart/><br></br>Matches</p>
             </Link>
           </li>
           <li>
             <Link to="/profile">
-              <p className="unhighlighted-button">Profile</p>
+              <p className="unhighlighted-button"><GoPerson /><br></br>Profile</p>
             </Link>
           </li>
         </ul>

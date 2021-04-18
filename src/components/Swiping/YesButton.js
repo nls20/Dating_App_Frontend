@@ -9,9 +9,9 @@ const [matches, setMatches] = useState([])
 const handleMatchYes = (evt) => {
     const addMatch = potentialMatches.filter(match => match.name == evt.target.value)
     if (matches.length) {
-        setMatches(matches.concat(addMatch))
+        setMatches(matches.concat(addMatch[0]))
     } else {
-        setMatches(addMatch)
+        setMatches(addMatch[0])
     }
     potentialMatches.splice(potentialMatches.indexOf(addMatch[0]), 1)
     selectOption()
