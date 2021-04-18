@@ -22,19 +22,25 @@ const DisplayInfo = ({potentialMatches}) => {
     //     selectOption()
     // }
 
-return (
-    <div className="display-container">
-        <img src={option.picture}></img>
-        <h2>{option.name}</h2>
-        <p>{option.age}</p>
-        <p>{option.location}</p>
-        <p>{option.hobbies}</p>
-        <div className="swipe-buttons">
-        <YesButton potentialMatches={potentialMatches} option={option} selectOption={selectOption}/>
-        <NoButton potentialMatches={potentialMatches} option={option} selectOption={selectOption}/>
-        </div>
-    </div>
-)
+    if (potentialMatches.length > 0) {
+        return (
+            <div className="display-container">
+                <img src={option.picture}></img>
+                <h2>{option.name}</h2>
+                <p>{option.age}</p>
+                <p>{option.location}</p>
+                <p>{option.hobbies}</p>
+                <div className="swipe-buttons">
+                <YesButton potentialMatches={potentialMatches} option={option} selectOption={selectOption}/>
+                <NoButton potentialMatches={potentialMatches} option={option} selectOption={selectOption}/>
+                </div>
+            </div>
+        )
+    } else {
+        return (
+            <h2>No matches left</h2>
+        )
+    }
 }
 
 export default DisplayInfo
