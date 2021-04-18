@@ -7,7 +7,7 @@ const DisplayInformation = ({name, age, location, hobbies, vaccinated, gender, p
     return null; 
   }else{
     return (
-      <article class="display-profile-content">
+      <article className="display-profile-content">
        <img src={image} alt="image" />
         <h4>name - {name}</h4>
         <p> age - {age}</p>

@@ -23,13 +23,13 @@ const DisplayInfo = ({potentialMatches}) => {
     // }
 
 return (
-    <div class="display-container">
+    <div className="display-container">
         <img src={option.picture}></img>
         <h2>{option.name}</h2>
         <p>{option.age}</p>
         <p>{option.location}</p>
         <p>{option.hobbies}</p>
-        <div class="swipe-buttons">
+        <div className="swipe-buttons">
         <YesButton potentialMatches={potentialMatches} option={option} selectOption={selectOption}/>
         <NoButton potentialMatches={potentialMatches} option={option} selectOption={selectOption}/>
         </div>

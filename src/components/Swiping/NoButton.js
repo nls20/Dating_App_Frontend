@@ -17,8 +17,8 @@ const NoButton = ({option, potentialMatches, selectOption}) => {
     }
 
 return (
-    <div class="button">
-        <button class="swipe-btn-no" value={option.name} onClick={handleMatchNo}>NO</button>
+    <div className="button">
+        <button className="swipe-btn-no" value={option.name} onClick={handleMatchNo}>NO</button>
     </div>
 )
 

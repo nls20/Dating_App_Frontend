@@ -17,8 +17,8 @@ const handleMatchYes = (evt) => {
 }
 
 return (
-    <div class="button">
-        <button class="swipe-btn-yes" value={option.name} onClick={handleMatchYes}>YES</button>
+    <div className="button">
+        <button className="swipe-btn-yes" value={option.name} onClick={handleMatchYes}>YES</button>
     </div>
 )
 
