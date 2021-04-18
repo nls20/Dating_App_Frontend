@@ -9,7 +9,7 @@ const NoButton = ({option, potentialMatches, selectOption}) => {
     const handleMatchNo = (evt) => {
         const addNotMatched = potentialMatches.filter(match => match.name == evt.target.value)
         if (notMatched.length) {
-            setNotMatched(notMatched.concat(addNotMatched))
+            setNotMatched(notMatched.concat(addNotMatched[0]))
         } else {
             setNotMatched(addNotMatched)
         }
