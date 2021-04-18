@@ -8,4 +8,9 @@
 #page-body{
     margin-bottom: 50px;
     padding-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#header{
+    font-family: sans-serif;
 }

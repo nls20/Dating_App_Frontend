@@ -5,11 +5,19 @@
   box-shadow: 0 0 5px gray;
 }
 
-#image{
-  height: 250px;
-  width: 250px;
+img{
+  height: 30vh;
+  width: 80vw;
   object-fit: cover;
   border-radius: 8px;
+}
+
+#image{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+  
 }
 
 #button-update{
