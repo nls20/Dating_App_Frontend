@@ -34,17 +34,17 @@ const NavBar = () => {
         <ul>
           <li>
             <Link to="/">
-              <p className="unhighlighted-button">Home</p>
+              <p className="unhighlighted-button"><AiFillHome /><br></br>Home</p>
             </Link>
           </li>
           <li>
             <Link to="/matches">
-              <p className="highlighted-button">Matches</p>
+              <p className="highlighted-button"><ImHeart/><br></br>Matches</p>
             </Link>
           </li>
           <li>
             <Link to="/profile">
-              <p className="unhighlighted-button">Profile</p>
+              <p className="unhighlighted-button"><GoPerson /><br></br>Profile</p>
             </Link>
           </li>
         </ul>
@@ -56,17 +56,17 @@ const NavBar = () => {
         <ul>
           <li>
             <Link to="/">
-              <p className="unhighlighted-button">Home</p>
+              <p className="unhighlighted-button"><AiFillHome /><br></br>Home</p>
             </Link>
           </li>
           <li>
             <Link to="/matches">
-              <p className="unhighlighted-button">Matches</p>
+              <p className="unhighlighted-button"><ImHeart/><br></br>Matches</p>
             </Link>
           </li>
           <li>
             <Link to="/profile">
-              <p className="highlighted-button">Profile</p>
+              <p className="highlighted-button"><GoPerson /><br></br>Profile</p>
             </Link>
           </li>
         </ul>
@@ -78,17 +78,17 @@ const NavBar = () => {
         <ul>
           <li>
             <Link to="/">
-              <p className="unhighlighted-button">Home</p>
+              <p className="unhighlighted-button"><AiFillHome /><br></br>Home</p>
             </Link>
           </li>
           <li>
             <Link to="/matches">
-              <p className="unhighlighted-button">Matches</p>
+              <p className="unhighlighted-button"><ImHeart/><br></br>Matches</p>
             </Link>
           </li>
           <li>
             <Link to="/profile">
-              <p className="unhighlighted-button">Profile</p>
+              <p className="unhighlighted-button"><GoPerson /><br></br>Profile</p>
             </Link>
           </li>
         </ul>
