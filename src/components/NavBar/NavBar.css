@@ -18,7 +18,7 @@
 }
 
 .nav-bar-section{
-    background-color: blue;
+    background-color: pink;
     padding: 10px;
 }
 
@@ -29,9 +29,14 @@
 }
 
 .highlighted-button{
-    background-color: red;
+    background-color: #fff;
+}
+
+.nav-home {
+    padding: 0;
+    margin: 0;
 }
 
 .unhighlighted-button{
-    background-color: green;
+    background-color: #fff;
 }

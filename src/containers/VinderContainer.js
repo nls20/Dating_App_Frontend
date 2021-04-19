@@ -131,18 +131,18 @@ const VinderContainer = () => {
       picture: "https://i.redd.it/v0caqchbtn741.jpg",
     },
     {
-      name: "Barry",
+      name: "Joanna",
       age: 20,
       location: "Inverness",
       hobbies: "Running",
-      picture: "https://i.redd.it/v0caqchbtn741.jpg",
+      picture: "https://image.freepik.com/free-photo/girl-cafe-with-smartphone_1321-389.jpg",
     },
     {
-      name: "James",
+      name: "Alison",
       age: 18,
       location: "Inverness",
       hobbies: "Running",
-      picture: "https://i.redd.it/v0caqchbtn741.jpg",
+      picture: "https://images.unsplash.com/photo-1605993439219-9d09d2020fa5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
     },
   ];
 

@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import './NoButton.css'
+import { ImCross } from "react-icons/im";
 
 const NoButton = ({option, potentialMatches, selectOption}) => {
 
@@ -8,7 +9,7 @@ const NoButton = ({option, potentialMatches, selectOption}) => {
     const handleMatchNo = (evt) => {
         const addNotMatched = potentialMatches.filter(match => match.name == evt.target.value)
         if (notMatched.length) {
-            setNotMatched(notMatched.concat(addNotMatched))
+            setNotMatched(notMatched.concat(addNotMatched[0]))
         } else {
             setNotMatched(addNotMatched)
         }
@@ -18,7 +19,9 @@ const NoButton = ({option, potentialMatches, selectOption}) => {
 
 return (
     <div className="button">
-        <button className="swipe-btn-no" value={option.name} onClick={handleMatchNo}>NO</button>
+        <button className="swipe-btn-no" value={option.name} onClick={handleMatchNo}>
+            <div class="cross"> <ImCross /></div>
+        </button>
     </div>
 )
 
