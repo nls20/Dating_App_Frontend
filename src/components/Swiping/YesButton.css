@@ -49,3 +49,8 @@
 	padding-top: 4px;
 }
 
+.swipe-btn-yes:active {
+	background-color: gray;
+	border: solid 2px lightgrey;
+	transform: translateY(4px);
+}
