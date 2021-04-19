@@ -3,3 +3,9 @@
     overflow-y: auto;
     height: 60vh;
 }
+
+#preview-section > a {
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+}

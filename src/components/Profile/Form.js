@@ -7,7 +7,7 @@ import HandleRadioButtons from './HandleRadioButtons';
 const Form = ({submitted, hasBeenSubmitted}) => {
 
   const [name, setName] = useState("");
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState(null);
   const [location, setLocation] = useState("");
   const [hobbies, setHobbies] = useState("");
   const [gender, setGender] = useState("");
@@ -150,7 +150,7 @@ const Form = ({submitted, hasBeenSubmitted}) => {
       <input 
       className="setUp-input" 
       type="text" 
-      placeholder="location" 
+      placeholder="Location" 
       value={location} 
       onChange={handleLocation} required/>
 
@@ -161,7 +161,7 @@ const Form = ({submitted, hasBeenSubmitted}) => {
        value={hobbies} 
        onChange={handleHobbies} required/>
        <select className="option-bar" onChange={handleGender}>
-           <option value="gender" disabled selected hidden>Choose a gender ---</option>
+           <option value="gender" disabled selected hidden>Choose a gender</option>
            <option value="male" >Male</option>
            <option value="female" >Female</option>
            <option value="non-binary" >non-binary</option>
@@ -173,13 +173,12 @@ const Form = ({submitted, hasBeenSubmitted}) => {
            <option value="non-binary" >non-binary</option>
            <option value="all" >All</option> 
        </select>
-       <p id="vaccinated">vaccinated</p>
+       <p id="vaccinated">Vaccinated</p>
 
        <HandleRadioButtons vaccinated={vaccinated}/>
   </form>
     )
   }
-
 }
 
 export default Form;

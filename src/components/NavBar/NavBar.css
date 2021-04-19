@@ -20,6 +20,7 @@
 .nav-bar-section{
     background-color: pink;
     padding: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-bar-section>ul>li>a>p{
