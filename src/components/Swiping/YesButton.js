@@ -6,8 +6,8 @@ const YesButton = ({option, potentialMatches, selectOption}) => {
 
 const [matches, setMatches] = useState([])
 
-const handleMatchYes = (evt) => {
-    const addMatch = potentialMatches.filter(match => match.name == evt.target.value)
+const handleMatchYes = () => {
+    const addMatch = potentialMatches.filter(match => match.name == option.name)
     if (matches.length) {
         setMatches(matches.concat(addMatch[0]))
     } else {
@@ -18,8 +18,8 @@ const handleMatchYes = (evt) => {
 }
 
 return (
-    <div className="button">
-        <button className="swipe-btn-yes" value={option.name} onClick={handleMatchYes}>
+    <div class="button">
+        <button class="swipe-btn-yes" onClick={handleMatchYes}>
             <div class="heart"><ImHeart/></div>
         </button>
     </div>

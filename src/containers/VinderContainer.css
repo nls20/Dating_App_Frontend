@@ -8,9 +8,16 @@
 #page-body{
     margin-bottom: 50px;
     padding-bottom: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: 'Montserrat', sans-serif;
 }
 
 #header{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Cookie', cursive;
+    font-size: 25px;
+}
+
+#header > h1 {
+    margin-bottom: 0px;
+    margin-top: 20px;
 }
