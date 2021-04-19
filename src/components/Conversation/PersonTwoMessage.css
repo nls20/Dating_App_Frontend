@@ -1,5 +1,6 @@
 #player-two-message>p{
-    background-color: red;
+    background-color:#f6abb6;
+    color: #fff;
     margin: 10px;
     padding: 8px;
     border-radius: 8px;
@@ -9,7 +10,7 @@
 #player-two-message{
     display: flex;
     justify-content: flex-start;
-    background-color: brown;
+    background-color:  #ead5dc;
     margin: 3px 10px;
     width: 80%;
     border-radius: 8px;

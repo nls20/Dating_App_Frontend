@@ -8,9 +8,15 @@
     margin: 0px;
 }
 
+#tile-section > h5 {
+    font-size: 15px;
+    text-decoration: underline;
+    padding-bottom: 5px;
+}
+
 #tile-picture-section>img{
-    height: 90px;
-    width: 90px;
+    height: 80px;
+    width: 80px;
     border-radius: 45px;
 }
 

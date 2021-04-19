@@ -48,13 +48,14 @@ const Form = ({submitted, hasBeenSubmitted}) => {
     if (evt.target.files && evt.target.files[0]) {
       setTypeFile(evt.target.files[0].type);
       let reader = new FileReader();
+      reader.readAsDataURL(evt.target.files[0]);
 
-      reader.onload = (evt) => {
-        setImage(evt.target.result);
+      reader.onload = () => {
+        setImage(reader.result);
         setIsUploaded(true);
       };
 
-      reader.readAsDataURL(evt.target.files[0]);
+      
     }
   }
 
