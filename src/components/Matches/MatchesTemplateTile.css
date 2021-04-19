@@ -2,14 +2,16 @@
 #tile-template-section{
     width: 80px;
     height: 80px;
+    margin-bottom: 0;
+
 }
 
 #tile-template-section>p{
-    margin: 10px;
+    margin: 15px 10px;
 }
 
 #tile-template-section>img{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 15px;
 }

@@ -6,6 +6,7 @@
     background: #fff;
     font-size: 30px;
     margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 .display-container > p {
@@ -25,4 +26,5 @@
     width: 90vw;
     object-fit: cover;
     border-radius: 8px;   
+  
 }

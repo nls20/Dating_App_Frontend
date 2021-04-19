@@ -18,49 +18,49 @@ const VinderContainer = () => {
 
   const matches = [
     {
-      name: "andrew",
+      name: "Andrew",
       picture: "https://i.redd.it/v0caqchbtn741.jpg",
       messageHistory:
         "this is andrew message this is andrew message this is andrew message this is andrew message this is andrew message this is andrew message ",
     },
     {
-      name: "david",
+      name: "David",
       picture: "https://i.redd.it/v0caqchbtn741.jpg",
       messageHistory: "this is a david message less than 60 characters",
     },
     {
-      name: "mark",
+      name: "Mark",
       picture: "https://i.redd.it/v0caqchbtn741.jpg",
       messageHistory:
         "this is a mark message more than 60 characters so some of it will not appear",
     },
     {
-      name: "nicola",
+      name: "Nicola",
       picture: "https://i.redd.it/v0caqchbtn741.jpg",
       messageHistory: "this is a nicola message",
     },
     {
-      name: "brian",
+      name: "Brian",
       picture: "https://i.redd.it/v0caqchbtn741.jpg",
       messageHistory: "this is a brian message",
     },
     {
-      name: "andrew",
+      name: "Andrew",
       picture: "https://i.redd.it/v0caqchbtn741.jpg",
       messageHistory: "this is a message",
     },
     {
-      name: "david",
+      name: "David",
       picture: "https://i.redd.it/v0caqchbtn741.jpg",
       messageHistory: "this is a message",
     },
     {
-      name: "mark",
+      name: "Mark",
       picture: "https://i.redd.it/v0caqchbtn741.jpg",
       messageHistory: "this is a message",
     },
     {
-      name: "nicola",
+      name: "Nicola",
       picture: "https://i.redd.it/v0caqchbtn741.jpg",
       messageHistory: "this is a message",
     },
