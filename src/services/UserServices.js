@@ -49,7 +49,7 @@ export default{
 
     //DELETE User   /users/{id}
     deleteUser(id) {
-        return fetch(usersBaseUrl + id, {
+        return fetch(usersBaseUrl + "/" + id, {
             method: 'DELETE'
         })
     }

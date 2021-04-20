@@ -8,6 +8,16 @@ export default{
         .then(res => res.json())
     },
 
+
+
+    //GET All Messages By Conversation ID    e.g. /messages?conversationId={id}
+    getAllMessages(id){
+        return fetch(messageBaseUrl + "?conversationId=" + id)
+        .then(res => res.json())
+    },
+
+    
+
     //POST Message       e.g. /messages
     addNewMessage(message) {
         return fetch(messageBaseUrl, {
@@ -20,17 +30,6 @@ export default{
         .then(res => res.json())
     },
 
-    //GET All Messages By Conversation ID    e.g. /messages?conversationId={id}
-    getAllMessages(id){
-        return fetch(messageBaseUrl + "?conversationId=" + id)
-        .then(res => res.json())
-    },
-
-
-
-
-    //GET Edit Message     /message/{id}/edit
-
     
 
     //POST Update Message  /message/
@@ -38,5 +37,8 @@ export default{
 
     
     //DELETE Message   /message/{id}
+    deleteMessage(id) {
+        return fetch(messageBaseURL + "/" + id)
+    }
     
 }
