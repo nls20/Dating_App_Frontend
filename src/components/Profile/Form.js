@@ -39,20 +39,6 @@ const Form = ({submitted, hasBeenSubmitted}) => {
       setVaccinated(evt.target.value)
   }
 
-  const handleFileSelected = (evt) => {
-    if (evt.target.files && evt.target.files[0]) {
-      setTypeFile(evt.target.files[0].type);
-      let reader = new FileReader();
-
-      reader.onload = (evt) => {
-        setImage(evt.target.result);
-        setIsUploaded(true);
-      };
-
-      reader.readAsDataURL(evt.target.files[0]);
-    }
-  }
-
   const handleSubmitForm = (evt) => {
       evt.preventDefault()
 

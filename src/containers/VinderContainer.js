@@ -23,47 +23,6 @@ const VinderContainer = () => {
       messageHistory:
         "this is andrew message this is andrew message this is andrew message this is andrew message this is andrew message this is andrew message ",
     },
-    {
-      name: "David",
-      picture: "https://images.pexels.com/photos/2078265/pexels-photo-2078265.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      messageHistory: "this is a david message less than 60 characters",
-    },
-    {
-      name: "Mark",
-      picture: "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-      messageHistory:
-        "this is a mark message more than 60 characters so some of it will not appear",
-    },
-    {
-      name: "Nicola",
-      picture: "https://image.freepik.com/free-photo/girl-cafe-with-smartphone_1321-389.jpg",
-      messageHistory: "this is a nicola message",
-    },
-    {
-      name: "Brian",
-      picture: "https://i.redd.it/v0caqchbtn741.jpg",
-      messageHistory: "this is a brian message",
-    },
-    {
-      name: "Andrew",
-      picture: "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg",
-      messageHistory: "this is a message",
-    },
-    {
-      name: "David",
-      picture: "https://images.pexels.com/photos/2078265/pexels-photo-2078265.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-      messageHistory: "this is a message",
-    },
-    {
-      name: "Mark",
-      picture: "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-      messageHistory: "this is a message",
-    },
-    {
-      name: "Nicola",
-      picture: "https://image.freepik.com/free-photo/girl-cafe-with-smartphone_1321-389.jpg",
-      messageHistory: "this is a message",
-    }
   ];
 
   const potentialMatches = [
@@ -77,8 +36,9 @@ const VinderContainer = () => {
     },
   ];
 
+
 //GET user information
- useEffect(() => {
+  useEffect(() => {
     UserServices.getUserInformation(userId)
     .then(data => setUser(data))
  }, [])

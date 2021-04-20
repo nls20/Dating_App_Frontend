@@ -17,7 +17,7 @@ const ProfilePage = ({getFormInformation, user}) => {
     //     if (user.id != null) {
     //     setHasBeenSubmitted(true)
     //     }
-    // })
+    // }, [])
 
     useEffect(() => {
         setName(user.name);
@@ -31,12 +31,6 @@ const ProfilePage = ({getFormInformation, user}) => {
 
     const submitted = (details) => {
         getFormInformation(details)
-        // setName(details.name)
-        // setAge(details.age)
-        // setLocation(details.location)
-        // setHobbies(details.hobbies)
-        // setGender(details.gender)
-        // setPreference(details.preference)
         setHasBeenSubmitted(true)
     }
 
