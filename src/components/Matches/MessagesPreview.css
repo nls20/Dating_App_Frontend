@@ -2,6 +2,9 @@
 #preview-section{
     overflow-y: auto;
     height: 60vh;
+    background: #fff;
+    /* border: 1px solid gray; */
+
 }
 
 #preview-section > a {
