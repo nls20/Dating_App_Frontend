@@ -25,4 +25,5 @@
     grid-template-columns: 1fr 5fr;
     align-items: center;
     padding: 10px;
+    border-top: 1px solid lightgray;
 }
