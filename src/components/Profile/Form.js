@@ -58,8 +58,6 @@ const Form = ({submitted, hasBeenSubmitted}) => {
     }
   }
 
-  
-
   const handleSubmitForm = (evt) => {
       evt.preventDefault()
 
@@ -73,8 +71,11 @@ const Form = ({submitted, hasBeenSubmitted}) => {
           preference : preference,
           image: image
       })
+
+      
   }
 
+  
   if (hasBeenSubmitted){
     return null
   }else{
