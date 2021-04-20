@@ -15,11 +15,29 @@
 #header{
     font-family: 'Cookie', cursive;
     font-size: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 #header > h1 {
+    display: flex;
     margin-bottom: 0px;
+    margin-left: 100px;
     color: black;
     margin-top: 10px;
     padding: 2px;
+}
+
+#header > div {
+    margin-top: 20px;
+    margin-left: 70px;
+}
+
+.help-button {
+    text-decoration: none;
+}
+
+.delete-button {
+    height: 30px;
+    width: 30px;
 }

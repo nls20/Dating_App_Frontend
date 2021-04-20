@@ -20,7 +20,7 @@ const NoButton = ({option, potentialMatches, selectOption}) => {
 return (
     <div className="button">
         <button className="swipe-btn-no" value={option.name} onClick={handleMatchNo}>
-            <div class="cross"> <ImCross /></div>
+            <div className="cross"> <ImCross /></div>
         </button>
     </div>
 )

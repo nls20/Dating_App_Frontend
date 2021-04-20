@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SwipingPage from "../components/Swiping/SwipingPage";
 import NavBar from "../components/NavBar/NavBar";
@@ -6,6 +6,7 @@ import MatchesPage from "../components/Matches/MatchesPage";
 import ProfilePage from "../components/Profile/ProfilePage";
 import Chatroom from "../components/Conversation/Chatroom";
 import "./VinderContainer.css";
+import { RiQuestionLine, RiDeleteBin7Line } from "react-icons/ri";
 
 const VinderContainer = () => {
   const [name, setName] = useState("");
@@ -177,13 +178,24 @@ const VinderContainer = () => {
     setPreference(details.preference);
   };
 
+  const iconSelect = () => {
+    if (window.location.pathname === "/") {
+      return <i onClick="" className="help-button"><RiQuestionLine/></i>
+    } else if (window.location.pathname.split("/")[2] === "conversation") {
+      return <i onClick="" className="delete-button"><RiDeleteBin7Line/></i>
+    } else {
+      return null
+    }
+  }
+
   return (
     <>
-      <div id="header">
-        <h1>Vinder</h1>
-      </div>
       <section id="router">
         <Router forceRefresh={true}>
+          <div id="header">
+            <h1>Vinder</h1>
+            <div>{iconSelect()}</div>
+          </div>
           <div id="page-body">
             <Switch id="switch">
               <Route exact path="/">
