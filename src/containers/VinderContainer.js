@@ -7,6 +7,7 @@ import ProfilePage from "../components/Profile/ProfilePage";
 import Chatroom from "../components/Conversation/Chatroom";
 import "./VinderContainer.css";
 import { RiQuestionLine, RiDeleteBin7Line } from "react-icons/ri";
+import HelpPage from "../components/Swiping/HelpPage";
 
 const VinderContainer = () => {
   const [name, setName] = useState("");
@@ -176,13 +177,19 @@ const VinderContainer = () => {
           <div id="header">
             <div id="spacer-div"/>
             <h1>Vinder </h1>
-            <div>{iconSelect()}</div>
+          <div>
+          <a href="/helppage">{iconSelect()}</a> 
+          </div>
           </div>
           <div id="page-body">
             <Switch id="switch">
               <Route exact path="/">
                 <SwipingPage potentialMatches={potentialMatches} />
               </Route>
+
+            <Route path ="/helppage">
+              <HelpPage />
+            </Route>
 
               <Route exact path="/matches">
                 <MatchesPage matches={matches} />
