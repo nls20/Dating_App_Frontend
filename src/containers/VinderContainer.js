@@ -13,7 +13,7 @@ import HelpPage from "../components/Swiping/HelpPage";
 const VinderContainer = () => {
 
   const [user, setUser] = useState({});
-  const [userId, setUserId] = useState(1);
+  const [userId, setUserId] = useState(localStorage.getItem("id"));
 
   const matches = [
     {
@@ -145,7 +145,10 @@ const VinderContainer = () => {
     }
 
   useEffect(() => {
-    setUserId(user.id)
+    if (user) {
+      localStorage.setItem("id", user.id)
+    }
+    return null
   }, [user])
 
   const iconSelect = () => {
