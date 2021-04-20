@@ -161,13 +161,13 @@ const Form = ({submitted, hasBeenSubmitted}) => {
        value={hobbies} 
        onChange={handleHobbies} required/>
        <select className="option-bar" onChange={handleGender}>
-           <option value="gender" disabled selected hidden>Choose a gender</option>
+           <option value="gender" disabled selected hidden>Gender</option>
            <option value="male" >Male</option>
            <option value="female" >Female</option>
            <option value="non-binary" >non-binary</option>
        </select>
        <select className="option-bar" onChange={handlePreference}>
-           <option value="gender" disabled selected hidden>Choose a Preference</option>
+           <option value="gender" disabled selected hidden>Interested in</option>
            <option value="male" >Male</option>
            <option value="female" >Female</option>
            <option value="non-binary" >non-binary</option>
