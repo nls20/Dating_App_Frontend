@@ -2,7 +2,9 @@
 #template-section{
     display: flex;
     overflow-x: auto;
-
+    background-color: rgba(255,182,193, 0.5);
+    height: 10vh;
+    padding: 10px;
 }
 
 #template-section > a {

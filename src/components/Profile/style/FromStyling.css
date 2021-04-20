@@ -23,13 +23,17 @@
   padding: 10px 60px;
   border: none;
   color: white;
-  background-color: rgb(66, 136, 130);
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #0589c6;
   box-shadow: gray 0 0 1px;
   border-radius: 6px;
   margin: 15px auto;
+  
 }
 
 #button:hover{
+  background-color: #039ce3;
   box-shadow: 0 0 7px gray;
   color: white;
 }
@@ -41,7 +45,7 @@
 }
 
 .Choice{
-  padding: 10px 10px;
+  padding: 10px 0px;
   margin: 10px 10px; 
 }
 
@@ -52,7 +56,7 @@
   border: none;
   color: gray;
   border-bottom: 1px gray solid;
-  padding: 5px 10px;
+  padding: 5px 0px;
   width: 156px;
   background-color: white;
 }
@@ -92,7 +96,7 @@
   display: flex;
   justify-content: space-around;
   margin: 0px;
-  padding-top: 20px;
+  padding-top: 15px;
   padding-left: 100px;
   padding-right: 100px;
   color: gray;

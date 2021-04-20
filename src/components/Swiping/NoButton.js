@@ -6,7 +6,8 @@ const NoButton = ({option, potentialMatches, selectOption}) => {
 
     const [notMatched, setNotMatched] = useState([])
 
-    const handleMatchNo = () => {
+    const handleMatchNo = (event) => {
+        event.preventDefault()
         const addNotMatched = potentialMatches.filter(match => match.name == option.name)
         if (notMatched.length) {
             setNotMatched(notMatched.concat(addNotMatched[0]))
@@ -19,9 +20,11 @@ const NoButton = ({option, potentialMatches, selectOption}) => {
 
 return (
     <div className="button">
+        <form action="">
         <button className="swipe-btn-no" value={option.name} onClick={handleMatchNo}>
             <div className="cross"> <ImCross /></div>
         </button>
+        </form>
     </div>
 )
 

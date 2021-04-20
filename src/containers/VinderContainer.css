@@ -16,13 +16,14 @@
     font-family: 'Cookie', cursive;
     font-size: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 #header > h1 {
-    display: flex;
+    /* display: flex; */
     margin-bottom: 0px;
-    margin-left: 100px;
+    /* margin-left: 80px;
+    margin-right: 80px; */
     color: black;
     margin-top: 10px;
     padding: 2px;
@@ -30,14 +31,20 @@
 
 #header > div {
     margin-top: 20px;
-    margin-left: 70px;
 }
 
 .help-button {
     text-decoration: none;
+    padding: 15px;
 }
 
 .delete-button {
     height: 30px;
     width: 30px;
+    padding: 15px;
+}
+
+#spacer-div {
+    width: 30px;
+    padding: 15px;
 }

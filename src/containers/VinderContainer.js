@@ -8,6 +8,7 @@ import Chatroom from "../components/Conversation/Chatroom";
 import "./VinderContainer.css";
 import UserServices from "../services/UserServices";
 import { RiQuestionLine, RiDeleteBin7Line } from "react-icons/ri";
+import HelpPage from "../components/Swiping/HelpPage";
 
 const VinderContainer = () => {
 
@@ -149,11 +150,13 @@ const VinderContainer = () => {
 
   const iconSelect = () => {
     if (window.location.pathname === "/") {
-      return <i onClick="" className="help-button"><RiQuestionLine/></i>
+      return <a href="/helppage"><i onClick="" className="help-button"><RiQuestionLine/></i></a>
     } else if (window.location.pathname.split("/")[2] === "conversation") {
-      return <i onClick="" className="delete-button"><RiDeleteBin7Line/></i>
+      return  <form>
+                <i onClick="" className="delete-button"><RiDeleteBin7Line/></i>
+              </form>
     } else {
-      return null
+      return <div id="spacer-div"/>
     }
   }
 
@@ -162,8 +165,11 @@ const VinderContainer = () => {
       <section id="router">
         <Router forceRefresh={true}>
           <div id="header">
-            <h1>Vinder</h1>
-            <div>{iconSelect()}</div>
+            <div id="spacer-div"/>
+            <h1>Vinder </h1>
+          <div>
+          {iconSelect()}
+          </div>
           </div>
           <div id="page-body">
             <Switch id="switch">
@@ -171,6 +177,10 @@ const VinderContainer = () => {
               <Route exact path="/">
                 <SwipingPage potentialMatches={potentialMatches} />
               </Route>
+
+            <Route path ="/helppage">
+              <HelpPage />
+            </Route>
 
               <Route exact path="/matches">
                 <MatchesPage matches={matches} />
