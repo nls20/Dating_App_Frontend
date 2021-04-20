@@ -165,7 +165,7 @@ const VinderContainer = () => {
                 <i onClick="" className="delete-button"><RiDeleteBin7Line/></i>
               </form>
     } else {
-      return null
+      return <div id="spacer-div"/>
     }
   }
 
@@ -174,7 +174,8 @@ const VinderContainer = () => {
       <section id="router">
         <Router forceRefresh={true}>
           <div id="header">
-            <h1>Vinder</h1>
+            <div id="spacer-div"/>
+            <h1>Vinder </h1>
             <div>{iconSelect()}</div>
           </div>
           <div id="page-body">
