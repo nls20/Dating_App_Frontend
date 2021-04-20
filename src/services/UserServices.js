@@ -31,18 +31,27 @@ export default{
         return fetch(usersBaseUrl, {
             method: 'POST',
             body: JSON.stringify(user),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            headers: { 'Content-Type': 'application/json' }
         })
         .then(res => res.json())
     },
 
 
-    //PATCH Update User  /users/
-
-
+    //PUT Update User  /users/
+    updateUser(user) {
+        return fetch(usersBaseUrl, {
+            method: 'POST',
+            body: JSON.stringify(user),
+            headers: { 'Content-Type': 'application/json' }
+        })
+        .then(res => res.json())
+    },
 
     //DELETE User   /users/{id}
+    deleteUser(id) {
+        return fetch(usersBaseUrl + id, {
+            method: 'DELETE'
+        })
+    }
     
 }
