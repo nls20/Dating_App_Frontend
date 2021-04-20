@@ -161,7 +161,9 @@ const VinderContainer = () => {
     if (window.location.pathname === "/") {
       return <i onClick="" className="help-button"><RiQuestionLine/></i>
     } else if (window.location.pathname.split("/")[2] === "conversation") {
-      return <i onClick="" className="delete-button"><RiDeleteBin7Line/></i>
+      return  <form>
+                <i onClick="" className="delete-button"><RiDeleteBin7Line/></i>
+              </form>
     } else {
       return null
     }

@@ -6,7 +6,8 @@ const YesButton = ({option, potentialMatches, selectOption}) => {
 
 const [matches, setMatches] = useState([])
 
-const handleMatchYes = () => {
+const handleMatchYes = (event) => {
+    event.preventDefault()
     const addMatch = potentialMatches.filter(match => match.name == option.name)
     if (matches.length) {
         setMatches(matches.concat(addMatch[0]))
@@ -19,12 +20,12 @@ const handleMatchYes = () => {
 
 return (
     <div className="button">
-        <button className="swipe-btn-yes" onClick={handleMatchYes}>
-            <div className="heart"><ImHeart/></div>
-        </button>
+        <form action="">
+            <button className="swipe-btn-yes" onClick={handleMatchYes}>
+                <div className="heart"><ImHeart/></div>
+            </button>
+        </form>
     </div>
-
-
 )
 
 }
