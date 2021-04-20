@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import DisplayInformation from './DisplayInformation';
 import Form from './Form';
+import AdddImageToUser from './AddImageToUser';
 
 const ProfilePage = ({getFormInformation}) => {
 
@@ -13,6 +14,11 @@ const ProfilePage = ({getFormInformation}) => {
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
     const [image, setImage] = useState("")
     const [typeFile, setTypeFile] = useState("");
+
+
+    // ----------------upload image---------------------------
+
+
 
     const submitted = (details) => {
 
@@ -43,7 +49,9 @@ const ProfilePage = ({getFormInformation}) => {
         image={image}
         typeFile={typeFile}
         hasBeenSubmitted={hasBeenSubmitted}/>
+        <AdddImageToUser />
         </>
+
     )
 }
 export default ProfilePage

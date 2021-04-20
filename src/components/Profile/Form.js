@@ -54,8 +54,6 @@ const Form = ({submitted, hasBeenSubmitted}) => {
         setImage(reader.result);
         setIsUploaded(true);
       };
-
-      
     }
   }
 
