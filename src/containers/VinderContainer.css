@@ -8,9 +8,36 @@
 #page-body{
     margin-bottom: 50px;
     padding-bottom: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: 'Montserrat', sans-serif;
 }
 
 #header{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Cookie', cursive;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#header > h1 {
+    display: flex;
+    margin-bottom: 0px;
+    margin-left: 100px;
+    color: black;
+    margin-top: 10px;
+    padding: 2px;
+}
+
+#header > div {
+    margin-top: 20px;
+    margin-left: 70px;
+}
+
+.help-button {
+    text-decoration: none;
+}
+
+.delete-button {
+    height: 30px;
+    width: 30px;
 }

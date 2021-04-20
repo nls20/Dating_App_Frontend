@@ -1,5 +1,6 @@
 #player-one-message>p{
-    background-color: lime;
+    background-color: darkgray;
+    color: #fff;
     margin: 10px;
     padding: 8px;
     border-radius: 8px;
@@ -9,13 +10,14 @@
 #player-one-message {
     display: flex;
     justify-content: flex-end;
-    background-color: magenta;
+    background-color: lightgray;
     margin: 3px 10px;
     width: 80%;
     border-radius: 8px;
 }
 
 #player-one-container{
+    padding-top: 10px;
     display: flex;
     justify-content: flex-end;
 }

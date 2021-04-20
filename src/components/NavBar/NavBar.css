@@ -20,6 +20,7 @@
 .nav-bar-section{
     background-color: pink;
     padding: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-bar-section>ul>li>a>p{
@@ -29,7 +30,10 @@
 }
 
 .highlighted-button{
-    background-color: #fff;
+    background-color:rgb(243, 124, 183);
+    border: 1.5px solid gray;
+    box-shadow: inset 0 0 5px gray;
+    
 }
 
 .nav-home {
