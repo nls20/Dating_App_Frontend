@@ -14,21 +14,6 @@ const DisplayInfo = ({ potentialMatches }) => {
     );
   };
 
-    const selectOption = () => {
-        return setOption(potentialMatches[Math.floor(Math.random() * potentialMatches.length)])
-    }
-
-    // const handleMatchNo = (evt) => {
-    //     const addNotMatched = potentialMatches.filter(match => match.name == evt.target.value)
-    //     if (notMatched.length) {
-    //         setNotMatched(notMatched.concat(addNotMatched))
-    //     } else {
-    //         setNotMatched(addNotMatched)
-    //     }
-    //     potentialMatches.splice(potentialMatches.indexOf(addNotMatched), 1)
-    //     selectOption()
-    // }
-
   const movePicture = (evt) => {
     if (evt.changedTouches[0].clientX > evt.view.innerWidth / 2) {
       console.log("liked");
