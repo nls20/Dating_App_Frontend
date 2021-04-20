@@ -53,7 +53,6 @@ const Form = ({submitted, hasBeenSubmitted}) => {
       })
   }
 
-  
   if (hasBeenSubmitted){
     return null
   }else{

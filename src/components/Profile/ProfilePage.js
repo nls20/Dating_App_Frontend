@@ -17,7 +17,7 @@ const ProfilePage = ({getFormInformation, user}) => {
     //     if (user.id != null) {
     //     setHasBeenSubmitted(true)
     //     }
-    // }, [])
+    // })
 
     useEffect(() => {
         setName(user.name);
