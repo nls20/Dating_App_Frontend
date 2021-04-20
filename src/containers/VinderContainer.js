@@ -106,45 +106,66 @@ const VinderContainer = () => {
       age: 23,
       location: "Alderran",
       hobbies: "Killing bad guys",
-      picture:
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg",
+      picture:[
+        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+      ]
     },
     {
       name: "Bill",
       age: 50,
       location: "Glasgow",
       hobbies: "Swimming",
-      picture:
+      picture: [
         "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+      ]
     },
     {
       name: "Mike",
       age: 45,
       location: "Edinburgh",
       hobbies: "Cycling",
-      picture:
+      picture:[
+        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
         "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+      ]
     },
     {
       name: "Doug",
       age: 25,
       location: "Inverness",
       hobbies: "Running",
-      picture: "https://i.redd.it/v0caqchbtn741.jpg",
+      picture: [
+        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+      ]
     },
     {
       name: "Joanna",
       age: 20,
       location: "Inverness",
       hobbies: "Running",
-      picture: "https://image.freepik.com/free-photo/girl-cafe-with-smartphone_1321-389.jpg",
+      picture: [
+        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+      ]
     },
     {
       name: "Alison",
       age: 18,
       location: "Inverness",
       hobbies: "Running",
-      picture: "https://images.unsplash.com/photo-1605993439219-9d09d2020fa5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+      picture: [
+        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+      ]
     },
   ];
 

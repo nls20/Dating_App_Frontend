@@ -8,7 +8,7 @@ const SwipingPage = ({potentialMatches}) => {
 
     return (
         <>
-        <DisplayInfo potentialMatches={potentialMatches}/>
+        <DisplayInfo  potentialMatches={potentialMatches}/>
         </>
     )
 }

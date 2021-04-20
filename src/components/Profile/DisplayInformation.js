@@ -4,7 +4,7 @@ import './style/InformationSyling.css'
 import './Form'
 import Form from './Form';
 
-const DisplayInformation = ({name, age, location, hobbies, typeFile, gender, preference, image, hasBeenSubmitted}) => {
+const DisplayInformation = ({name, age, location, hobbies, gender, preference, hasBeenSubmitted}) => {
 
   const [upDate, setUpdate] = useState(false)
 
@@ -17,22 +17,6 @@ const DisplayInformation = ({name, age, location, hobbies, typeFile, gender, pre
   }else{
     return (
       <article className="display-profile-content">
-        {/* {typeFile.includes("video") ? (
-        <video
-        id="uploaded-image"
-        src={image}
-        draggable={false}
-        controls
-        autoPlay
-        alt="uploaded-img"
-        />
-        ) : ( */}
-        <img
-          id="image"
-          src={image}
-          alt="uploaded-img"
-        />
-        {/* )} */}
         <p id="name"><span id="name1">Name - </span> {name}</p>
         <p id="age"><span id="name1">Age - </span> {age}</p>
         <p id="location"><span id="name1">Location - </span>{location}</p>
