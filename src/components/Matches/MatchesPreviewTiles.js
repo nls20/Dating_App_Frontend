@@ -6,7 +6,7 @@ const MatchesPreviewTiles = ({matches}) => {
     
 
     const previews = matches.map((match, index) => {
-        return <MatchesTemplateTile match={match} key={index}/>
+        return <a href="/matches/conversation/{match.name}"><MatchesTemplateTile match={match} key={index}/></a>
     })
 
     return(
