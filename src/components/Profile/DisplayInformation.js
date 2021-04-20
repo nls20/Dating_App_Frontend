@@ -39,7 +39,7 @@ const DisplayInformation = ({name, age, location, hobbies, typeFile, gender, pre
         <p id="hobbies"><span id="name1">Hobbies - </span>{hobbies}</p>
         <p id="Gender"><span id="name1">Gender - </span>{gender}</p>
         <p id="preference"><span id="name1">Interested in - </span> {preference}</p>
-        <Link to="/profile"><button id="button-update" value={true} onClick={handleUpdateButton}><i class="fa fa-user-edit"></i></button></Link>
+        <Link to="/profile"><button id="button-update" value={true} onClick={handleUpdateButton}><i className="fa fa-user-edit"></i></button></Link>
       </article>
     )}
 }

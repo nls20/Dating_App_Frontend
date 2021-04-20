@@ -25,7 +25,7 @@ const DisplayInfo = ({potentialMatches}) => {
     if (potentialMatches.length > 0) {
         return (
             <div className="display-container">
-                <img class="display-picture"src={option.picture}></img>
+                <img className="display-picture"src={option.picture}></img>
                 <h2>{option.name}</h2>
                 <p>{option.age}</p>
                 <p>{option.location}</p>
