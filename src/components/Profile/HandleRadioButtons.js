@@ -19,7 +19,7 @@ const HandleRadioButtons = ({vaccinated}) => {
   return (
     <>
     <div className="Choice">
-      <div class="radio-button">
+      <div className="radio-button">
         <input type="radio" 
         id="Choice1"
         name="vaccinated" 
@@ -30,7 +30,7 @@ const HandleRadioButtons = ({vaccinated}) => {
         <label htmlFor="Choice1">YES</label>
       </div>
 
-      <div class="radio-button">
+      <div className="radio-button">
         <input 
         type="radio" 
         id="Choice2"
