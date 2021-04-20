@@ -18,9 +18,9 @@ const handleMatchYes = () => {
 }
 
 return (
-    <div class="button">
-        <button class="swipe-btn-yes" onClick={handleMatchYes}>
-            <div class="heart"><ImHeart/></div>
+    <div className="button">
+        <button className="swipe-btn-yes" onClick={handleMatchYes}>
+            <div className="heart"><ImHeart/></div>
         </button>
     </div>
 

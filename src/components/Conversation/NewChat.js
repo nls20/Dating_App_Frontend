@@ -18,7 +18,7 @@ import './NewChat.css'
 
     return (
         <>
-            <section class="message-submit">
+            <section className="message-submit">
                 <form onSubmit={formSubmit} action="">
                     <input id="input-box" type="text" value={message} onChange={textChange}/>
 
