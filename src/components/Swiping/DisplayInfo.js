@@ -7,6 +7,8 @@ const DisplayInfo = ({ potentialMatches }) => {
   const [option, setOption] = useState(
     potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
   );
+  const [pictureCounter, setPictureCounter] = useState(0);
+  const [currentPicture, setCurrentPicture] = useState(option.picture[0]);
 
   const selectOption = () => {
     return setOption(
@@ -15,10 +17,26 @@ const DisplayInfo = ({ potentialMatches }) => {
   };
 
   const movePicture = (evt) => {
-    if (evt.changedTouches[0].clientX > evt.view.innerWidth / 2) {
+    if (evt.changedTouches[0].clientX > (evt.view.innerWidth / 10) * 9) {
       console.log("liked");
-    } else {
+    } else if (evt.changedTouches[0].clientX < evt.view.innerWidth / 10) {
       console.log("not liked");
+    }
+  };
+
+  const pictureClicked = (event) => {
+    if (event.clientX > event.view.innerWidth / 2) {
+      if (pictureCounter < option.picture.length -1) {
+        let newNum = pictureCounter + 1;
+        setPictureCounter(newNum);
+        setCurrentPicture(option.picture[newNum]);
+      }
+    } else {
+      if (pictureCounter > 0) {
+        let newNum = pictureCounter - 1;
+        setPictureCounter(newNum);
+        setCurrentPicture(option.picture[newNum]);
+      }
     }
   };
 
@@ -27,8 +45,9 @@ const DisplayInfo = ({ potentialMatches }) => {
       <div className="display-container">
         <img
           onTouchEnd={movePicture}
+          onClick={pictureClicked}
           class="display-picture"
-          src={option.picture}
+          src={currentPicture}
         ></img>
         <h2>{option.name}</h2>
         <p draggable="true">{option.age}</p>
