@@ -30,7 +30,7 @@ export default{
 
     //GET All Conversations by User ID /conversations?userId={id}
     getAllConversationsForUser(id){
-        return fetch(conversationsBaseUrl + 'conversations?userId=' + id)
+        return fetch(conversationsBaseUrl+'?userId='+id)
         .then(res => res.json())
     },
 

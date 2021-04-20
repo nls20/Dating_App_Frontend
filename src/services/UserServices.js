@@ -8,18 +8,6 @@ export default{
         .then(res => res.json())
     },
 
-    //POST User e.g.    /users
-    addNewUser(user) {
-        return fetch(usersBaseUrl, {
-            method: 'POST',
-            body: JSON.stringify(user),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(res => res.json())
-    },
-
     //GET All Users e.g.    /users
     getAllUsers(id){
         return fetch(usersBaseUrl)
@@ -38,14 +26,20 @@ export default{
         .then(res => res.json())
     },
 
+    //POST User e.g.    /users
+    addNewUser(user) {
+        return fetch(usersBaseUrl, {
+            method: 'POST',
+            body: JSON.stringify(user),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+    },
 
 
-
-    //GET Edit User     /users/{id}/edit    GET
-
-    
-
-    //POST Update User  /users/
+    //PATCH Update User  /users/
 
 
 
