@@ -4,7 +4,8 @@ import './MessagesPreview.css'
 const MessagesPreview = ({matches}) => {
 
     const preview = matches.map((match, index) => {
-         return <a href="/matches/conversation/{match.name}"><MessageTemplateTile match={match} key={index} /></a>
+        const hrefName = "/matches/conversation/" + match.name
+         return <a href={hrefName}><MessageTemplateTile match={match} key={index} /></a>
     })
 
     return( 
