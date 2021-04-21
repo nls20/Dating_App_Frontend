@@ -2,6 +2,7 @@ const HelpPage = () => {
 
     return (
         <>
+        <div className="help-container">
         <div>
             <h1>Help Page</h1>
             <h3>Home Page</h3>
@@ -18,6 +19,7 @@ const HelpPage = () => {
         <div>
             <h3>Profile</h3>
             <p>Upload an image here and fill in your details. Once your details are saved you can update your datails here too.</p>
+        </div>
         </div>
         </>
     )
