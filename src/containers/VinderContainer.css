@@ -14,7 +14,7 @@
 
 #header{
     font-family: 'Cookie', cursive;
-    font-size: 30px;
+    font-size: 40px;
     display: flex;
     justify-content: space-between;
 }
@@ -24,7 +24,9 @@
     margin-bottom: 0px;
     /* margin-left: 80px;
     margin-right: 80px; */
-    color: black;
+    background: -webkit-linear-gradient(#f77062, #fe5196);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-top: 10px;
     padding: 2px;
 }
