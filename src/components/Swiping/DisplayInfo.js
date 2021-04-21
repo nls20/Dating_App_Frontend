@@ -9,9 +9,9 @@ const DisplayInfo = ({ potentialMatches }) => {
     potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
   );
   const [pictureCounter, setPictureCounter] = useState(0);
-  const [currentPicture, setCurrentPicture] = useState("");
+  const [currentPicture, setCurrentPicture] = useState(option.picture[pictureCounter]);
 
-  console.log("option", option);
+  // console.log("option", option);
 
   const selectOption = () => {
     return setOption(
@@ -22,15 +22,22 @@ const DisplayInfo = ({ potentialMatches }) => {
   const movePicture = (evt) => {
     if (evt.changedTouches[0].clientX > (evt.view.innerWidth / 10) * 9) {
       console.log("liked");
+      potentialMatches.splice(potentialMatches.indexOf(option), 1);
+      setPictureCounter(0);
+      setCurrentPicture(option.picture[pictureCounter])
+      selectOption();
     } else if (evt.changedTouches[0].clientX < evt.view.innerWidth / 10) {
       console.log("not liked");
+      potentialMatches.splice(potentialMatches.indexOf(option), 1);
+      setPictureCounter(0);
+      setCurrentPicture(option.picture[pictureCounter])
+      selectOption();
     }
-    potentialMatches.splice(potentialMatches.indexOf(option), 1);
-    selectOption();
   };
 
   const pictureClicked = (event) => {
     if (event.clientX > event.view.innerWidth / 2) {
+      console.log('right');
       if (pictureCounter < option.picture.length - 1) {
         let newNum = pictureCounter + 1;
         setPictureCounter(newNum);
