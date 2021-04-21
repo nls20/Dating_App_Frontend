@@ -21,9 +21,9 @@ const ProfilePage = ({getFormInformation, user}) => {
             name={user.name} 
             age={user.age} 
             location={user.location} 
-            hobbies={user.hobbies} 
+            bio={user.bio} 
             gender={user.gender} 
-            preference={user.preference}
+            gender_preference={user.gender_preference}
             hasBeenSubmitted={hasBeenSubmitted}
             user={user}
             />

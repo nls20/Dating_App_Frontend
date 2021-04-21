@@ -154,10 +154,10 @@ const VinderContainer = () => {
 
   const iconSelect = () => {
     if (window.location.pathname === "/") {
-      return <a href="/helppage"><i onClick="" className="help-button"><RiQuestionLine/></i></a>
+      return <a href="/helppage"><i className="help-button"><RiQuestionLine/></i></a>
     } else if (window.location.pathname.split("/")[2] === "conversation") {
       return  <form>
-                <i onClick="" className="delete-button"><RiDeleteBin7Line/></i>
+                <i className="delete-button"><RiDeleteBin7Line/></i>
               </form>
     } else {
       return <div id="spacer-div"/>

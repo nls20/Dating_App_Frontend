@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import YesButton from "./YesButton";
 import NoButton from "./NoButton";
 import "./DisplayInfo.css";
@@ -26,7 +26,7 @@ const DisplayInfo = ({ potentialMatches }) => {
 
   const pictureClicked = (event) => {
     if (event.clientX > event.view.innerWidth / 2) {
-      if (pictureCounter < option.picture.length -1) {
+      if (pictureCounter < option.picture.length - 1) {
         let newNum = pictureCounter + 1;
         setPictureCounter(newNum);
         setCurrentPicture(option.picture[newNum]);
@@ -40,13 +40,24 @@ const DisplayInfo = ({ potentialMatches }) => {
     }
   };
 
-  if (potentialMatches.length > 0) {
+  // useEffect = (() => {
+  //   setCurrentPicture(option.picture[pictureCounter])
+  // }, [potentialMatches])
+
+  if (potentialMatches.length === 0) {
+    return (
+      <div>
+        <h2>Nobody left in your area!</h2>
+        <p>Congratulations you've completed Vinder</p>
+      </div>
+    );
+  } else {
     return (
       <div className="display-container">
         <img
           onTouchEnd={movePicture}
           onClick={pictureClicked}
-          class="display-picture"
+          className="display-picture"
           src={currentPicture}
         ></img>
         <h2>{option.name}</h2>
@@ -65,13 +76,6 @@ const DisplayInfo = ({ potentialMatches }) => {
             selectOption={selectOption}
           />
         </div>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <h2>Nobody left in your area!</h2>
-        <p>Congratulations you've completed Vinder</p>
       </div>
     );
   }
