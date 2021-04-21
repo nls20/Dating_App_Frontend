@@ -16,7 +16,6 @@ const ProfilePage = ({getFormInformation, user}) => {
         <>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossOrigin="anonymous"></link>
         
-        <AddImageToUser />
         <Form submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} user={user}/>
         <DisplayInformation 
             name={user.name} 
@@ -25,7 +24,9 @@ const ProfilePage = ({getFormInformation, user}) => {
             hobbies={user.hobbies} 
             gender={user.gender} 
             preference={user.preference}
-            hasBeenSubmitted={hasBeenSubmitted}/>
+            hasBeenSubmitted={hasBeenSubmitted}
+            user={user}
+            />
         </>
 
     )

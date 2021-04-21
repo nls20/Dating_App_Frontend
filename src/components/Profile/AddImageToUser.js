@@ -2,8 +2,9 @@ import {useState, useEffect} from 'react'
 import FolderIcon from "./assets/folder_icon_transparent.png";
 import CloseIcon from "./assets/CloseIcon.svg";
 import AddingImageServices from '../../services/AddingImageServices';
+import UserServices from '../../services/UserServices';
 
-const AddImageToUser = () => {
+const AddImageToUser = ({user}) => {
   const [image, setImage] = useState("");
   const [isUploaded, setIsUploaded] = useState(false);
   const [typeFile, setTypeFile] = useState("");
@@ -11,6 +12,7 @@ const AddImageToUser = () => {
 
 
   const handleFileSelected = (evt) => {
+    
     if (evt.target.files && evt.target.files[0]) {
       setTypeFile(evt.target.files[0].type);
       let reader = new FileReader();
@@ -18,24 +20,16 @@ const AddImageToUser = () => {
 
       reader.onload = () => {
         setImage(reader.result);
-        AddingImageServices.postProfileImage(evt.target.files[0])
+        AddingImageServices.postProfileImage(reader.result)
+        .then(data => {
+          console.log("show image", data.id); //undefined 
+          AddingImageServices.addNewProfileImage({mongo_id: data.id, user_id: user.id})
+        })
         setIsUploaded(true);
       };
     }
   }
-
-
-  // useEffect(() => {
-  //   AddingImageServices.postProfileImage(profileImage)
-  // })
-
-// //GET user information
-//   useEffect(() => {
-//     UserServices.getUserInformation(userId)
-//     .then(data => setUser(data))
-//  }, [])
-
-
+  
   return(
     <form>
       <div className="image-upload"> 

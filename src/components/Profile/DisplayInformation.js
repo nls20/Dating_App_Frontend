@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import './style/InformationSyling.css'
 import './Form'
 import Form from './Form';
+import AddImageToUser from './AddImageToUser';
 
-const DisplayInformation = ({name, age, location, hobbies, gender, preference, hasBeenSubmitted}) => {
+const DisplayInformation = ({name, age, location, hobbies, gender, preference, hasBeenSubmitted, user}) => {
 
   const [upDate, setUpdate] = useState(false)
 
@@ -17,6 +18,7 @@ const DisplayInformation = ({name, age, location, hobbies, gender, preference, h
   }else{
     return (
       <article className="display-profile-content">
+      <AddImageToUser user={user}/>
         <p id="name"><span id="name1">Name - </span> {name}</p>
         <p id="age"><span id="name1">Age - </span> {age}</p>
         <p id="location"><span id="name1">Location - </span>{location}</p>

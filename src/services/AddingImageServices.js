@@ -1,4 +1,5 @@
 const baseURL = "http://localhost:3000/api/profileImage/"
+const springImageBaseUrl = "http://localhost:8080/profileImage"
 
 export default{
 
@@ -10,9 +11,19 @@ export default{
   postProfileImage(payload){
     return fetch(baseURL, {
       method: 'POST',
-      body: JSON.stringify(payload),
+      body: JSON.stringify({image: payload}),
       headers: {'Content-Type': 'application/json'}
     })
     .then(res => res.json())
-  }
+  },
+  
+  addNewProfileImage(imageURL) {
+  
+    return fetch(springImageBaseUrl, {
+      method: 'POST',
+      body: JSON.stringify(imageURL),
+      headers: { 'Content-Type': 'application/json' }
+      })
+      .then(res => res.json())
+  },
 }
