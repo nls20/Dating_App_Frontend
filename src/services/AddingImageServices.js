@@ -18,7 +18,7 @@ export default{
   },
   
   addNewProfileImage(imageURL) {
-  
+    console.log("image url", imageURL);
     return fetch(springImageBaseUrl, {
       method: 'POST',
       body: JSON.stringify(imageURL),

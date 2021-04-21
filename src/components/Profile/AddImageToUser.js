@@ -20,12 +20,12 @@ const AddImageToUser = ({user}) => {
 
       reader.onload = () => {
         setImage(reader.result);
+        setIsUploaded(true);
         AddingImageServices.postProfileImage(reader.result)
         .then(data => {
-          console.log("show image", data._id)
+          // console.log("show image", data._id)
           AddingImageServices.addNewProfileImage({mongo_id: data._id, user_id: user.id})
         })
-        setIsUploaded(true);
       };
     }
   }
