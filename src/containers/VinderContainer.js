@@ -139,7 +139,7 @@ const VinderContainer = () => {
 
 //GET user information
   useEffect(() => {
-    UserServices.getUserInformation(userId)
+    UserServices.getUserInformation(8)
     .then(data => setUser(data))
 
     UserServices.getAllPotentialMatches(userId)
@@ -185,7 +185,7 @@ const VinderContainer = () => {
             <Switch id="switch">
 
               <Route exact path="/">
-                <SwipingPage potentialMatches={potentialMatches} />
+                {/* <SwipingPage potentialMatches={potentialMatches} /> */}
               </Route>
 
             <Route path ="/helppage">
@@ -193,7 +193,7 @@ const VinderContainer = () => {
             </Route>
 
               <Route exact path="/matches">
-                <MatchesPage matches={matches} />
+                <MatchesPage matches={user.matches} />
               </Route>
 
               <Route path="/matches/conversation">
