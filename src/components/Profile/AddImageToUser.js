@@ -22,14 +22,14 @@ const AddImageToUser = ({user}) => {
         setImage(reader.result);
         AddingImageServices.postProfileImage(reader.result)
         .then(data => {
-          console.log("show image", data.id); //undefined 
-          AddingImageServices.addNewProfileImage({mongo_id: data.id, user_id: user.id})
+          console.log("show image", data._id)
+          AddingImageServices.addNewProfileImage({mongo_id: data._id, user_id: user.id})
         })
         setIsUploaded(true);
       };
     }
   }
-  
+
   return(
     <form>
       <div className="image-upload"> 
