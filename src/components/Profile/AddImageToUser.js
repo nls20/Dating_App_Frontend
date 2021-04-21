@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import FolderIcon from "./assets/folder_icon_transparent.png";
+import FolderIcon from "./assets/FolderIcon2.png";
 import CloseIcon from "./assets/CloseIcon.svg";
 import AddingImageServices from '../../services/AddingImageServices';
 import UserServices from '../../services/UserServices';
