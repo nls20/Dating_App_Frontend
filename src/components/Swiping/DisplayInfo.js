@@ -9,7 +9,7 @@ const DisplayInfo = ({ potentialMatches }) => {
     potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
   );
   const [pictureCounter, setPictureCounter] = useState(0);
-  const [currentPicture, setCurrentPicture] = useState(option.picture[pictureCounter]);
+  const [currentPicture, setCurrentPicture] = useState(option.profileImages[pictureCounter]);
 
   const selectOption = () => {
     return setOption(

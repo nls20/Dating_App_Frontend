@@ -8,9 +8,14 @@ export default{
         .then(res => res.json())
     },
 
+    getAllPotentialMatches(id){
+        return fetch(usersBaseUrl+ "/4"  + "/potential-matches" )
+        .then(res => res.json())
+    },
+
     //GET All Users e.g.    /users
     getAllUsers(id){
-        return fetch(usersBaseUrl)
+        return fetch(usersBaseUrl )
         .then(res => res.json())
     },
 

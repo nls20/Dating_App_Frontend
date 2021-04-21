@@ -63,80 +63,87 @@ const VinderContainer = () => {
     }
   ];
 
-  const potentialMatches = [
-    {
-      name: "Harrison",
-      age: 23,
-      location: "Alderran",
-      hobbies: "Killing bad guys",
-      picture:[
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
-      ]
-    },
-    {
-      name: "Bill",
-      age: 50,
-      location: "Glasgow",
-      hobbies: "Swimming",
-      picture: [
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
-      ]
-    },
-    {
-      name: "Mike",
-      age: 45,
-      location: "Edinburgh",
-      hobbies: "Cycling",
-      picture:[
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
-      ]
-    },
-    {
-      name: "Doug",
-      age: 25,
-      location: "Inverness",
-      hobbies: "Running",
-      picture: [
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
-      ]
-    },
-    {
-      name: "Joanna",
-      age: 20,
-      location: "Inverness",
-      hobbies: "Running",
-      picture: [
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
-      ]
-    },
-    {
-      name: "Alison",
-      age: 18,
-      location: "Inverness",
-      hobbies: "Running",
-      picture: [
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
-      ]
-    },
-  ];
+  // const potentialMatches = [
+  //   {
+  //     name: "Harrison",
+  //     age: 23,
+  //     location: "Alderran",
+  //     hobbies: "Killing bad guys",
+  //     picture:[
+  //       "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+  //       "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+  //       "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+  //     ]
+  //   },
+  //   {
+  //     name: "Bill",
+  //     age: 50,
+  //     location: "Glasgow",
+  //     hobbies: "Swimming",
+  //     picture: [
+  //       "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+  //       "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+  //       "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+  //     ]
+  //   },
+  //   {
+  //     name: "Mike",
+  //     age: 45,
+  //     location: "Edinburgh",
+  //     hobbies: "Cycling",
+  //     picture:[
+  //       "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+  //       "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+  //       "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+  //     ]
+  //   },
+  //   {
+  //     name: "Doug",
+  //     age: 25,
+  //     location: "Inverness",
+  //     hobbies: "Running",
+  //     picture: [
+  //       "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+  //       "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+  //       "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+  //     ]
+  //   },
+  //   {
+  //     name: "Joanna",
+  //     age: 20,
+  //     location: "Inverness",
+  //     hobbies: "Running",
+  //     picture: [
+  //       "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+  //       "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+  //       "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+  //     ]
+  //   },
+  //   {
+  //     name: "Alison",
+  //     age: 18,
+  //     location: "Inverness",
+  //     hobbies: "Running",
+  //     picture: [
+  //       "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+  //       "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+  //       "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+  //     ]
+  //   },
+  // ];
+
+  const [potentialMatches, setPotentialMatches] = useState([])
+
+  
 
 
 //GET user information
   useEffect(() => {
     UserServices.getUserInformation(userId)
     .then(data => setUser(data))
+
+    UserServices.getAllPotentialMatches(userId)
+  .then(data => setPotentialMatches(data))
  }, [])
 
   const handleUserCreation = (submittedInfo) => {
@@ -178,7 +185,7 @@ const VinderContainer = () => {
             <Switch id="switch">
 
               <Route exact path="/">
-                <SwipingPage potentialMatches={potentialMatches} />
+                {/* <SwipingPage potentialMatches={potentialMatches} /> */}
               </Route>
 
             <Route path ="/helppage">
