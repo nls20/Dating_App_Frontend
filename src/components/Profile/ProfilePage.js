@@ -3,15 +3,20 @@ import DisplayInformation from './DisplayInformation';
 import Form from './Form';
 import AddImageToUser from './AddImageToUser';
 
-const ProfilePage = ({getFormInformation, user}) => {
+const ProfilePage = ({submitted, hasBeenSubmitted, user}) => {
 
-    const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
+    // const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false); // tried boolean and null
 
-    const submitted = (details) => {
-        getFormInformation(details)
-        setHasBeenSubmitted(true)
-    }
+    // const submitted = (details) => {
+    //     getFormInformation(details)
+    //     setHasBeenSubmitted(true)
+    // }
 
+    if (hasBeenSubmitted) {
+        <DisplayInformation />;
+        console.log("this is the user", user); // show the user object
+        console.log("what is the status", hasBeenSubmitted); //true
+    } 
     return (
         <>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossOrigin="anonymous"></link>
