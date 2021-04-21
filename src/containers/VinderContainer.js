@@ -185,7 +185,7 @@ const VinderContainer = () => {
             <Switch id="switch">
 
               <Route exact path="/">
-                {/* <SwipingPage potentialMatches={potentialMatches} /> */}
+                <SwipingPage potentialMatches={potentialMatches} />
               </Route>
 
             <Route path ="/helppage">
