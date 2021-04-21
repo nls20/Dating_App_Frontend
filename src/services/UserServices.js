@@ -35,15 +35,17 @@ export default{
         })
         .then(res => res.json())
     },
-    // postUserData(payload){
-    //     return fetch(baseURL, {
-    //       method: 'POST',
-    //       body: JSON.stringify(payload),
-    //       headers: {'Content-Type': 'application/json'}
-    //     })
-    //     .then(res => res.json())
-    //   }
 
+    // Add express post request
+
+    postUserData(payload){
+        return fetch('/api/profileImage', {
+          method: 'POST',
+          body: JSON.stringify(payload),
+          headers: {'Content-Type': 'application/json'}
+        })
+        .then(res => res.json())
+      },
 
     //PUT Update User  /users/
     updateUser(user) {

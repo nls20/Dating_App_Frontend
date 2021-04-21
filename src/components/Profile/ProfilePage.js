@@ -5,31 +5,7 @@ import AddImageToUser from './AddImageToUser';
 
 const ProfilePage = ({getFormInformation, user}) => {
 
-    const [name, setName] = useState("");
-    const [age, setAge] = useState(0);
-    const [location, setLocation] = useState("");
-    const [hobbies, setHobbies] = useState("");
-    const [gender, setGender] = useState("");
-    const [preference, setPreference] = useState("");
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
-
-    // useEffect(() => {
-    //     if (user.id != null) {
-    //     setHasBeenSubmitted(true)
-    //     }
-    // })
-
-    useEffect(() => {
-        if (user.id) {
-        setName(user.name);
-        setAge(user.age);
-        setLocation(user.location);
-        setHobbies(user.bio);    //Watch for naming, hobbies vs bio
-        setGender(user.gender)
-        setPreference(user.preference)
-        }
-    }, [user])
-
 
     const submitted = (details) => {
         getFormInformation(details)
@@ -43,12 +19,12 @@ const ProfilePage = ({getFormInformation, user}) => {
         <AddImageToUser />
         <Form submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} user={user}/>
         <DisplayInformation 
-            name={name} 
-            age={age} 
-            location={location} 
-            hobbies={hobbies} 
-            gender={gender} 
-            preference={preference}
+            name={user.name} 
+            age={user.age} 
+            location={user.location} 
+            hobbies={user.hobbies} 
+            gender={user.gender} 
+            preference={user.preference}
             hasBeenSubmitted={hasBeenSubmitted}/>
         </>
 
