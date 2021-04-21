@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import DisplayInformation from './DisplayInformation';
 import Form from './Form';
-import AdddImageToUser from './AddImageToUser';
+import AddImageToUser from './AddImageToUser';
 
 const ProfilePage = ({getFormInformation, user}) => {
 
@@ -40,7 +40,7 @@ const ProfilePage = ({getFormInformation, user}) => {
         <>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossOrigin="anonymous"></link>
         
-        <AdddImageToUser />
+        <AddImageToUser />
         <Form submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} user={user}/>
         <DisplayInformation 
             name={name} 
