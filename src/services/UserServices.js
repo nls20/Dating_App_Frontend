@@ -52,6 +52,5 @@ export default{
         return fetch(usersBaseUrl + "/" + id, {
             method: 'DELETE'
         })
-    }
-    
+    }  
 }
