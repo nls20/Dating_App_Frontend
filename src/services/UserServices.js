@@ -37,7 +37,7 @@ export default{
     },
 
     // Add express post request
-
+    //-----------------------------------------
     postUserData(payload){
         return fetch('/api/profileImage', {
           method: 'POST',
@@ -46,6 +46,8 @@ export default{
         })
         .then(res => res.json())
       },
+
+      //--------------------------------------
 
     //PUT Update User  /users/
     updateUser(user) {

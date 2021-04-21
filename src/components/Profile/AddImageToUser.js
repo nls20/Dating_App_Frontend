@@ -1,6 +1,7 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import FolderIcon from "./assets/folder_icon_transparent.png";
 import CloseIcon from "./assets/CloseIcon.svg";
+import AddingImageServices from '../../services/AddingImageServices';
 
 const AddImageToUser = () => {
   const [image, setImage] = useState("");
@@ -17,10 +18,22 @@ const AddImageToUser = () => {
 
       reader.onload = () => {
         setImage(reader.result);
+        AddingImageServices.postProfileImage(evt.target.files[0])
         setIsUploaded(true);
       };
     }
   }
+
+
+  // useEffect(() => {
+  //   AddingImageServices.postProfileImage(profileImage)
+  // })
+
+// //GET user information
+//   useEffect(() => {
+//     UserServices.getUserInformation(userId)
+//     .then(data => setUser(data))
+//  }, [])
 
 
   return(

@@ -9,6 +9,7 @@ import "./VinderContainer.css";
 import UserServices from "../services/UserServices";
 import { RiQuestionLine, RiDeleteBin7Line } from "react-icons/ri";
 import HelpPage from "../components/Swiping/HelpPage";
+import AddingImageServices from "../services/AddingImageServices";
 
 const VinderContainer = () => {
 
