@@ -150,13 +150,22 @@ const VinderContainer = () => {
       UserServices.addNewUser(submittedInfo)
       .then(data => setUser(data))
     }
+  
 
-  useEffect(() => {
-    if (user) {
-      sessionStorage.setItem("id", user.id)
-    }
-    return null
-  }, [user])
+    //TODO remove this and replace it with the useEffect below
+    useEffect(() => {
+      if (user) {
+        sessionStorage.setItem("id", 1)
+      }
+      return null
+    }, [])
+
+  // useEffect(() => {
+  //   if (user) {
+  //     sessionStorage.setItem("id", user.id)
+  //   }
+  //   return null
+  // }, [user])
 
   const iconSelect = () => {
     if (window.location.pathname === "/") {

@@ -13,7 +13,7 @@ const MatchesPage = ({ matches }) => {
       
       <section id="message-section">
         <h2>Messages</h2>
-        <MessagesPreview id="messages-preview" matches={matches} />
+        {/* <MessagesPreview id="messages-preview" matches={matches} /> */}
       </section>
     </>
   );

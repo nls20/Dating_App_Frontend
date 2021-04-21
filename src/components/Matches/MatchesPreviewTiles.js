@@ -8,8 +8,10 @@ const MatchesPreviewTiles = ({ matches }) => {
 
   useEffect(() => {
     if (matches) {
+      const userId = sessionStorage.getItem("id")
+      console.log('id', userId);
       let newPreviews = matches.map((match, index) => {
-        const hrefName = "/matches/conversation/" + match.user.name;
+        const hrefName = "/matches/conversation/" + userId+"/"+ match.user.name;
         return (
           <a href={hrefName}>
             <MatchesTemplateTile match={match} key={index} />
