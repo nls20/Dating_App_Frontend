@@ -7,9 +7,7 @@ const MatchesPreviewTiles = ({ matches }) => {
   const [previews, setPreviews] = useState(null)
 
   useEffect(() => {
-    
     if (matches) {
-        console.log('matches', matches);
       let newPreviews = matches.map((match, index) => {
         const hrefName = "/matches/conversation/" + match.user.name;
         return (
@@ -18,11 +16,8 @@ const MatchesPreviewTiles = ({ matches }) => {
           </a>
         );
       })
-      console.log('new', newPreviews);
       setPreviews(newPreviews)
-      console.log("previews", previews);
     }
-    
   }, [matches]);
 
   return <section id="template-section">{previews}</section>;
