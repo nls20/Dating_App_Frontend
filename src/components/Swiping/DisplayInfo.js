@@ -9,7 +9,7 @@ const DisplayInfo = ({ potentialMatches }) => {
     potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
   );
   const [pictureCounter, setPictureCounter] = useState(0);
-  const [currentPicture, setCurrentPicture] = useState(0);
+  const [currentPicture, setCurrentPicture] = useState(option.picture[pictureCounter]);
 
   const selectOption = () => {
     return setOption(
@@ -43,9 +43,9 @@ const DisplayInfo = ({ potentialMatches }) => {
     }
   };
 
-  useEffect(() => {
-    option.picture[currentPicture]
-  }, [potentialMatches])
+  // useEffect(() => {
+  //   option.picture[currentPicture]
+  // }, [potentialMatches])
 
   if (potentialMatches.length > 0) {
     return (
