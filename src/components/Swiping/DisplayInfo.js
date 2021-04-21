@@ -24,20 +24,19 @@ const DisplayInfo = ({ potentialMatches }) => {
       console.log("liked");
       potentialMatches.splice(potentialMatches.indexOf(option), 1);
       setPictureCounter(0);
-      setCurrentPicture(option.picture[pictureCounter])
+      setCurrentPicture(option.picture[0])
       selectOption();
     } else if (evt.changedTouches[0].clientX < evt.view.innerWidth / 10) {
       console.log("not liked");
       potentialMatches.splice(potentialMatches.indexOf(option), 1);
       setPictureCounter(0);
-      setCurrentPicture(option.picture[pictureCounter])
+      setCurrentPicture(option.picture[0])
       selectOption();
     }
   };
 
   const pictureClicked = (event) => {
     if (event.clientX > event.view.innerWidth / 2) {
-      console.log('right');
       if (pictureCounter < option.picture.length - 1) {
         let newNum = pictureCounter + 1;
         setPictureCounter(newNum);
