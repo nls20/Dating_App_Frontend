@@ -12,10 +12,10 @@ const MatchesPreviewTiles = ({ matches }) => {
       console.log("id", userId);
       let newPreviews = matches.map((match, index) => {
         const hrefName =
-          "/matches/conversations/" + userId + "/" + match.id ;
+          "/matches/conversations/" + userId + "/" + match.user.id ;
         return (
           <a href={hrefName}>
-            <MatchesTemplateTile match={match} key={index} />
+            <MatchesTemplateTile match={match.user} key={index} />
           </a>
         );
       });
