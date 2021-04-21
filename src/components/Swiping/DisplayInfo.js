@@ -2,13 +2,14 @@ import { useState } from "react";
 import YesButton from "./YesButton";
 import NoButton from "./NoButton";
 import "./DisplayInfo.css";
+import { useEffect } from "react/cjs/react.production.min";
 
 const DisplayInfo = ({ potentialMatches }) => {
   const [option, setOption] = useState(
     potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
   );
   const [pictureCounter, setPictureCounter] = useState(0);
-  const [currentPicture, setCurrentPicture] = useState(option.picture[0]);
+  const [currentPicture, setCurrentPicture] = useState(0);
 
   const selectOption = () => {
     return setOption(
@@ -22,11 +23,13 @@ const DisplayInfo = ({ potentialMatches }) => {
     } else if (evt.changedTouches[0].clientX < evt.view.innerWidth / 10) {
       console.log("not liked");
     }
+    potentialMatches.splice(potentialMatches.indexOf(option), 1);
+      selectOption();
   };
 
   const pictureClicked = (event) => {
     if (event.clientX > event.view.innerWidth / 2) {
-      if (pictureCounter < option.picture.length -1) {
+      if (pictureCounter < option.picture.length - 1) {
         let newNum = pictureCounter + 1;
         setPictureCounter(newNum);
         setCurrentPicture(option.picture[newNum]);
@@ -39,6 +42,10 @@ const DisplayInfo = ({ potentialMatches }) => {
       }
     }
   };
+
+  useEffect(() => {
+    option.picture[currentPicture]
+  }, [potentialMatches])
 
   if (potentialMatches.length > 0) {
     return (
