@@ -7,13 +7,10 @@ const ProfilePage = ({getFormInformation, user}) => {
 
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
 
-    const submitted = (details, user) => {
+    const submitted = (details) => {
         getFormInformation(details)
         setHasBeenSubmitted(true)
-    }
 
-    if(user){
-        getFormInformation(user)
     }
 
     return (
