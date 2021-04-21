@@ -20,13 +20,15 @@ const ProfilePage = ({getFormInformation, user}) => {
     // })
 
     useEffect(() => {
+        if (user.id) {
         setName(user.name);
         setAge(user.age);
         setLocation(user.location);
         setHobbies(user.bio);    //Watch for naming, hobbies vs bio
         setGender(user.gender)
         setPreference(user.preference)
-    })
+        }
+    }, [user])
 
 
     const submitted = (details) => {
@@ -39,7 +41,7 @@ const ProfilePage = ({getFormInformation, user}) => {
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossOrigin="anonymous"></link>
         
         <AdddImageToUser />
-        <Form submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} />
+        <Form submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} user={user}/>
         <DisplayInformation 
             name={name} 
             age={age} 

@@ -1,8 +1,8 @@
 import './style/FromStyling.css'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import HandleRadioButtons from './HandleRadioButtons';
 
-const Form = ({submitted, hasBeenSubmitted}) => {
+const Form = ({submitted, hasBeenSubmitted, user}) => {
 
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -55,6 +55,18 @@ const Form = ({submitted, hasBeenSubmitted}) => {
           preference : preferenceToSubmit,
       })
   }
+
+  useEffect(() => {
+    if (user.id) {
+    setName(user.name);
+    setAge(user.age);
+    setLocation(user.location);
+    setHobbies(user.bio);    //Watch for naming, hobbies vs bio
+    setGender(user.gender)
+    setPreference(user.preference)
+    }
+}, [user])
+  
 
   if (hasBeenSubmitted){
     return null
