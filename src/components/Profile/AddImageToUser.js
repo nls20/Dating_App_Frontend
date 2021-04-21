@@ -24,7 +24,7 @@ const AddImageToUser = ({user}) => {
         AddingImageServices.postProfileImage(reader.result)
         .then(data => {
           // console.log("show image", data._id)
-          AddingImageServices.addNewProfileImage({mongo_id: data._id, user_id: user.id})
+          AddingImageServices.addNewProfileImage({mongoId: data._id, user: user})
         })
       };
     }
