@@ -7,7 +7,7 @@ const MatchesTemplateTile = ({ match }) => {
   return (
     <section id="tile-template-section">
       {/* <img src={match.user.profileImages[0]}/> */}
-      <p>{match.user.name}</p>
+      <p>{match.name}</p>
     </section>
   );
 };

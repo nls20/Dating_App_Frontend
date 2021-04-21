@@ -9,9 +9,15 @@ export default{
     },
 
     getAllPotentialMatches(id){
-        return fetch(usersBaseUrl+ "/4"  + "/potential-matches" )
+        return fetch(usersBaseUrl+ "/" + id + "/potential-matches" )
         .then(res => res.json())
     },
+
+    getAllUserMatches(id){
+        return fetch(usersBaseUrl+ "/" + id + "/matches" )
+        .then(res => res.json())
+    }, 
+    
 
     //GET All Users e.g.    /users
     getAllUsers(id){

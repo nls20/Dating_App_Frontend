@@ -4,21 +4,22 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const MatchesPreviewTiles = ({ matches }) => {
-  const [previews, setPreviews] = useState(null)
+  const [previews, setPreviews] = useState(null);
 
   useEffect(() => {
     if (matches) {
-      const userId = sessionStorage.getItem("id")
-      console.log('id', userId);
+      const userId = sessionStorage.getItem("id");
+      console.log("id", userId);
       let newPreviews = matches.map((match, index) => {
-        const hrefName = "/matches/conversation/" + userId+"/"+ match.user.id;
+        const hrefName =
+          "/matches/conversations/" + userId + "/" + match.id ;
         return (
           <a href={hrefName}>
             <MatchesTemplateTile match={match} key={index} />
           </a>
         );
-      })
-      setPreviews(newPreviews)
+      });
+      setPreviews(newPreviews);
     }
   }, [matches]);
 

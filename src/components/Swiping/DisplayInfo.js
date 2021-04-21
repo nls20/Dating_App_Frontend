@@ -9,7 +9,9 @@ const DisplayInfo = ({ potentialMatches }) => {
     potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
   );
   const [pictureCounter, setPictureCounter] = useState(0);
-  const [currentPicture, setCurrentPicture] = useState(option.profileImages[pictureCounter]);
+  const [currentPicture, setCurrentPicture] = useState("");
+
+  console.log("option", option);
 
   const selectOption = () => {
     return setOption(
@@ -24,7 +26,7 @@ const DisplayInfo = ({ potentialMatches }) => {
       console.log("not liked");
     }
     potentialMatches.splice(potentialMatches.indexOf(option), 1);
-      selectOption();
+    selectOption();
   };
 
   const pictureClicked = (event) => {
@@ -44,8 +46,8 @@ const DisplayInfo = ({ potentialMatches }) => {
   };
 
   // useEffect(() => {
-  //   option.picture[currentPicture]
-  // }, [potentialMatches])
+  //   console.log("match updated");
+  // }, []);
 
   if (potentialMatches.length > 0) {
     return (
