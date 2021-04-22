@@ -20,7 +20,7 @@ const handleMatchYes = (event) => {
 
 return (
     <div className="button">
-        <form action="">
+        <form method="POST" action="/">
             <button className="swipe-btn-yes" onClick={handleMatchYes}>
                 <div className="heart"><ImHeart/></div>
             </button>

@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import YesButton from "./YesButton";
 import NoButton from "./NoButton";
 import "./DisplayInfo.css";
+import { useEffect } from "react/cjs/react.production.min";
 
 const DisplayInfo = ({ potentialMatches }) => {
   const [option, setOption] = useState(
     potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
   );
   const [pictureCounter, setPictureCounter] = useState(0);
-  const [currentPicture, setCurrentPicture] = useState(option.picture[0]);
+  const [currentPicture, setCurrentPicture] = useState(option.picture[pictureCounter]);
+
+  // console.log("option", option);
 
   const selectOption = () => {
     return setOption(
@@ -19,8 +22,16 @@ const DisplayInfo = ({ potentialMatches }) => {
   const movePicture = (evt) => {
     if (evt.changedTouches[0].clientX > (evt.view.innerWidth / 10) * 9) {
       console.log("liked");
+      potentialMatches.splice(potentialMatches.indexOf(option), 1);
+      setPictureCounter(0);
+      setCurrentPicture(option.picture[0])
+      selectOption();
     } else if (evt.changedTouches[0].clientX < evt.view.innerWidth / 10) {
       console.log("not liked");
+      potentialMatches.splice(potentialMatches.indexOf(option), 1);
+      setPictureCounter(0);
+      setCurrentPicture(option.picture[0])
+      selectOption();
     }
   };
 
@@ -39,10 +50,6 @@ const DisplayInfo = ({ potentialMatches }) => {
       }
     }
   };
-
-  // useEffect = (() => {
-  //   setCurrentPicture(option.picture[pictureCounter])
-  // }, [potentialMatches])
 
   if (potentialMatches.length === 0) {
     return (
