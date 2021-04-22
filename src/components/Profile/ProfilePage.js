@@ -5,13 +5,6 @@ import AddImageToUser from './AddImageToUser';
 
 const ProfilePage = ({submitted, hasBeenSubmitted, user}) => {
 
-    // const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false); // tried boolean and null
-
-    // const submitted = (details) => {
-    //     getFormInformation(details)
-    //     setHasBeenSubmitted(true)
-    // }
-
     if (hasBeenSubmitted) {
         <DisplayInformation />;
         console.log("this is the user", user); // show the user object

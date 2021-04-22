@@ -12,86 +12,88 @@ import HelpPage from "../components/Swiping/HelpPage";
 import AddingImageServices from "../services/AddingImageServices";
 
 const VinderContainer = () => {
-
   const [user, setUser] = useState({});
 
-  const [userId, setUserId] = useState(localStorage.getItem('id'));
+  const [userId, setUserId] = useState(localStorage.getItem("id"));
 
-  const [hasBeenSubmitted, setHasBeenSubmitted] = useState(localStorage.getItem('profile_card'))
-  
+  const [hasBeenSubmitted, setHasBeenSubmitted] = useState(
+    localStorage.getItem("profile_card")
+  );
 
-  const [potentialMatches, setPotentialMatches] = useState([])
-  const [matches, setMatches] = useState([])
-  
+  const [potentialMatches, setPotentialMatches] = useState([]);
 
+  const [matches, setMatches] = useState([]);
 
+  const submitted = (details) => {
+    handleUserCreation(details);
+    setHasBeenSubmitted(true);
+  };
 
-const submitted = (details) => {
-    handleUserCreation(details)
-    setHasBeenSubmitted(true)
-}
-//GET user information
+  //GET user information
   useEffect(() => {
-    UserServices.getUserInformation(7)
-    .then(data => setUser(data))
+    UserServices.getUserInformation(7).then((data) => setUser(data));
 
-    UserServices.getAllUserMatches(7)
-    .then(data => setMatches(data))
+    UserServices.getAllUserMatches(7).then((data) => setMatches(data));
 
     // AddingImageServices.getProfileImage()
     // .then(data => setUser.profileImages[0].mongoId(data))
 
-    UserServices.getAllPotentialMatches(1)
-  .then(data => setPotentialMatches(data))
- }, [])
+    UserServices.getAllPotentialMatches(1).then((data) =>
+      setPotentialMatches(data)
+    );
+  }, []);
 
   const handleUserCreation = (submittedInfo) => {
-      UserServices.addNewUser(submittedInfo)
-      .then(data => setUser(data))
-    }  
-
+    UserServices.addNewUser(submittedInfo).then((data) => setUser(data));
+  };
 
   useEffect(() => {
     if (user) {
-      localStorage.setItem("id", user.id)
+      localStorage.setItem("id", user.id);
     }
-    return null
-  }, [user])
-
+    return null;
+  }, [user]);
 
   const iconSelect = () => {
     if (window.location.pathname === "/") {
-      return <a href="/helppage"><i className="help-button"><RiQuestionLine/></i></a>
+      return (
+        <a href="/helppage">
+          <i className="help-button">
+            <RiQuestionLine />
+          </i>
+        </a>
+      );
     } else if (window.location.pathname.split("/")[2] === "conversation") {
-      return  <form>
-                <i className="delete-button"><RiDeleteBin7Line/></i>
-              </form>
+      return (
+        <form>
+          <i className="delete-button">
+            <RiDeleteBin7Line />
+          </i>
+        </form>
+      );
     } else {
-      return <div id="spacer-div"/>
+      return <div id="spacer-div" />;
     }
-  }
+  };
 
   return (
     <>
       <section id="router">
         <Router forceRefresh={true}>
           <div id="header">
-            <div id="spacer-div"/>
+            <div id="spacer-div" />
             <h1>Vinder </h1>
-          <div>
-          {iconSelect()}
-          </div>
+            <div>{iconSelect()}</div>
           </div>
           <div id="page-body">
             <Switch id="switch">
-
               <Route exact path="/">
                 <SwipingPage potentialMatches={potentialMatches} />
               </Route>
 
-            <Route path ="/helppage">
-              <HelpPage />
-            </Route>
+              <Route path="/helppage">
+                <HelpPage />
+              </Route>
 
               <Route exact path="/matches">
                 <MatchesPage matches={matches} />
@@ -102,9 +104,12 @@ const submitted = (details) => {
               </Route>
 
               <Route path="/profile">
-                <ProfilePage  submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} user={user}/>
+                <ProfilePage
+                  submitted={submitted}
+                  hasBeenSubmitted={hasBeenSubmitted}
+                  user={user}
+                />
               </Route>
-
             </Switch>
           </div>
 
