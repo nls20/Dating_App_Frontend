@@ -1,6 +1,6 @@
-// import { useState } from "react";
+import { useState } from "react";
 import MatchesPreviewTiles from "./MatchesPreviewTiles";
-// import MessagesPreview from "./MessagesPreview";
+import MessagesPreview from "./MessagesPreview";
 import "./MatchesPage.css";
 
 const MatchesPage = ({ matches }) => {

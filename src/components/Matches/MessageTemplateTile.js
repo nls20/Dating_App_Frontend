@@ -21,7 +21,7 @@ const MessageTemplateTile = ({ match }) => {
     }
   }
 
-//   let messagePreview = match[match.length - 1].message;
+  let messagePreview = match[match.length - 1].message;
 //   const maxLength = 60
 
   
