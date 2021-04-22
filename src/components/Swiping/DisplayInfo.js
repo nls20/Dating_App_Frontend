@@ -4,6 +4,7 @@ import NoButton from "./NoButton";
 import "./DisplayInfo.css";
 
 const DisplayInfo = ({ potentialMatches }) => {
+  
   const [option, setOption] = useState(
     potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
   );
@@ -94,8 +95,9 @@ const DisplayInfo = ({ potentialMatches }) => {
         ></img>
         <h2>{option.name}</h2>
         <p draggable="true">{option.age}</p>
+        <p>{option.gender}</p>
         <p>{option.location}</p>
-        <p>{option.hobbies}</p>
+        <p>{option.bio}</p>
         <div className="swipe-buttons">
         <NoButton
             potentialMatches={potentialMatches}
