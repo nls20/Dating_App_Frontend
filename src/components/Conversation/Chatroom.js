@@ -12,14 +12,14 @@ const Chatroom = ({ matches }) => {
 
   for (let i = 0; i < matches.length; i++) {
     if (matches[i].matchedUser.id == targetUser) {
-      for (let j = 0; j < matches[i].messages.length; j++) {
         let newPerson;
         messageList = matches[i].messages.map((message, index) => {
-          if (message.messages[j].fromUser.id != targetUser) {
+          console.log('test', message);
+          if (message.fromUser.id != targetUser) {
             console.log("in if");
             messages.push({
               person: 1,
-              message: matches[i].messages[j].message,
+              message: matches[i].messages[index].message,
             });
             newPerson = (
               <PersonOneMessage key={index} message={message.message} />
@@ -28,7 +28,7 @@ const Chatroom = ({ matches }) => {
             console.log("in else");
             messages.push({
               person: 2,
-              message: matches[i].messages[j].message,
+              message: matches[i].messages[index].message,
             });
             newPerson = (
               <PersonTwoMessage key={index} message={message.message} />
@@ -36,7 +36,7 @@ const Chatroom = ({ matches }) => {
           }
           return newPerson;
         });
-      }
+      
     }
   }
 
