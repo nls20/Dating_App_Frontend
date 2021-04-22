@@ -1,6 +1,6 @@
-// import { useState } from "react";
+import { useState } from "react";
 import MatchesPreviewTiles from "./MatchesPreviewTiles";
-// import MessagesPreview from "./MessagesPreview";
+import MessagesPreview from "./MessagesPreview";
 import "./MatchesPage.css";
 
 const MatchesPage = ({ matches }) => {
@@ -14,7 +14,7 @@ const MatchesPage = ({ matches }) => {
       
       <section id="message-section">
         <h2>Messages</h2>
-        {/* <MessagesPreview id="messages-preview" matches={matches} /> */}
+        <MessagesPreview id="messages-preview" matches={matches} />
       </section>
     </>
   );

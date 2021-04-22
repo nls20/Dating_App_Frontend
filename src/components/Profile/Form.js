@@ -1,4 +1,4 @@
-import './style/FromStyling.css'
+import './style/FormStyling.css'
 import React, {useState, useEffect} from 'react'
 import HandleRadioButtons from './HandleRadioButtons';
 
@@ -101,18 +101,18 @@ const Form = ({submitted, hasBeenSubmitted, user}) => {
        value={bio} 
        onChange={handleBio} required/>
 
-       <select className="option-bar" onChange={handleGender}>
-           <option value="" disabled selected>Choose a gender</option>
-           <option value="male" >Male</option>
-           <option value="female" >Female</option>
-           <option value="non-binary" >non-binary</option>
+       <select className="option-bar" value={gender} onChange={handleGender}>
+           <option disabled selected>Choose a gender</option>
+           <option value="Male" >Male</option>
+           <option value="Female" >Female</option>
+           <option value="NonBinary" >Non-Binary</option>
        </select>
-       <select className="option-bar" onChange={handleGenderPreference}>
-           <option value="" disabled selected>Choose a Preference</option>
-           <option value="male" >Male</option>
-           <option value="female" >Female</option>
-           <option value="non-binary" >non-binary</option>
-           <option value="all" >All</option> 
+       <select className="option-bar" value={gender_preference} onChange={handleGenderPreference}>
+           <option disabled selected>Choose a Preference</option>
+           <option value="Male" >Male</option>
+           <option value="Female" >Female</option>
+           <option value="NonBinary" >Non-Binary</option>
+           <option value="All" >All</option> 
        </select>
        <p id="vaccinated">Vaccinated</p>
 

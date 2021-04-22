@@ -10,6 +10,9 @@ const DisplayInfo = ({ potentialMatches }) => {
   const [pictureCounter, setPictureCounter] = useState(0);
   const [currentPicture, setCurrentPicture] = useState();
 
+  //-------count down clock---------
+  const [counter, setCounter] = useState(60);
+
 
   // console.log("option", option);
 
@@ -18,7 +21,6 @@ const DisplayInfo = ({ potentialMatches }) => {
       potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
     );
   };
-
 
 
   const movePicture = (evt) => {
@@ -60,14 +62,25 @@ const DisplayInfo = ({ potentialMatches }) => {
   };
 
   useEffect(() => {
-    if (potentialMatches.length > 0) {setCurrentPicture(option.picture[0])}
+    if (potentialMatches.length > 0) {
+      setCurrentPicture(option.picture[0])
+    }
   }, [potentialMatches]);
+
+
+  useEffect(() => {
+      counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
+      if (counter === 0){
+        window.location.reload(false);
+    }
+  }, [counter]);
 
   if (potentialMatches.length === 0) {
     return (
-      <div>
+      <div className="ran-out-of-matches">
         <h2>Nobody left in your area!</h2>
         <p>Congratulations you've completed Vinder</p>
+        <h2>Try again in: {counter}</h2>
       </div>
     );
   } else {
@@ -84,16 +97,17 @@ const DisplayInfo = ({ potentialMatches }) => {
         <p>{option.location}</p>
         <p>{option.hobbies}</p>
         <div className="swipe-buttons">
+        <NoButton
+            potentialMatches={potentialMatches}
+            option={option}
+            selectOption={selectOption}
+          />
           <YesButton
             potentialMatches={potentialMatches}
             option={option}
             selectOption={selectOption}
           />
-          <NoButton
-            potentialMatches={potentialMatches}
-            option={option}
-            selectOption={selectOption}
-          />
+          
         </div>
       </div>
     );
