@@ -16,9 +16,9 @@ const Chatroom = () => {
 
   const messageList = messageHistory.map((message, index) => {
     let newPerson;
-    if (message.person == 1) {
+    if (message.person === 1) {
       newPerson = <PersonOneMessage key={index} message={message.message} />;
-    } else if (message.person == 2) {
+    } else if (message.person === 2) {
       newPerson = <PersonTwoMessage key={index} message={message.message} />;
     }
     return newPerson;

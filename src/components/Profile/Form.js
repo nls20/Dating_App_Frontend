@@ -1,4 +1,4 @@
-import './style/FromStyling.css'
+import './style/FormStyling.css'
 import React, {useState, useEffect} from 'react'
 import HandleRadioButtons from './HandleRadioButtons';
 
@@ -102,13 +102,13 @@ const Form = ({submitted, hasBeenSubmitted, user}) => {
        onChange={handleBio} required/>
 
        <select className="option-bar" onChange={handleGender}>
-           <option value="gender" disabled value hidden>Choose a gender</option>
+           <option value="" disabled selected>Choose a gender</option>
            <option value="male" >Male</option>
            <option value="female" >Female</option>
            <option value="non-binary" >non-binary</option>
        </select>
        <select className="option-bar" onChange={handleGenderPreference}>
-           <option value="gender" disabled value hidden>Choose a Preference</option>
+           <option value="" disabled selected>Choose a Preference</option>
            <option value="male" >Male</option>
            <option value="female" >Female</option>
            <option value="non-binary" >non-binary</option>
