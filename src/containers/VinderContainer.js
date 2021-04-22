@@ -42,15 +42,27 @@ const VinderContainer = () => {
   ];
   
 
+  // const [potentialMatches, setPotentialMatches] = useState([])
+  const [matches, setMatches] = useState([])
+  
+
+
+
 const submitted = (details) => {
     handleUserCreation(details)
     setHasBeenSubmitted(true)
 }
 
-//GET user information
+  //GET user information
   useEffect(() => {
-    UserServices.getUserInformation(userId)
+    UserServices.getUserInformation(8)
     .then(data => setUser(data))
+
+    UserServices.getAllUserMatches(8)
+    .then(data => setMatches(data))
+
+  //   UserServices.getAllPotentialMatches(1)
+  // .then(data => setPotentialMatches(data))
  }, [])
 
 
@@ -58,8 +70,7 @@ const submitted = (details) => {
       UserServices.addNewUser(submittedInfo)
       .then(data => setUser(data))
       .then(AddingImageServices.getProfileImage(user.id))
-    }
-
+    }  
 
   useEffect(() => {
     if (user) {

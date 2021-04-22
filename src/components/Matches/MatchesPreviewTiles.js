@@ -1,19 +1,28 @@
-import MatchesTemplateTile from "./MatchesTemplateTile"
-import './MatchesPreviewTiles.css'
+import MatchesTemplateTile from "./MatchesTemplateTile";
+import "./MatchesPreviewTiles.css";
+import { useEffect } from "react";
+import { useState } from "react";
 
-const MatchesPreviewTiles = ({matches}) => {
+const MatchesPreviewTiles = ({ matches }) => {
+  const [previews, setPreviews] = useState(null);
 
-    
+  useEffect(() => {
+    if (matches) {
+      const userId = sessionStorage.getItem("id");
+      console.log("id", userId);
+      let newPreviews = matches.map((match, index) => {
+        const hrefName =
+          "/matches/conversations/" + userId + "/" + match.user.id ;
+        return (
+          <a href={hrefName}>
+            <MatchesTemplateTile match={match.user} key={index} />
+          </a>
+        );
+      });
+      setPreviews(newPreviews);
+    }
+  }, [matches]);
 
-    const previews = matches.map((match, index) => {
-        const hrefName = "/matches/conversation/" + match.name
-        return <a href={hrefName}><MatchesTemplateTile match={match} key={index}/></a>
-    })
-
-    return(
-        <section id="template-section">
-            {previews}
-        </section>
-    )
-}
-export default MatchesPreviewTiles
+  return <section id="template-section">{previews}</section>;
+};
+export default MatchesPreviewTiles;

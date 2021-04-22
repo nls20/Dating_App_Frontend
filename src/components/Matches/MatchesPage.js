@@ -4,6 +4,7 @@ import MessagesPreview from "./MessagesPreview";
 import "./MatchesPage.css";
 
 const MatchesPage = ({ matches }) => {
+
   return (
     <>
       <section>
@@ -13,7 +14,7 @@ const MatchesPage = ({ matches }) => {
       
       <section id="message-section">
         <h2>Messages</h2>
-        <MessagesPreview id="messages-preview" matches={matches} />
+        {/* <MessagesPreview id="messages-preview" matches={matches} /> */}
       </section>
     </>
   );
