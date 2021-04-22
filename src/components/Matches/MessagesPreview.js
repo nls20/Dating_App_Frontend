@@ -17,9 +17,10 @@ const MessagesPreview = ({ matches }) => {
 
     let newPreviews = messageList.map((message, index) => {
       // const hrefName = "/matches/conversation/" + message.fromUser.name;
+      console.log('name', matches[index].matchedUser.name);
       return (
         // <a href={hrefName}>
-        <MessageTemplateTile match={message} image={matches[index].matchedUser.profileImages[0].mongoId} key={index} />
+        <MessageTemplateTile match={matches[index].matchedUser.name} image={matches[index].matchedUser.profileImages[0].mongoId} message={matches[index]} key={index} />
         // {/* </a> */}
       );
     });

@@ -1,7 +1,7 @@
 import "./MessageTemplateTile.css";
 
-const MessageTemplateTile = ({ match , image}) => {
-  console.log("match", match);
+const MessageTemplateTile = ({ match , image, message}) => {
+  console.log("match", message.messages[message.messages.length-1]);
 
   //let messages = []
 
@@ -15,13 +15,12 @@ const MessageTemplateTile = ({ match , image}) => {
   let matchName;
   let picture;
   for (let i = 0; i < match.length; i++) {
-    if (match[i].fromUser.name !== "Barry") {
-      matchName = match[i].fromUser.name;
-    //   picture = match[i].fromUser.picture
+    if (match !== "Barry") {
+      matchName = match;
     }
   }
 
-  let messagePreview = match[match.length - 1].message;
+  let messagePreview = message.messages[message.messages.length-1].message;
 //   const maxLength = 60
 
   
