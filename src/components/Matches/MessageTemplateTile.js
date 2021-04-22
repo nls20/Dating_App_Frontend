@@ -1,7 +1,6 @@
 import "./MessageTemplateTile.css";
 
-const MessageTemplateTile = ({ match }) => {
-  console.log("match", match);
+const MessageTemplateTile = ({ match , image, message}) => {
 
   //let messages = []
 
@@ -15,13 +14,12 @@ const MessageTemplateTile = ({ match }) => {
   let matchName;
   let picture;
   for (let i = 0; i < match.length; i++) {
-    if (match[i].fromUser.name !== "Barry") {
-      matchName = match[i].fromUser.name;
-    //   picture = match[i].fromUser.picture
+    if (match !== "Barry") {
+      matchName = match;
     }
   }
 
-  let messagePreview = match[match.length - 1].message;
+  let messagePreview = message.messages[message.messages.length-1].message;
 //   const maxLength = 60
 
   
@@ -29,7 +27,7 @@ const MessageTemplateTile = ({ match }) => {
   return (
     <section id="total-tile-section">
       <section id="tile-picture-section">
-        {/* <img src={match.picture} /> */}
+        <img src={image} />
       </section>
 
       <section id="tile-section">

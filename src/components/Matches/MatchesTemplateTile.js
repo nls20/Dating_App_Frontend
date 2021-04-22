@@ -4,7 +4,7 @@ import "./MatchesTemplateTile.css";
 const MatchesTemplateTile = ({ match }) => {
   return (
     <section id="tile-template-section">
-      {/* <img src={match.user.profileImages[0]}/> */}
+      <img src={match.profileImages[0].mongoId}/>
       <p>{match.name}</p>
     </section>
   );

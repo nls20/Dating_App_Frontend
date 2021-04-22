@@ -2,26 +2,28 @@ import { useState, useEffect } from "react";
 import YesButton from "./YesButton";
 import NoButton from "./NoButton";
 import "./DisplayInfo.css";
+import userEvent from "@testing-library/user-event";
 
 const DisplayInfo = ({ potentialMatches }) => {
 
   const [option, setOption] = useState(null);
+
   const [pictureCounter, setPictureCounter] = useState(0);
+
   const [currentPicture, setCurrentPicture] = useState();
+
+
 
   //-------count down clock---------
   const [counter, setCounter] = useState(60);
 
-  useEffect(() => {
-    setOption(potentialMatches[Math.floor(Math.random() * potentialMatches.length)])
-    console.log("option", option)
-  }, [potentialMatches])
 
   const selectOption = () => {
     return setOption(
-      potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
+      potentialMatches[0]
     );
   };
+
 
   const movePicture = (evt) => {
     console.log("show", option.profileImages[0].mongoId);
@@ -45,6 +47,7 @@ const DisplayInfo = ({ potentialMatches }) => {
     }
   };
 
+
   const pictureClicked = (event) => {
     if (event.clientX > event.view.innerWidth / 2) {
       if (pictureCounter < option.picture.length - 1) {
@@ -61,6 +64,7 @@ const DisplayInfo = ({ potentialMatches }) => {
     }
   };
 
+
   useEffect(() => {
       counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
       if (counter === 0){
@@ -68,12 +72,30 @@ const DisplayInfo = ({ potentialMatches }) => {
     }
   }, [counter]);
 
-  if (potentialMatches.length === 0 || !option) {
+  useEffect(() => {
+    setOption(potentialMatches[Math.floor(Math.random() * potentialMatches.length)])
+  }, [potentialMatches])
+
+  // useEffect(() => {
+  //   if (potentialMatches.length > 0) {
+  //        setCurrentPicture(option.profileImages[0].mongoId)
+  //     }
+  // }, [potentialMatches]);
+
+//   useEffect(() => {
+//     for (let i = 0; i < potentialMatches.length ; i++){
+//       const picture = potentialMatches[i].profileImages[0].mongoId
+//        setCurrentPicture(picture)
+//     }
+// }, [potentialMatches]);
+  
+
+  if (potentialMatches.length === 0 || !option || option.profileImages.length === 0) {
     return (
       <div className="ran-out-of-matches">
         <h2>Nobody left in your area!</h2>
         <p>Congratulations you've completed Vinder</p>
-        <h2>Try again in: {counter}</h2>
+        <h2>More matches in: {counter}</h2>
       </div>
     );
   } else {

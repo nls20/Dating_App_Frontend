@@ -41,6 +41,9 @@ const Form = ({submitted, hasBeenSubmitted, user}) => {
 
   const handleSubmitForm = (evt) => {
       evt.preventDefault()
+
+      localStorage.setItem('profile_card', true)
+
       if (user.id) {
         submitted({
             id: user.id,
