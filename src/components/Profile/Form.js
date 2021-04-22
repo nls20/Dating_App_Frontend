@@ -42,17 +42,14 @@ const Form = ({submitted, hasBeenSubmitted, user}) => {
   const handleSubmitForm = (evt) => {
       evt.preventDefault()
 
-      const genderToSubmit = gender.toUpperCase();
-      const genderPreferenceToSubmit = gender_preference.toUpperCase();
-
       submitted({
           name: name,
           age: age,
           location: location,
           bio: bio,
           vaccinated: vaccinated,
-          gender: genderToSubmit,
-          gender_preference : genderPreferenceToSubmit,
+          gender: gender,
+          gender_preference : gender_preference,
       })
   }
 
