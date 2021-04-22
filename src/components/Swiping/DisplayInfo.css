@@ -1,11 +1,12 @@
 .display-container {
-    padding-top: 10px;
+    padding-top: 5px;
+
 }
 
 .display-container > h2 {
     background: #fff;
     font-size: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     margin-top: 15px;
 }
 

@@ -56,7 +56,6 @@ export default{
         .then(res => res.json())
     },
 
-
     //PUT Update User  /users/
     updateUser(user) {
         return fetch(usersBaseUrl, {
@@ -72,6 +71,5 @@ export default{
         return fetch(usersBaseUrl + "/" + id, {
             method: 'DELETE'
         })
-    }
-    
+    }  
 }

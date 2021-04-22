@@ -9,11 +9,15 @@ import "./VinderContainer.css";
 import UserServices from "../services/UserServices";
 import { RiQuestionLine, RiDeleteBin7Line } from "react-icons/ri";
 import HelpPage from "../components/Swiping/HelpPage";
+import AddingImageServices from "../services/AddingImageServices";
 
 const VinderContainer = () => {
 
   const [user, setUser] = useState({});
-  const [userId, setUserId] = useState(sessionStorage.getItem("id"));
+
+  const [userId, setUserId] = useState(localStorage.getItem("id"));
+
+  const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
 
   // const matches = [
   //   {
@@ -200,12 +204,18 @@ const VinderContainer = () => {
       ]
     },
   ];
+  
 
   // const [potentialMatches, setPotentialMatches] = useState([])
   const [matches, setMatches] = useState([])
   
 
 
+
+const submitted = (details) => {
+    handleUserCreation(details)
+    setHasBeenSubmitted(true)
+}
 //GET user information
   useEffect(() => {
     UserServices.getUserInformation(8)
@@ -223,27 +233,21 @@ const VinderContainer = () => {
       .then(data => setUser(data))
     }  
 
-    //TODO remove this and replace it with the useEffect below
-    useEffect(() => {
-      if (user) {
-        sessionStorage.setItem("id", 8)
-      }
-      return null
-    }, [])
 
-  // useEffect(() => {
-  //   if (user) {
-  //     sessionStorage.setItem("id", user.id)
-  //   }
-  //   return null
-  // }, [user])
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem("id", user.id)
+    }
+    return null
+  }, [user])
+
 
   const iconSelect = () => {
     if (window.location.pathname === "/") {
-      return <a href="/helppage"><i onClick="" className="help-button"><RiQuestionLine/></i></a>
+      return <a href="/helppage"><i className="help-button"><RiQuestionLine/></i></a>
     } else if (window.location.pathname.split("/")[2] === "conversation") {
       return  <form>
-                <i onClick="" className="delete-button"><RiDeleteBin7Line/></i>
+                <i className="delete-button"><RiDeleteBin7Line/></i>
               </form>
     } else {
       return <div id="spacer-div"/>
@@ -281,7 +285,7 @@ const VinderContainer = () => {
               </Route>
 
               <Route path="/profile">
-                <ProfilePage getFormInformation={handleUserCreation} user={user}/>
+                <ProfilePage  submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} user={user}/>
               </Route>
 
             </Switch>

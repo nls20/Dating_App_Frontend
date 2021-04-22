@@ -25,15 +25,15 @@
   color: white;
   font-weight: bold;
   font-size: 16px;
-  background-color: #0589c6;
-  box-shadow: gray 0 0 1px;
+  background-color: darkgray;
+  box-shadow: black 0 0 1px;
   border-radius: 6px;
   margin: 15px auto;
   
 }
 
 #button:hover{
-  background-color: #039ce3;
+  background-color: pink;
   box-shadow: 0 0 7px gray;
   color: white;
 }
@@ -77,14 +77,16 @@
   width: 180px;
   object-fit: cover;
   border-radius: 50%;
+  margin-right: 35px;
 }
 
 .close-icon{
-  background-color: #0571a3;
+  background-color: darkgray;
   border-radius: 50%;
   z-index: 10;
   width: 20px;
   height: 20px;
+  margin-right: 0;
 }
 
 #add-image{

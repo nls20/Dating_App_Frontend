@@ -1,53 +1,37 @@
 import { useState, useEffect } from 'react';
 import DisplayInformation from './DisplayInformation';
 import Form from './Form';
-import AdddImageToUser from './AddImageToUser';
+import AddImageToUser from './AddImageToUser';
 
-const ProfilePage = ({getFormInformation, user}) => {
+const ProfilePage = ({submitted, hasBeenSubmitted, user}) => {
 
-    const [name, setName] = useState("");
-    const [age, setAge] = useState(0);
-    const [location, setLocation] = useState("");
-    const [hobbies, setHobbies] = useState("");
-    const [gender, setGender] = useState("");
-    const [preference, setPreference] = useState("");
-    const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
+    // const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false); // tried boolean and null
 
-    // useEffect(() => {
-    //     if (user.id != null) {
+    // const submitted = (details) => {
+    //     getFormInformation(details)
     //     setHasBeenSubmitted(true)
-    //     }
-    // })
+    // }
 
-    useEffect(() => {
-        setName(user.name);
-        setAge(user.age);
-        setLocation(user.location);
-        setHobbies(user.bio);    //Watch for naming, hobbies vs bio
-        setGender(user.gender)
-        setPreference(user.preference)
-    })
-
-
-    const submitted = (details) => {
-        getFormInformation(details)
-        setHasBeenSubmitted(true)
-    }
-
+    if (hasBeenSubmitted) {
+        <DisplayInformation />;
+        console.log("this is the user", user); // show the user object
+        console.log("what is the status", hasBeenSubmitted); //true
+    } 
     return (
         <>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossOrigin="anonymous"></link>
         
-        <AdddImageToUser />
-        <Form submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} />
+        <Form submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} user={user}/>
         <DisplayInformation 
-            name={name} 
-            age={age} 
-            location={location} 
-            hobbies={hobbies} 
-            gender={gender} 
-            preference={preference}
-            hasBeenSubmitted={hasBeenSubmitted}/>
+            name={user.name} 
+            age={user.age} 
+            location={user.location} 
+            bio={user.bio} 
+            gender={user.gender} 
+            gender_preference={user.gender_preference}
+            hasBeenSubmitted={hasBeenSubmitted}
+            user={user}
+            />
         </>
 
     )

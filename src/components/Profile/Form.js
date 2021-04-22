@@ -1,23 +1,23 @@
 import './style/FromStyling.css'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import HandleRadioButtons from './HandleRadioButtons';
 
-const Form = ({submitted, hasBeenSubmitted}) => {
+const Form = ({submitted, hasBeenSubmitted, user}) => {
 
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [location, setLocation] = useState("");
-  const [hobbies, setHobbies] = useState("");
+  const [bio, setBio] = useState("");
   const [gender, setGender] = useState("");
-  const [preference, setPreference] = useState("");
+  const [gender_preference, setGenderPreference] = useState("");
   const [vaccinated, setVaccinated] = useState(true);
 
   const handleGender = (evt) => {
     setGender(evt.target.value)
   }
 
-  const handlePreference = (evt) => {
-    setPreference(evt.target.value)
+  const handleGenderPreference = (evt) => {
+    setGenderPreference(evt.target.value)
   }
 
   const handleName = (evt) => {
@@ -31,8 +31,8 @@ const Form = ({submitted, hasBeenSubmitted}) => {
   const handleLocation = (evt) => {
       setLocation(evt.target.value)
   }
-  const handleHobbies = (evt) => {
-      setHobbies(evt.target.value)
+  const handleBio = (evt) => {
+      setBio(evt.target.value)
   }
 
   const handleVaccinated = (evt) => {
@@ -43,18 +43,30 @@ const Form = ({submitted, hasBeenSubmitted}) => {
       evt.preventDefault()
 
       const genderToSubmit = gender.toUpperCase();
-      const preferenceToSubmit = preference.toUpperCase();
+      const genderPreferenceToSubmit = gender_preference.toUpperCase();
 
       submitted({
           name: name,
           age: age,
           location: location,
-          hobbies: hobbies,
+          bio: bio,
           vaccinated: vaccinated,
           gender: genderToSubmit,
-          preference : preferenceToSubmit,
+          gender_preference : genderPreferenceToSubmit,
       })
   }
+
+  useEffect(() => {
+    if (user.id) {
+    setName(user.name);
+    setAge(user.age);
+    setLocation(user.location);
+    setBio(user.bio);
+    setGender(user.gender)
+    setGenderPreference(user.gender_preference)
+    }
+}, [user])
+  
 
   if (hasBeenSubmitted){
     return null
@@ -86,16 +98,17 @@ const Form = ({submitted, hasBeenSubmitted}) => {
        className="setUp-input" 
        type="text" 
        placeholder="Hobbies & Interests" 
-       value={hobbies} 
-       onChange={handleHobbies} required/>
-       <select value="gender" className="option-bar" onChange={handleGender}>
-           <option value="gender" disabled hidden>Choose a gender</option>
+       value={bio} 
+       onChange={handleBio} required/>
+
+       <select className="option-bar" onChange={handleGender}>
+           <option value="gender" disabled value hidden>Choose a gender</option>
            <option value="male" >Male</option>
            <option value="female" >Female</option>
            <option value="non-binary" >non-binary</option>
        </select>
-       <select value="gender" className="option-bar" onChange={handlePreference}>
-           <option value="gender" disabled hidden>Choose a Preference</option>
+       <select className="option-bar" onChange={handleGenderPreference}>
+           <option value="gender" disabled value hidden>Choose a Preference</option>
            <option value="male" >Male</option>
            <option value="female" >Female</option>
            <option value="non-binary" >non-binary</option>

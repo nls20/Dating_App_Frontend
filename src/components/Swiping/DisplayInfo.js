@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import YesButton from "./YesButton";
 import NoButton from "./NoButton";
 import "./DisplayInfo.css";
@@ -51,17 +51,20 @@ const DisplayInfo = ({ potentialMatches }) => {
     }
   };
 
-  // useEffect(() => {
-  //   console.log("match updated");
-  // }, []);
-
-  if (potentialMatches.length > 0) {
+  if (potentialMatches.length === 0) {
+    return (
+      <div>
+        <h2>Nobody left in your area!</h2>
+        <p>Congratulations you've completed Vinder</p>
+      </div>
+    );
+  } else {
     return (
       <div className="display-container">
         <img
           onTouchEnd={movePicture}
           onClick={pictureClicked}
-          class="display-picture"
+          className="display-picture"
           src={currentPicture}
         ></img>
         <h2>{option.name}</h2>
@@ -80,13 +83,6 @@ const DisplayInfo = ({ potentialMatches }) => {
             selectOption={selectOption}
           />
         </div>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <h2>Nobody left in your area!</h2>
-        <p>Congratulations you've completed Vinder</p>
       </div>
     );
   }
