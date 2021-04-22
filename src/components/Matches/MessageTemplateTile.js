@@ -1,6 +1,6 @@
 import "./MessageTemplateTile.css";
 
-const MessageTemplateTile = ({ match }) => {
+const MessageTemplateTile = ({ match , image}) => {
   console.log("match", match);
 
   //let messages = []
@@ -29,7 +29,7 @@ const MessageTemplateTile = ({ match }) => {
   return (
     <section id="total-tile-section">
       <section id="tile-picture-section">
-        {/* <img src={match.picture} /> */}
+        <img src={image} />
       </section>
 
       <section id="tile-section">

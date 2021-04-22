@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const MessagesPreview = ({ matches }) => {
   const [previews, setPreviews] = useState(null);
+  console.log('match', matches);
 
   useEffect(() => {
     let messageList = [];
@@ -13,22 +14,14 @@ const MessagesPreview = ({ matches }) => {
         messageList.push(matches[i].messages);
       }
     }
-    console.log("lisg", messageList);
-    // for (let i = 0;i<matches.length;i++){
-    //   console.log("matches", matches[i]);
-    // }
-    // if (matches) {
+
     let newPreviews = messageList.map((message, index) => {
       // const hrefName = "/matches/conversation/" + message.fromUser.name;
       return (
         // <a href={hrefName}>
-        <MessageTemplateTile match={message} key={index} />
+        <MessageTemplateTile match={message} image={matches[index].matchedUser.profileImages[0].mongoId} key={index} />
         // {/* </a> */}
       );
-      //   }
-      // })
-      
-      // }
     });
     setPreviews(newPreviews);
   }, [matches]);

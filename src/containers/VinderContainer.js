@@ -218,10 +218,10 @@ const submitted = (details) => {
 }
 //GET user information
   useEffect(() => {
-    UserServices.getUserInformation(8)
+    UserServices.getUserInformation(7)
     .then(data => setUser(data))
 
-    UserServices.getAllUserMatches(8)
+    UserServices.getAllUserMatches(7)
     .then(data => setMatches(data))
 
   //   UserServices.getAllPotentialMatches(1)
