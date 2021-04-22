@@ -14,9 +14,7 @@ import AddingImageServices from "../services/AddingImageServices";
 const VinderContainer = () => {
 
   const [user, setUser] = useState({});
-
   const [userId, setUserId] = useState(localStorage.getItem("id"));
-
   const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
 
   const matches = [
@@ -98,7 +96,7 @@ const VinderContainer = () => {
   
 
   // const [potentialMatches, setPotentialMatches] = useState([])
-  const [matches, setMatches] = useState([])
+  // const [matches, setMatches] = useState([])
   
 
 
