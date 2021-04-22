@@ -20,8 +20,7 @@ const HandleRadioButtons = ({vaccinated}) => {
   // }
 
   if (vaccinatedNo){
-    return <p><a href="https://www.nhs.uk/conditions/coronavirus-covid-19/coronavirus-vaccination/book-coronavirus-vaccination/" target="_blank">Go and get a vaccine!</a></p>
-    
+    return <p>Go and get a vaccine!</p>
   }
   return (
     <>
