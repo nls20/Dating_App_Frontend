@@ -37,7 +37,7 @@ const submitted = (details) => {
     UserServices.getAllUserMatches(7)
     .then(data => setMatches(data))
 
-    UserServices.getAllPotentialMatches(7)
+    UserServices.getAllPotentialMatches(1)
      .then(data => setPotentialMatches(data))
     }, [])
 

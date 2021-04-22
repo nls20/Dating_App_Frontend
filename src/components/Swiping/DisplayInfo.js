@@ -14,9 +14,8 @@ const DisplayInfo = ({ potentialMatches }) => {
 
   useEffect(() => {
     setOption(potentialMatches[Math.floor(Math.random() * potentialMatches.length)])
+    console.log("option", option)
   }, [potentialMatches])
-
-  // console.log("option", option);
 
   const selectOption = () => {
     return setOption(
@@ -24,13 +23,8 @@ const DisplayInfo = ({ potentialMatches }) => {
     );
   };
 
-console.log("this is the optoin", option.profileImages[0].mongoId)
-console.log("this is the user", potentialMatches)
-
-
-
   const movePicture = (evt) => {
-    console.log("show", option.picture[0]);
+    console.log("show", option.profileImages[0].mongoId);
     if (evt.changedTouches[0].clientX > (evt.view.innerWidth / 10) * 9) {
       potentialMatches.splice(potentialMatches.indexOf(option), 1);
       let newNum = pictureCounter + 1;
@@ -56,23 +50,16 @@ console.log("this is the user", potentialMatches)
       if (pictureCounter < option.picture.length - 1) {
         let newNum = pictureCounter + 1;
         setPictureCounter(newNum);
-        setCurrentPicture(option.profileImages[0].mongoId);
+        setCurrentPicture(option.picture[newNum]);
       }
     } else {
       if (pictureCounter > 0) {
         let newNum = pictureCounter - 1;
         setPictureCounter(newNum);
-        setCurrentPicture(option.profileImages[0].mongoId);
+        setCurrentPicture(option.picture[newNum]);
       }
     }
   };
-
-  // useEffect(() => {
-  //   if (potentialMatches.length > 0) {
-  //     setCurrentPicture(option.picture[0])
-  //   }
-  // }, [potentialMatches]);
-
 
   useEffect(() => {
       counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
@@ -81,7 +68,7 @@ console.log("this is the user", potentialMatches)
     }
   }, [counter]);
 
-  if (potentialMatches.length === 0) {
+  if (potentialMatches.length === 0 || !option) {
     return (
       <div className="ran-out-of-matches">
         <h2>Nobody left in your area!</h2>
@@ -97,7 +84,7 @@ console.log("this is the user", potentialMatches)
           onClick={pictureClicked}
           className="display-picture"
           src={option.profileImages[0].mongoId}
-        ></img> 
+        ></img>
         <h2>{option.name}</h2>
         <p draggable="true">{option.age}</p>
         <p>{option.gender}</p>
