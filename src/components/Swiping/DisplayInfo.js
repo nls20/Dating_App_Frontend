@@ -8,7 +8,8 @@ const DisplayInfo = ({ potentialMatches }) => {
     potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
   );
   const [pictureCounter, setPictureCounter] = useState(0);
-  const [currentPicture, setCurrentPicture] = useState(option.picture[pictureCounter]);
+  const [currentPicture, setCurrentPicture] = useState();
+
 
   // console.log("option", option);
 
@@ -18,19 +19,27 @@ const DisplayInfo = ({ potentialMatches }) => {
     );
   };
 
+
+
   const movePicture = (evt) => {
+    console.log("show", option.picture[0]);
     if (evt.changedTouches[0].clientX > (evt.view.innerWidth / 10) * 9) {
-      console.log("liked");
       potentialMatches.splice(potentialMatches.indexOf(option), 1);
-      setPictureCounter(0);
-      setCurrentPicture(option.picture[0])
+      let newNum = pictureCounter + 1;
       selectOption();
+      setPictureCounter(newNum);
+      setCurrentPicture(option.picture[0])
+      console.log("liked", currentPicture);
+      
+
     } else if (evt.changedTouches[0].clientX < evt.view.innerWidth / 10) {
-      console.log("not liked");
+      console.log("not liked", currentPicture);
       potentialMatches.splice(potentialMatches.indexOf(option), 1);
-      setPictureCounter(0);
-      setCurrentPicture(option.picture[0])
+      let newNum = pictureCounter - 1;
       selectOption();
+      setPictureCounter(newNum);
+      setCurrentPicture(option.picture[0])
+    
     }
   };
 
@@ -50,6 +59,10 @@ const DisplayInfo = ({ potentialMatches }) => {
     }
   };
 
+  useEffect(() => {
+    if (potentialMatches.length > 0) {setCurrentPicture(option.picture[0])}
+  }, [potentialMatches]);
+
   if (potentialMatches.length === 0) {
     return (
       <div>
@@ -64,7 +77,7 @@ const DisplayInfo = ({ potentialMatches }) => {
           onTouchEnd={movePicture}
           onClick={pictureClicked}
           className="display-picture"
-          src={currentPicture}
+          src={option.picture[0]}
         ></img>
         <h2>{option.name}</h2>
         <p draggable="true">{option.age}</p>
