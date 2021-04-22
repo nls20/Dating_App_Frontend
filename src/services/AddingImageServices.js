@@ -1,15 +1,15 @@
-const baseURL = "http://localhost:3000/api/profileImage/"
+const MongoBaseURL = "http://localhost:3005/api/profileImage/"
 const springImageBaseUrl = "http://localhost:8080/profileImage"
 
 export default{
 
-  getProfileImage(){
-    return fetch(baseURL)
+  getProfileImage(id){
+    return fetch(MongoBaseURL + id)
     .then(res => res.json())
   },
 
   postProfileImage(payload){
-    return fetch(baseURL, {
+    return fetch(MongoBaseURL, {
       method: 'POST',
       body: JSON.stringify({image: payload}),
       headers: {'Content-Type': 'application/json'}

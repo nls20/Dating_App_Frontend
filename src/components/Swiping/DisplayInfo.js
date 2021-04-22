@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import YesButton from "./YesButton";
 import NoButton from "./NoButton";
 import "./DisplayInfo.css";
-// import { useEffect } from "react/cjs/react.production.min";
 
 const DisplayInfo = ({ potentialMatches }) => {
   const [option, setOption] = useState(
