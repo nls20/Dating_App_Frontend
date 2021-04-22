@@ -3,10 +3,14 @@ import NewChat from "./NewChat";
 import PersonOneMessage from "./PersonOneMessage";
 import PersonTwoMessage from "./PersonTwoMessage";
 import "./ChatRoom.css";
+import { useEffect } from "react/cjs/react.production.min";
 
 const Chatroom = ({ matches }) => {
   let messages = [];
   let messageList = [];
+
+  let test;
+  console.log('test1', test);
 
   const targetUser = window.location.pathname.split("/")[4];
 
@@ -38,6 +42,7 @@ const Chatroom = ({ matches }) => {
         });
       
     }
+     test = <div id="message-list">{messageList}</div>
   }
 
   // const messageList = messageHistory.map((message, index) => {
@@ -55,11 +60,18 @@ const Chatroom = ({ matches }) => {
       person: 1,
       message: newMessage,
     });
+    console.log('len', messageList.length);
+     
+     console.log('test', test);
   };
+
+  // useEffect(()=>{
+  //   test = <div id="message-list">{messageList}</div>
+  // }, [messageList])
 
   return (
     <>
-      <div id="message-list">{messageList}</div>
+      {test}
 
       <div id="new-message">
         <NewChat newMessage={addNewMessage} />
