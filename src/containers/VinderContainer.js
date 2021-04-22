@@ -20,11 +20,6 @@ const VinderContainer = () => {
   const [matches, setMatches] = useState([])
   
 
-const submitted = (details) => {
-    handleUserCreation(details)
-    setHasBeenSubmitted(true)
-}
-
 //GET user information
   useEffect(() => {
     UserServices.getUserInformation(7)
@@ -38,11 +33,22 @@ const submitted = (details) => {
     }, [])
 
 
-  const handleUserCreation = (submittedInfo) => {
+  const submitted = (details, userId) => {
+    handleUserCreation(details, userId)
+    setHasBeenSubmitted(true)
+  }
+
+  const handleUserCreation = (submittedInfo, userId) => {
+    if (user.id) {
+      UserServices.updateUser(submittedInfo, userId)
+      .then(data => setUser(data))
+    } else {
       UserServices.addNewUser(submittedInfo)
       .then(data => setUser(data))
       .then(AddingImageServices.getProfileImage(user.id))
-    }  
+    }
+  }  
+
 
   useEffect(() => {
     if (user) {
