@@ -1,7 +1,6 @@
 import "./MessageTemplateTile.css";
 
 const MessageTemplateTile = ({ match , image, message}) => {
-  console.log("match", message.messages[message.messages.length-1]);
 
   //let messages = []
 
