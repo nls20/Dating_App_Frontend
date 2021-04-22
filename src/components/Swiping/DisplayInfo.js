@@ -4,17 +4,18 @@ import NoButton from "./NoButton";
 import "./DisplayInfo.css";
 
 const DisplayInfo = ({ potentialMatches }) => {
-  const [option, setOption] = useState(
-    potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
-  );
+
+  const [option, setOption] = useState(null);
   const [pictureCounter, setPictureCounter] = useState(0);
   const [currentPicture, setCurrentPicture] = useState();
 
   //-------count down clock---------
   const [counter, setCounter] = useState(60);
 
-
-  // console.log("option", option);
+  useEffect(() => {
+    setOption(potentialMatches[Math.floor(Math.random() * potentialMatches.length)])
+    console.log("option", option)
+  }, [potentialMatches])
 
   const selectOption = () => {
     return setOption(
@@ -22,15 +23,14 @@ const DisplayInfo = ({ potentialMatches }) => {
     );
   };
 
-
   const movePicture = (evt) => {
-    console.log("show", option.picture[0]);
+    console.log("show", option.profileImages[0].mongoId);
     if (evt.changedTouches[0].clientX > (evt.view.innerWidth / 10) * 9) {
       potentialMatches.splice(potentialMatches.indexOf(option), 1);
       let newNum = pictureCounter + 1;
       selectOption();
       setPictureCounter(newNum);
-      setCurrentPicture(option.picture[0])
+      setCurrentPicture(option.profileImages[0].mongoId)
       console.log("liked", currentPicture);
       
 
@@ -40,7 +40,7 @@ const DisplayInfo = ({ potentialMatches }) => {
       let newNum = pictureCounter - 1;
       selectOption();
       setPictureCounter(newNum);
-      setCurrentPicture(option.picture[0])
+      setCurrentPicture(option.profileImages[0].mongoId)
     
     }
   };
@@ -62,20 +62,13 @@ const DisplayInfo = ({ potentialMatches }) => {
   };
 
   useEffect(() => {
-    if (potentialMatches.length > 0) {
-      setCurrentPicture(option.picture[0])
-    }
-  }, [potentialMatches]);
-
-
-  useEffect(() => {
       counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
       if (counter === 0){
         window.location.reload(false);
     }
   }, [counter]);
 
-  if (potentialMatches.length === 0) {
+  if (potentialMatches.length === 0 || !option) {
     return (
       <div className="ran-out-of-matches">
         <h2>Nobody left in your area!</h2>
@@ -90,12 +83,13 @@ const DisplayInfo = ({ potentialMatches }) => {
           onTouchEnd={movePicture}
           onClick={pictureClicked}
           className="display-picture"
-          src={option.picture[0]}
+          src={option.profileImages[0].mongoId}
         ></img>
         <h2>{option.name}</h2>
         <p draggable="true">{option.age}</p>
+        <p>{option.gender}</p>
         <p>{option.location}</p>
-        <p>{option.hobbies}</p>
+        <p>{option.bio}</p>
         <div className="swipe-buttons">
         <NoButton
             potentialMatches={potentialMatches}
