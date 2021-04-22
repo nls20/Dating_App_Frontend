@@ -95,7 +95,7 @@ const submitted = (details) => {
               </Route>
 
               <Route path="/matches/conversation">
-                <Chatroom />
+                <Chatroom matches={matches} />
               </Route>
 
               <Route path="/profile">

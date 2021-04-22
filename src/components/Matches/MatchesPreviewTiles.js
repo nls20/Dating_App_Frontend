@@ -11,7 +11,7 @@ const MatchesPreviewTiles = ({ matches }) => {
       const userId = sessionStorage.getItem("id");
       let newPreviews = matches.map((match, index) => {
         const hrefName =
-          "/matches/conversations/7"  + "/" + match.matchedUser.id ;
+          "/matches/conversation/7/" + match.matchedUser.id ;
         return (
           <a href={hrefName}>
             <MatchesTemplateTile match={match.matchedUser} key={index} />
