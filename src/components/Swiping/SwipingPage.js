@@ -3,12 +3,12 @@ import DisplayInfo from "./DisplayInfo"
 import YesButton from './YesButton'
 import NoButton from './NoButton'
 
-const SwipingPage = ({potentialMatches}) => {
+const SwipingPage = ({potentialMatches, addNewMatch}) => {
 
 
     return (
         <>
-        <DisplayInfo  potentialMatches={potentialMatches}/>
+        <DisplayInfo  potentialMatches={potentialMatches} addNewMatch={addNewMatch}/>
         </>
     )
 }

@@ -4,7 +4,7 @@ import NoButton from "./NoButton";
 import "./DisplayInfo.css";
 import userEvent from "@testing-library/user-event";
 
-const DisplayInfo = ({ potentialMatches }) => {
+const DisplayInfo = ({ potentialMatches, addNewMatch }) => {
 
   const [option, setOption] = useState(null);
 

@@ -35,6 +35,8 @@ const VinderContainer = () => {
 
     UserServices.getAllUserMatches(7).then((data) => setMatches(data));
 
+    
+
     // AddingImageServices.getProfileImage()
     // .then(data => setUser.profileImages[0].mongoId(data))
 
@@ -42,6 +44,8 @@ const VinderContainer = () => {
       setPotentialMatches(data)
     );
   }, []);
+
+  console.log('maiun', matches);
 
   const handleUserCreation = (submittedInfo) => {
     UserServices.addNewUser(submittedInfo).then((data) => setUser(data));
@@ -53,6 +57,11 @@ const VinderContainer = () => {
     }
     return null;
   }, [user]);
+
+  const addNewMatch = (newMatch) => {
+    const newList = matches.concat(newMatch)
+    setMatches(newList)
+  }
 
   const iconSelect = () => {
     if (window.location.pathname === "/") {
@@ -88,7 +97,7 @@ const VinderContainer = () => {
           <div id="page-body">
             <Switch id="switch">
               <Route exact path="/">
-                <SwipingPage potentialMatches={potentialMatches} />
+                <SwipingPage potentialMatches={potentialMatches} addNewMatch={addNewMatch} />
               </Route>
 
               <Route path="/helppage">

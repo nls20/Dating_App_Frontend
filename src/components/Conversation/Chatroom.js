@@ -10,7 +10,7 @@ const Chatroom = ({ matches }) => {
   let messageList = [];
 
   let test;
-  console.log('test1', test);
+  // console.log('test1', test);
 
   const targetUser = window.location.pathname.split("/")[4];
 
@@ -18,9 +18,9 @@ const Chatroom = ({ matches }) => {
     if (matches[i].matchedUser.id == targetUser) {
         let newPerson;
         messageList = matches[i].messages.map((message, index) => {
-          console.log('test', message);
+          // console.log('test', message);
           if (message.fromUser.id != targetUser) {
-            console.log("in if");
+            // console.log("in if");
             messages.push({
               person: 1,
               message: matches[i].messages[index].message,
@@ -29,7 +29,7 @@ const Chatroom = ({ matches }) => {
               <PersonOneMessage key={index} message={message.message} />
             );
           } else {
-            console.log("in else");
+            // console.log("in else");
             messages.push({
               person: 2,
               message: matches[i].messages[index].message,
