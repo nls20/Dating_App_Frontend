@@ -41,8 +41,19 @@ const Form = ({submitted, hasBeenSubmitted, user}) => {
 
   const handleSubmitForm = (evt) => {
       evt.preventDefault()
-
-      submitted({
+      if (user.id) {
+        submitted({
+            id: user.id,
+            name: name,
+            age: age,
+            location: location,
+            bio: bio,
+            vaccinated: vaccinated,
+            gender: gender,
+            gender_preference : gender_preference,
+        }, user.id)
+      } else {
+        submitted({
           name: name,
           age: age,
           location: location,
@@ -50,7 +61,8 @@ const Form = ({submitted, hasBeenSubmitted, user}) => {
           vaccinated: vaccinated,
           gender: gender,
           gender_preference : gender_preference,
-      })
+        }, user.id)
+    }
   }
 
   useEffect(() => {
