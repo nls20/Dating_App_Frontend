@@ -43,10 +43,7 @@ const HandleRadioButtons = ({vaccinated}) => {
     </div>
 
     <div>
-    {/* {
-      if()
-    } */}
-      <input  id="button" type="submit" value="Save Profile"/>
+      <input onChange={handVaccinatedYes} id="button" type="submit" value="Save Profile"/>
     </div>
     </>
   )
