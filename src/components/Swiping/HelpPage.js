@@ -13,15 +13,13 @@ const HelpPage = () => {
             <h3>Home Page
                 <div className="home"> <FcHome /> </div>
             </h3>
-            <p>If you like what you see, swipe right on the image or tap the heart button to match.</p>
-            <p>If not, swipe left on the image or tap the cross button to move onto the next person.</p>
+            <p>If you like what you see, swipe right on the image or tap the heart button to match. If not, swipe left on the image or tap the cross button to move onto the next person.</p>
       
         
             <h3>Matches Page
                 <div className="match"><AiFillHeart /> </div> 
             </h3>
-            <p>Your matches will appear in the scroll bar at the top of the page. Click on a match to open a message window.</p>
-            <p>Your messages with matches will appear in the main section of the page. You can access existing messages by clicking your match in the scroll bar or on the main section.</p>
+            <p>Your matches will appear in the scroll bar at the top of the page. Click on a match to open a message window.  Your messages will appear in the main section of the page. You can access existing messages by clicking your match in the scroll bar or on the main section.</p>
 
             <h3>Messages
                 <div className="message"> <BiMessageDetail /></div>
