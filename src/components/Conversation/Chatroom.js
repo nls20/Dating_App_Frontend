@@ -4,36 +4,42 @@ import PersonOneMessage from "./PersonOneMessage";
 import PersonTwoMessage from "./PersonTwoMessage";
 import "./ChatRoom.css";
 
-const Chatroom = ({matches}) => {
+const Chatroom = ({ matches }) => {
+  let messages = [];
+  let messageList = [];
 
-  let messages=[]
-  let messageList=[]
+  const targetUser = window.location.pathname.split("/")[4];
 
-  const targetUser = window.location.pathname.split("/")[4]
-
-  for (let i=0;i<matches.length;i++){
-
-    if (matches[i].matchedUser.id == targetUser){
-    for (let j=0;j<matches[i].messages.length;j++){
-      let newPerson
-       messageList = matches[i].messages.map((message, index) => {
-        if (message.fromUser.id != targetUser){
-          console.log('in if');
-          messages.push({person: 1, message: matches[i].messages[j].message})
-          newPerson = <PersonOneMessage key={index} message={message.message} />
-        } else {
-          console.log('in else');
-          messages.push({person: 2, message: matches[i].messages[j].message})
-          newPerson = <PersonTwoMessage key={index} message={message.message} />
-        }
-        return newPerson
-      })
-      
+  for (let i = 0; i < matches.length; i++) {
+    if (matches[i].matchedUser.id == targetUser) {
+      for (let j = 0; j < matches[i].messages.length; j++) {
+        let newPerson;
+        messageList = matches[i].messages.map((message, index) => {
+          if (message.messages[j].fromUser.id != targetUser) {
+            console.log("in if");
+            messages.push({
+              person: 1,
+              message: matches[i].messages[j].message,
+            });
+            newPerson = (
+              <PersonOneMessage key={index} message={message.message} />
+            );
+          } else {
+            console.log("in else");
+            messages.push({
+              person: 2,
+              message: matches[i].messages[j].message,
+            });
+            newPerson = (
+              <PersonTwoMessage key={index} message={message.message} />
+            );
+          }
+          return newPerson;
+        });
+      }
     }
   }
-  }
 
-  
   // const messageList = messageHistory.map((message, index) => {
   //   let newPerson;
   //   if (message.person === 1) {
@@ -45,19 +51,15 @@ const Chatroom = ({matches}) => {
   // });
 
   const addNewMessage = (newMessage) => {
-    
-      messageList.push({
-        person: 1,
-        message: newMessage,
-      })
-    
+    messageList.push({
+      person: 1,
+      message: newMessage,
+    });
   };
 
   return (
     <>
-      <div id="message-list">
-        {messageList}
-      </div>
+      <div id="message-list">{messageList}</div>
 
       <div id="new-message">
         <NewChat newMessage={addNewMessage} />
