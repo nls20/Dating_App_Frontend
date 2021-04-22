@@ -2,7 +2,7 @@ import {useState} from 'react'
 
 const HandleRadioButtons = ({vaccinated}) => {
 
-  const [vaccinatedYes, setVaccinatedYes] = useState(true)
+  const [vaccinatedYes, setVaccinatedYes] = useState(false)
   const [vaccinatedNo, setVaccinatedNo] = useState(false)
 
   const handVaccinatedYes = (evt) => {
@@ -13,8 +13,15 @@ const HandleRadioButtons = ({vaccinated}) => {
     setVaccinatedNo(evt.target.value)
   }
 
+  // const handleButton = (evt) => {
+  //   if(vaccinatedYes) {
+  //     <input id="button" type="submit" value="Save Profile"/>
+  //   }
+  // }
+
   if (vaccinatedNo){
-    return <p>Stop stop stop, Go and get a vaccine!</p>
+    return <p><a href="https://www.nhs.uk/conditions/coronavirus-covid-19/coronavirus-vaccination/book-coronavirus-vaccination/" target="_blank">Go and get a vaccine!</a></p>
+    
   }
   return (
     <>
@@ -43,7 +50,7 @@ const HandleRadioButtons = ({vaccinated}) => {
     </div>
 
     <div>
-      <input onChange={handVaccinatedYes} id="button" type="submit" value="Save Profile"/>
+       <input id="button" type="submit" value="Save Profile"/>
     </div>
     </>
   )
