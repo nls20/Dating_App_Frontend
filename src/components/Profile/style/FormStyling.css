@@ -1,3 +1,8 @@
+.form {
+  padding-top: 50px;
+}
+
+
 
 .setUp-input{
   display: flex;
@@ -25,7 +30,7 @@
   color: white;
   font-weight: bold;
   font-size: 16px;
-  background-color: darkgray;
+  background-color:	#707070;
   box-shadow: black 0 0 1px;
   border-radius: 6px;
   margin: 15px auto;
@@ -106,4 +111,19 @@
 
 .radio-button{
   padding: 0px;
+}
+
+.stop-text {
+  padding-top: 20px;
+  line-height: 1.5em;
+}
+
+.stop-text > a {
+  color: black;
+}
+
+.injection {
+  padding-top: 15px;
+  font-size: 50px;
+  color: hotpink;
 }
