@@ -1,3 +1,10 @@
+.form {
+  padding-top: 50px;
+}
+
+#vaccinated {
+  padding-top: 15px;
+}
 
 .setUp-input{
   display: flex;
@@ -25,7 +32,7 @@
   color: white;
   font-weight: bold;
   font-size: 16px;
-  background-color: darkgray;
+  background-color:	#707070;
   box-shadow: black 0 0 1px;
   border-radius: 6px;
   margin: 15px auto;
@@ -78,16 +85,19 @@
   object-fit: cover;
   border-radius: 50%;
   margin-right: 35px;
+  padding: 0;
 }
 
 .close-icon{
   background-color: darkgray;
   border-radius: 50%;
   z-index: 10;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
+  padding-right: 0;
   margin-right: 0;
 }
+
 
 #add-image{
   color: slategray;
@@ -106,4 +116,20 @@
 
 .radio-button{
   padding: 0px;
+}
+
+
+.stop-text {
+  padding-top: 20px;
+  line-height: 1.5em;
+}
+
+.stop-text > a {
+  color: black;
+}
+
+.injection {
+  padding-top: 15px;
+  font-size: 50px;
+  color: hotpink;
 }

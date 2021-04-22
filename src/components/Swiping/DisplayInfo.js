@@ -97,16 +97,17 @@ const DisplayInfo = ({ potentialMatches }) => {
         <p>{option.location}</p>
         <p>{option.hobbies}</p>
         <div className="swipe-buttons">
+        <NoButton
+            potentialMatches={potentialMatches}
+            option={option}
+            selectOption={selectOption}
+          />
           <YesButton
             potentialMatches={potentialMatches}
             option={option}
             selectOption={selectOption}
           />
-          <NoButton
-            potentialMatches={potentialMatches}
-            option={option}
-            selectOption={selectOption}
-          />
+          
         </div>
       </div>
     );

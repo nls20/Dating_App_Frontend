@@ -1,4 +1,4 @@
-import './style/FromStyling.css'
+import './style/FormStyling.css'
 import React, {useState, useEffect} from 'react'
 import HandleRadioButtons from './HandleRadioButtons';
 

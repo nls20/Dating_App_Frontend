@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { GiLoveInjection } from "react-icons/gi";
 
 const HandleRadioButtons = ({vaccinated}) => {
 
@@ -20,7 +21,12 @@ const HandleRadioButtons = ({vaccinated}) => {
   // }
 
   if (vaccinatedNo){
-    return <p>Go and get a vaccine!</p>
+    return <p className="stop-text">Stop stop stop! <br></br>
+              <a href="https://www.nhsinform.scot/covid-19-vaccine/invitations-and-appointments/registering-for-a-coronavirus-vaccine">Click here to get the Vaccine</a>
+              <div className="injection">
+                 < GiLoveInjection />
+             </div>
+            </p>
   }
   return (
     <>
