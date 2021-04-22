@@ -20,7 +20,7 @@ const DisplayInfo = ({ potentialMatches }) => {
 
   const selectOption = () => {
     return setOption(
-      potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
+      potentialMatches[0]
     );
   };
 
@@ -74,7 +74,6 @@ const DisplayInfo = ({ potentialMatches }) => {
 
   useEffect(() => {
     setOption(potentialMatches[Math.floor(Math.random() * potentialMatches.length)])
-    console.log("option", option)
   }, [potentialMatches])
 
   // useEffect(() => {
@@ -91,14 +90,12 @@ const DisplayInfo = ({ potentialMatches }) => {
 // }, [potentialMatches]);
   
 
-console.log("option", option)
-
   if (potentialMatches.length === 0 || !option || option.profileImages.length === 0) {
     return (
       <div className="ran-out-of-matches">
         <h2>Nobody left in your area!</h2>
         <p>Congratulations you've completed Vinder</p>
-        <h2>Try again in: {counter}</h2>
+        <h2>More matches in: {counter}</h2>
       </div>
     );
   } else {
