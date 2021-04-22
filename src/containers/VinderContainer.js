@@ -143,9 +143,9 @@ const VinderContainer = () => {
       location: "Alderran",
       hobbies: "Killing bad guys",
       picture:[
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
         "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+        // "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+        // "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
       ]
     },
     {
@@ -154,9 +154,9 @@ const VinderContainer = () => {
       location: "Glasgow",
       hobbies: "Swimming",
       picture: [
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png"
+        // "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+        // "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
       ]
     },
     {
@@ -165,44 +165,44 @@ const VinderContainer = () => {
       location: "Edinburgh",
       hobbies: "Cycling",
       picture:[
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
+        // "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+        // "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
       ]
     },
-    {
-      name: "Doug",
-      age: 25,
-      location: "Inverness",
-      hobbies: "Running",
-      picture: [
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
-      ]
-    },
-    {
-      name: "Joanna",
-      age: 20,
-      location: "Inverness",
-      hobbies: "Running",
-      picture: [
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
-      ]
-    },
-    {
-      name: "Alison",
-      age: 18,
-      location: "Inverness",
-      hobbies: "Running",
-      picture: [
-        "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
-        "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
-        "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
-      ]
-    },
+    // {
+    //   name: "Doug",
+    //   age: 25,
+    //   location: "Inverness",
+    //   hobbies: "Running",
+    //   picture: [
+    //     "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg",
+    //     "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+    //     "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+    //   ]
+    // },
+    // {
+    //   name: "Joanna",
+    //   age: 20,
+    //   location: "Inverness",
+    //   hobbies: "Running",
+    //   picture: [
+    //     "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+    //     "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+    //     "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+    //   ]
+    // },
+    // {
+    //   name: "Alison",
+    //   age: 18,
+    //   location: "Inverness",
+    //   hobbies: "Running",
+    //   picture: [
+    //     "https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-3.png",
+    //     "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+    //     "https://i.pinimg.com/originals/4e/10/e5/4e10e564d614436de1fc60cb45198cc4.jpg"
+    //   ]
+    // },
   ];
   
 
