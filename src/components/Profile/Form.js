@@ -45,6 +45,8 @@ const Form = ({submitted, hasBeenSubmitted, user}) => {
       const genderToSubmit = gender.toUpperCase();
       const genderPreferenceToSubmit = gender_preference.toUpperCase();
 
+      localStorage.setItem('profile_card', true)
+      
       submitted({
           name: name,
           age: age,

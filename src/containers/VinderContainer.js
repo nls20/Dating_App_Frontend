@@ -15,9 +15,9 @@ const VinderContainer = () => {
 
   const [user, setUser] = useState({});
 
-  const [userId, setUserId] = useState(localStorage.getItem("id"));
+  const [userId, setUserId] = useState(localStorage.getItem('id'));
 
-  const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false)
+  const [hasBeenSubmitted, setHasBeenSubmitted] = useState(localStorage.getItem('profile_card'))
   
 
   const [potentialMatches, setPotentialMatches] = useState([])
@@ -37,6 +37,9 @@ const submitted = (details) => {
 
     UserServices.getAllUserMatches(7)
     .then(data => setMatches(data))
+
+    // AddingImageServices.getProfileImage()
+    // .then(data => setUser.profileImages[0].mongoId(data))
 
     UserServices.getAllPotentialMatches(1)
   .then(data => setPotentialMatches(data))
