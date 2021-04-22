@@ -10,6 +10,16 @@ const AddImageToUser = ({user}) => {
   const [typeFile, setTypeFile] = useState("");
   const [base64, setBase64] = useState("")
 
+  const userObject = {
+    "id": user.id,
+    "name": user.name,
+    "age": user.age,
+    "gender": user.gender,
+    "location": user.location,
+    "gender_preference": user.gender_preference,
+    "bio": user.bio
+  }
+
 
   const handleFileSelected = (evt) => {
     
@@ -22,13 +32,18 @@ const AddImageToUser = ({user}) => {
         setImage(reader.result);
         setIsUploaded(true);
         AddingImageServices.postProfileImage(reader.result)
-        .then(data => {
-          // console.log("show image", data._id)
-          AddingImageServices.addNewProfileImage({mongoId: data._id, user: user})
-        })
+        .then(data => {AddingImageServices.addNewProfileImage({mongoId: data._id, user: userObject})})
       };
     }
   }
+
+  useEffect(() => {
+    if (user.id) {
+      AddingImageServices.getProfileImage(user.profileImages[0].mongoId)
+      .then((data) => setImage(data.image))
+      .then(setIsUploaded(true))
+    }
+  }, [user])
 
   return(
     <form>

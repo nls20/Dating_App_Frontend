@@ -19,19 +19,17 @@ const VinderContainer = () => {
   const [matches, setMatches] = useState([]);
 
 
-  //GET user information
   useEffect(() => {
-    UserServices.getUserInformation(7).then((data) => setUser(data));
+    UserServices.getUserInformation(7)
+    .then((data) => setUser(data))
 
-    UserServices.getAllUserMatches(7).then((data) => setMatches(data));
+    UserServices.getAllUserMatches(7)
+    .then((data) => setMatches(data));
 
-    // AddingImageServices.getProfileImage()
-    // .then(data => setUser.profileImages[0].mongoId(data))
+    UserServices.getAllPotentialMatches(1)
+    .then((data) => setPotentialMatches(data));
+}, []);
 
-    UserServices.getAllPotentialMatches(1).then((data) =>
-      setPotentialMatches(data)
-    );
-  }, []);
 
   const submitted = (details, userId) => {
     handleUserCreation(details, userId)
@@ -45,7 +43,6 @@ const VinderContainer = () => {
     } else {
       UserServices.addNewUser(submittedInfo)
       .then(data => setUser(data))
-      .then(AddingImageServices.getProfileImage(user.id))
     }
   }
 
