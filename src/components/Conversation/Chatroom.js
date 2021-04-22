@@ -10,31 +10,28 @@ const Chatroom = ({matches}) => {
   let messageList=[]
 
   const targetUser = window.location.pathname.split("/")[4]
-  console.log('target', targetUser);
 
-  console.log('matches', matches);
   for (let i=0;i<matches.length;i++){
 
     if (matches[i].matchedUser.id == targetUser){
-    console.log('found', matches[i].messages);
     for (let j=0;j<matches[i].messages.length;j++){
       let newPerson
        messageList = matches[i].messages.map((message, index) => {
-        if (matches[i].messages[j].fromUser.id != targetUser){
-          
+        if (message.fromUser.id != targetUser){
+          console.log('in if');
           messages.push({person: 1, message: matches[i].messages[j].message})
           newPerson = <PersonOneMessage key={index} message={message.message} />
         } else {
+          console.log('in else');
+          messages.push({person: 2, message: matches[i].messages[j].message})
           newPerson = <PersonTwoMessage key={index} message={message.message} />
         }
         return newPerson
       })
-      console.log('new', newPerson);
       
     }
   }
   }
-  console.log('all', messages);
 
   
   // const messageList = messageHistory.map((message, index) => {
