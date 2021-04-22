@@ -4,16 +4,17 @@ import NoButton from "./NoButton";
 import "./DisplayInfo.css";
 
 const DisplayInfo = ({ potentialMatches }) => {
-  
-  const [option, setOption] = useState(
-    potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
-  );
+
+  const [option, setOption] = useState(null);
   const [pictureCounter, setPictureCounter] = useState(0);
   const [currentPicture, setCurrentPicture] = useState();
 
   //-------count down clock---------
   const [counter, setCounter] = useState(60);
 
+  useEffect(() => {
+    setOption(potentialMatches[Math.floor(Math.random() * potentialMatches.length)])
+  }, [potentialMatches])
 
   // console.log("option", option);
 
@@ -23,6 +24,10 @@ const DisplayInfo = ({ potentialMatches }) => {
     );
   };
 
+console.log("this is the optoin", option.profileImages[0].mongoId)
+console.log("this is the user", potentialMatches)
+
+
 
   const movePicture = (evt) => {
     console.log("show", option.picture[0]);
@@ -31,7 +36,7 @@ const DisplayInfo = ({ potentialMatches }) => {
       let newNum = pictureCounter + 1;
       selectOption();
       setPictureCounter(newNum);
-      setCurrentPicture(option.picture[0])
+      setCurrentPicture(option.profileImages[0].mongoId)
       console.log("liked", currentPicture);
       
 
@@ -41,7 +46,7 @@ const DisplayInfo = ({ potentialMatches }) => {
       let newNum = pictureCounter - 1;
       selectOption();
       setPictureCounter(newNum);
-      setCurrentPicture(option.picture[0])
+      setCurrentPicture(option.profileImages[0].mongoId)
     
     }
   };
@@ -51,22 +56,22 @@ const DisplayInfo = ({ potentialMatches }) => {
       if (pictureCounter < option.picture.length - 1) {
         let newNum = pictureCounter + 1;
         setPictureCounter(newNum);
-        setCurrentPicture(option.picture[newNum]);
+        setCurrentPicture(option.profileImages[0].mongoId);
       }
     } else {
       if (pictureCounter > 0) {
         let newNum = pictureCounter - 1;
         setPictureCounter(newNum);
-        setCurrentPicture(option.picture[newNum]);
+        setCurrentPicture(option.profileImages[0].mongoId);
       }
     }
   };
 
-  useEffect(() => {
-    if (potentialMatches.length > 0) {
-      setCurrentPicture(option.picture[0])
-    }
-  }, [potentialMatches]);
+  // useEffect(() => {
+  //   if (potentialMatches.length > 0) {
+  //     setCurrentPicture(option.picture[0])
+  //   }
+  // }, [potentialMatches]);
 
 
   useEffect(() => {
@@ -91,8 +96,8 @@ const DisplayInfo = ({ potentialMatches }) => {
           onTouchEnd={movePicture}
           onClick={pictureClicked}
           className="display-picture"
-          src={option.picture[0]}
-        ></img>
+          src={option.profileImages[0].mongoId}
+        ></img> 
         <h2>{option.name}</h2>
         <p draggable="true">{option.age}</p>
         <p>{option.gender}</p>

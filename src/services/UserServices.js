@@ -9,7 +9,7 @@ export default{
     },
 
     getAllPotentialMatches(id){
-        return fetch(usersBaseUrl+ "/" + id + "/potential-matches/" )
+        return fetch(usersBaseUrl + "/" )
         .then(res => res.json())
     },
 
