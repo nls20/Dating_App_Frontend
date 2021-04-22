@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000/api/profileImage/"
+const baseURL = "http://localhost:3001/api/profileImage/"
 const springImageBaseUrl = "http://localhost:8080/profileImage"
 
 export default{
