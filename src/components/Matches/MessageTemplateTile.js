@@ -14,10 +14,8 @@ const MessageTemplateTile = ({match}) => {
         // }
     // }
     let matchName = ""
-    match.find(m => {
-        if (m.fromUser)
-    })
-    let messagePreview = match[match.length]
+    
+    let messagePreview = match[match.length-1].message
     // const maxLength = 60
 
     // if (match.user.toMessages.length > 0){
@@ -42,7 +40,7 @@ const MessageTemplateTile = ({match}) => {
             </section>
 
             <section id="tile-section">
-                <h5>{matchName}</h5>
+                {/* <h5>{matchName}</h5> */}
                 <p>{messagePreview}</p>
             </section>
 
