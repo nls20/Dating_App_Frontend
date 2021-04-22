@@ -14,7 +14,10 @@ import AddingImageServices from "../services/AddingImageServices";
 const VinderContainer = () => {
 
   const [user, setUser] = useState({});
+
   const [userId, setUserId] = useState(localStorage.getItem("id"));
+
+  const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
 
   const matches = [
     {
@@ -132,8 +135,14 @@ const VinderContainer = () => {
       ]
     },
   ];
+  
 
 
+
+const submitted = (details) => {
+    handleUserCreation(details)
+    setHasBeenSubmitted(true)
+}
 //GET user information
   useEffect(() => {
     UserServices.getUserInformation(userId)
@@ -151,6 +160,7 @@ const VinderContainer = () => {
     }
     return null
   }, [user])
+
 
   const iconSelect = () => {
     if (window.location.pathname === "/") {
@@ -195,7 +205,7 @@ const VinderContainer = () => {
               </Route>
 
               <Route path="/profile">
-                <ProfilePage getFormInformation={handleUserCreation} user={user}/>
+                <ProfilePage  submitted={submitted} hasBeenSubmitted={hasBeenSubmitted} user={user}/>
               </Route>
 
             </Switch>
