@@ -3,7 +3,7 @@ import DisplayInformation from './DisplayInformation';
 import Form from './Form';
 import AddImageToUser from './AddImageToUser';
 
-const ProfilePage = ({submitted, hasBeenSubmitted, user}) => {
+const ProfilePage = ({submitted, hasBeenSubmitted, user, handleUserEdit}) => {
 
     if (hasBeenSubmitted) {
         <DisplayInformation />;
@@ -25,6 +25,7 @@ const ProfilePage = ({submitted, hasBeenSubmitted, user}) => {
             hasBeenSubmitted={hasBeenSubmitted}
             user={user}
             submitted={submitted} 
+            handleUserEdit={handleUserEdit}
             />
         </>
 

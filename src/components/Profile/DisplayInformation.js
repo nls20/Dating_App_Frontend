@@ -5,14 +5,16 @@ import './Form'
 import Form from './Form';
 import AddImageToUser from './AddImageToUser';
 
-const DisplayInformation = ({name, age, location, bio, gender, gender_preference, hasBeenSubmitted, user, submitted}) => {
+const DisplayInformation = ({name, age, location, bio, gender, gender_preference, hasBeenSubmitted, user, handleUserEdit}) => {
 
   const [upDate, setUpdate] = useState(false)
 
   const handleUpdateButton  = (evt) => {
     evt.preventDefault()
+    handleUserEdit()
     setUpdate(true)
     localStorage.setItem('profile_card', false)
+    console.log()
   }
 
   if (!hasBeenSubmitted){

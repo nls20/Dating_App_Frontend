@@ -47,6 +47,10 @@ const VinderContainer = () => {
     UserServices.addNewUser(submittedInfo).then((data) => setUser(data));
   };
 
+  const handleUserEdit = (hasBeenSubmitted) => {
+    setHasBeenSubmitted(false)
+  };
+
   useEffect(() => {
     if (user) {
       localStorage.setItem("id", user.id);
@@ -108,6 +112,7 @@ const VinderContainer = () => {
                   submitted={submitted}
                   hasBeenSubmitted={hasBeenSubmitted}
                   user={user}
+                  handleUserEdit={handleUserEdit}
                 />
               </Route>
             </Switch>
