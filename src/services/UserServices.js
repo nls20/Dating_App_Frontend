@@ -48,9 +48,9 @@ export default{
     },
 
     //PUT Update User  /users/
-    updateUser(user) {
-        return fetch(usersBaseUrl, {
-            method: 'POST',
+    updateUser(user, id) {
+        return fetch(usersBaseUrl + "/" + id, {
+            method: 'PUT',
             body: JSON.stringify(user),
             headers: { 'Content-Type': 'application/json' }
         })

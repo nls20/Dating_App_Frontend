@@ -13,39 +13,38 @@ import AddingImageServices from "../services/AddingImageServices";
 
 const VinderContainer = () => {
   const [user, setUser] = useState({});
-
   const [userId, setUserId] = useState(localStorage.getItem("id"));
-
-  const [hasBeenSubmitted, setHasBeenSubmitted] = useState(
-    localStorage.getItem("profile_card")
-  );
-
+  const [hasBeenSubmitted, setHasBeenSubmitted] = useState(localStorage.getItem("profile_card"));
   const [potentialMatches, setPotentialMatches] = useState([]);
-
   const [matches, setMatches] = useState([]);
 
-  const submitted = (details) => {
-    handleUserCreation(details);
-    setHasBeenSubmitted(true);
-  };
 
-  //GET user information
   useEffect(() => {
-    UserServices.getUserInformation(7).then((data) => setUser(data));
+    UserServices.getUserInformation(7)
+    .then((data) => setUser(data))
 
-    UserServices.getAllUserMatches(7).then((data) => setMatches(data));
+    UserServices.getAllUserMatches(7)
+    .then((data) => setMatches(data));
 
-    // AddingImageServices.getProfileImage()
-    // .then(data => setUser.profileImages[0].mongoId(data))
+    UserServices.getAllPotentialMatches(1)
+    .then((data) => setPotentialMatches(data));
+}, []);
 
-    UserServices.getAllPotentialMatches(1).then((data) =>
-      setPotentialMatches(data)
-    );
-  }, []);
 
-  const handleUserCreation = (submittedInfo) => {
-    UserServices.addNewUser(submittedInfo).then((data) => setUser(data));
-  };
+  const submitted = (details, userId) => {
+    handleUserCreation(details, userId)
+    setHasBeenSubmitted(true)
+  }
+
+  const handleUserCreation = (submittedInfo, userId) => {
+    if (user.id) {
+      UserServices.updateUser(submittedInfo, userId)
+      .then(data => setUser(data))
+    } else {
+      UserServices.addNewUser(submittedInfo)
+      .then(data => setUser(data))
+    }
+  }
 
   const handleUserEdit = (hasBeenSubmitted) => {
     setHasBeenSubmitted(false)

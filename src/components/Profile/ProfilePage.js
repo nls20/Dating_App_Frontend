@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react';
 import DisplayInformation from './DisplayInformation';
 import Form from './Form';
-import AddImageToUser from './AddImageToUser';
 
 const ProfilePage = ({submitted, hasBeenSubmitted, user, handleUserEdit}) => {
 
     if (hasBeenSubmitted) {
         <DisplayInformation />;
-        console.log("this is the user", user); // show the user object
-        console.log("what is the status", hasBeenSubmitted); //true
     } 
     return (
         <>
