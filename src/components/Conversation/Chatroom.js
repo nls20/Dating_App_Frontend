@@ -11,6 +11,10 @@ const Chatroom = ({matches}) => {
 
   const targetUser = window.location.pathname.split("/")[4]
 
+  console.log('list', messageList);
+  console.log('listw', messages);
+
+
   for (let i=0;i<matches.length;i++){
 
     if (matches[i].matchedUser.id == targetUser){
@@ -50,6 +54,8 @@ const Chatroom = ({matches}) => {
       })
     
   };
+
+  console.log('list', messageList);
 
   return (
     <>
