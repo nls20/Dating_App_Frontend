@@ -59,8 +59,12 @@ const VinderContainer = () => {
   }, [user]);
 
   const addNewMatch = (newMatch) => {
-    const newList = matches.concat(newMatch)
+    const newItem = {id: matches.length + 1, matchedUser: newMatch, messages: [], user: user}
+    const newList = matches.concat(newItem)
+    console.log('new', newList);
     setMatches(newList)
+    console.log('vinder', matches);
+    localStorage.setItem("matches", matches)
   }
 
   const iconSelect = () => {

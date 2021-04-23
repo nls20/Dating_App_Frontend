@@ -30,10 +30,13 @@ const DisplayInfo = ({ potentialMatches, addNewMatch }) => {
     if (evt.changedTouches[0].clientX > (evt.view.innerWidth / 10) * 9) {
       potentialMatches.splice(potentialMatches.indexOf(option), 1);
       let newNum = pictureCounter + 1;
+      
+      addNewMatch(option)
       selectOption();
       setPictureCounter(newNum);
       setCurrentPicture(option.profileImages[0].mongoId)
       console.log("liked", currentPicture);
+      
       
 
     } else if (evt.changedTouches[0].clientX < evt.view.innerWidth / 10) {

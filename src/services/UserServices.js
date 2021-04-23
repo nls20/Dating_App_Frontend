@@ -18,6 +18,14 @@ export default{
         .then(res => res.json())
     }, 
 
+    addNewMatch(userId, targetId){
+        return fetch(usersBaseUrl + "/"+userId + "/"+targetId,{
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        })
+        .then(res => res.json())
+    },
+
 
     //GET All Users e.g.    /users
     getAllUsers(id){
