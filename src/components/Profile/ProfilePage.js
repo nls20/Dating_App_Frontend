@@ -24,6 +24,7 @@ const ProfilePage = ({submitted, hasBeenSubmitted, user}) => {
             gender_preference={user.gender_preference}
             hasBeenSubmitted={hasBeenSubmitted}
             user={user}
+            submitted={submitted} 
             />
         </>
 
