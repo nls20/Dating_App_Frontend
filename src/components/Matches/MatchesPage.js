@@ -5,14 +5,16 @@ import "./MatchesPage.css";
 
 const MatchesPage = ({ matches }) => {
 
-  const newMatches = localStorage.getItem("matches")
-  console.log('new', newMatches);
+  // const newMatches = localStorage.getItem("matches")
+  // console.log('new', newMatches);
+
+  console.log('page', matches);
 
   return (
     <>
       <section>
         <h2>Matches</h2>
-        <MatchesPreviewTiles matches={newMatches} />
+        <MatchesPreviewTiles matches={matches} />
       </section>
       
       <section id="message-section">

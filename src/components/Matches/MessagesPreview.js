@@ -6,7 +6,9 @@ const MessagesPreview = ({ matches }) => {
   const [previews, setPreviews] = useState(null);
 
   useEffect(() => {
+    if (matches){
     let messageList = [];
+    console.log('matches', matches);
     for (let i = 0; i < matches.length; i++) {
       if (matches[i].messages.length > 0) {
         messageList.push(matches[i].messages);
@@ -22,6 +24,7 @@ const MessagesPreview = ({ matches }) => {
       );
     });
     setPreviews(newPreviews);
+  }
   }, [matches]);
 
   return <section id="preview-section">{previews}</section>;

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import YesButton from "./YesButton";
 import NoButton from "./NoButton";
 import "./DisplayInfo.css";
-import userEvent from "@testing-library/user-event";
 
 const DisplayInfo = ({ potentialMatches, addNewMatch }) => {
 
@@ -12,6 +11,7 @@ const DisplayInfo = ({ potentialMatches, addNewMatch }) => {
 
   const [currentPicture, setCurrentPicture] = useState();
 
+  console.log('info', potentialMatches);
 
 
   //-------count down clock---------
@@ -26,21 +26,18 @@ const DisplayInfo = ({ potentialMatches, addNewMatch }) => {
 
 
   const movePicture = (evt) => {
-    console.log("show", option.profileImages[0].mongoId);
     if (evt.changedTouches[0].clientX > (evt.view.innerWidth / 10) * 9) {
       potentialMatches.splice(potentialMatches.indexOf(option), 1);
       let newNum = pictureCounter + 1;
       
-      addNewMatch(option)
+      // addNewMatch(7,1)
       selectOption();
       setPictureCounter(newNum);
       setCurrentPicture(option.profileImages[0].mongoId)
-      console.log("liked", currentPicture);
       
       
 
     } else if (evt.changedTouches[0].clientX < evt.view.innerWidth / 10) {
-      console.log("not liked", currentPicture);
       potentialMatches.splice(potentialMatches.indexOf(option), 1);
       let newNum = pictureCounter - 1;
       selectOption();
@@ -93,7 +90,7 @@ const DisplayInfo = ({ potentialMatches, addNewMatch }) => {
 // }, [potentialMatches]);
   
 
-  if (potentialMatches.length === 0 || !option || option.profileImages.length === 0) {
+  if (potentialMatches || !option || option.profileImages.length === 0) {
     return (
       <div className="ran-out-of-matches">
         <h2>Nobody left in your area!</h2>
