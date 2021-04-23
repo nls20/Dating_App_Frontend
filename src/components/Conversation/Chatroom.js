@@ -18,11 +18,9 @@ const Chatroom = ({matches}) => {
       let newPerson
        messageList = matches[i].messages.map((message, index) => {
         if (message.fromUser.id != targetUser){
-          console.log('in if');
           messages.push({person: 1, message: matches[i].messages[j].message})
           newPerson = <PersonOneMessage key={index} message={message.message} />
         } else {
-          console.log('in else');
           messages.push({person: 2, message: matches[i].messages[j].message})
           newPerson = <PersonTwoMessage key={index} message={message.message} />
         }

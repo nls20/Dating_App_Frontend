@@ -5,76 +5,63 @@ import "./DisplayInfo.css";
 import userEvent from "@testing-library/user-event";
 
 const DisplayInfo = ({ potentialMatches }) => {
-
   const [option, setOption] = useState(null);
 
   const [pictureCounter, setPictureCounter] = useState(0);
 
   const [currentPicture, setCurrentPicture] = useState();
 
-
-
   //-------count down clock---------
   const [counter, setCounter] = useState(60);
 
-
   const selectOption = () => {
-    return setOption(
-      potentialMatches[0]
-    );
+    return setOption(potentialMatches[0]);
   };
 
-
   const movePicture = (evt) => {
-    console.log("show", option.profileImages[0].mongoId);
     if (evt.changedTouches[0].clientX > (evt.view.innerWidth / 10) * 9) {
       potentialMatches.splice(potentialMatches.indexOf(option), 1);
-      let newNum = pictureCounter + 1;
       selectOption();
-      setPictureCounter(newNum);
-      setCurrentPicture(option.profileImages[0].mongoId)
-      console.log("liked", currentPicture);
-      
+      setPictureCounter(0);
+      setCurrentPicture(option.profileImages[pictureCounter].mongoId);
 
     } else if (evt.changedTouches[0].clientX < evt.view.innerWidth / 10) {
-      console.log("not liked", currentPicture);
       potentialMatches.splice(potentialMatches.indexOf(option), 1);
       let newNum = pictureCounter - 1;
       selectOption();
-      setPictureCounter(newNum);
-      setCurrentPicture(option.profileImages[0].mongoId)
-    
+      setPictureCounter(0);
+      setCurrentPicture(option.profileImages[pictureCounter].mongoId);
     }
   };
 
-
   const pictureClicked = (event) => {
     if (event.clientX > event.view.innerWidth / 2) {
-      if (pictureCounter < option.picture.length - 1) {
-        let newNum = pictureCounter + 1;
-        setPictureCounter(newNum);
-        setCurrentPicture(option.picture[newNum]);
+    if (option.profileImages.length > pictureCounter +1) {
+          let newNum = pictureCounter +1;
+          setPictureCounter(newNum);
+          setCurrentPicture(option.profileImages[pictureCounter].mongoId);
       }
     } else {
       if (pictureCounter > 0) {
         let newNum = pictureCounter - 1;
         setPictureCounter(newNum);
-        setCurrentPicture(option.picture[newNum]);
+        setCurrentPicture(option.profileImages[pictureCounter].mongoId);
       }
     }
   };
 
-
   useEffect(() => {
-      counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
+    counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
     //   if (counter === 0){
     //     window.location.reload(false);
     // }
   }, [counter]);
 
   useEffect(() => {
-    setOption(potentialMatches[Math.floor(Math.random() * potentialMatches.length)])
-  }, [potentialMatches])
+    setOption(
+      potentialMatches[Math.floor(Math.random() * potentialMatches.length)]
+    );
+  }, [potentialMatches]);
 
   // useEffect(() => {
   //   if (potentialMatches.length > 0) {
@@ -82,20 +69,23 @@ const DisplayInfo = ({ potentialMatches }) => {
   //     }
   // }, [potentialMatches]);
 
-//   useEffect(() => {
-//     for (let i = 0; i < potentialMatches.length ; i++){
-//       const picture = potentialMatches[i].profileImages[0].mongoId
-//        setCurrentPicture(picture)
-//     }
-// }, [potentialMatches]);
-  
+  //   useEffect(() => {
+  //     for (let i = 0; i < potentialMatches.length ; i++){
+  //       const picture = potentialMatches[i].profileImages[0].mongoId
+  //        setCurrentPicture(picture)
+  //     }
+  // }, [potentialMatches]);
 
-  if (potentialMatches.length === 0 || !option || option.profileImages.length === 0) {
+  if (
+    potentialMatches.length === 0 ||
+    !option ||
+    option.profileImages.length === 0
+  ) {
     return (
       <div className="ran-out-of-matches">
         <h2>Nobody left in your area!</h2>
         <p>Congratulations you've completed Vinder</p>
-        <h2>More matches in: {counter}</h2>
+        {/* <h2>More matches in: {counter}</h2> */}
       </div>
     );
   } else {
@@ -105,7 +95,7 @@ const DisplayInfo = ({ potentialMatches }) => {
           onTouchEnd={movePicture}
           onClick={pictureClicked}
           className="display-picture"
-          src={option.profileImages[0].mongoId}
+          src={option.profileImages[pictureCounter].mongoId}
         ></img>
         <h2>{option.name}</h2>
         <p draggable="true">{option.age}</p>
@@ -113,7 +103,7 @@ const DisplayInfo = ({ potentialMatches }) => {
         <p>{option.location}</p>
         <p>{option.bio}</p>
         <div className="swipe-buttons">
-        <NoButton
+          <NoButton
             potentialMatches={potentialMatches}
             option={option}
             selectOption={selectOption}
@@ -123,7 +113,6 @@ const DisplayInfo = ({ potentialMatches }) => {
             option={option}
             selectOption={selectOption}
           />
-          
         </div>
       </div>
     );
