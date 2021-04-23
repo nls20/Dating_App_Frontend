@@ -67,9 +67,9 @@ const DisplayInfo = ({ potentialMatches }) => {
 
   useEffect(() => {
       counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
-      if (counter === 0){
-        window.location.reload(false);
-    }
+    //   if (counter === 0){
+    //     window.location.reload(false);
+    // }
   }, [counter]);
 
   useEffect(() => {
