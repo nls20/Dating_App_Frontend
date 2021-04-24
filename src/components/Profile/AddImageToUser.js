@@ -38,7 +38,7 @@ const AddImageToUser = ({user}) => {
   }
 
   useEffect(() => {
-    if (user.id) {
+    if (user.profileImages && user.id) {
       AddingImageServices.getProfileImage(user.profileImages[0].mongoId)
       .then((data) => setImage(data.image))
       .then(setIsUploaded(true))

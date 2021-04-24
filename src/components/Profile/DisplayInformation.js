@@ -14,7 +14,6 @@ const DisplayInformation = ({name, age, location, bio, gender, gender_preference
     handleUserEdit()
     setUpdate(true)
     localStorage.setItem('profile_card', false)
-    console.log()
   }
 
   if (!hasBeenSubmitted){
