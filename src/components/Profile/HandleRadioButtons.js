@@ -22,7 +22,7 @@ const HandleRadioButtons = ({vaccinated}) => {
 
   if (vaccinatedNo){
     return <p className="stop-text">Stop stop stop! <br></br>
-              <a href="https://www.nhsinform.scot/covid-19-vaccine/invitations-and-appointments/registering-for-a-coronavirus-vaccine" target="_blank">Click here to get the Vaccine</a>
+              <a href="https://www.nhsinform.scot/covid-19-vaccine/invitations-and-appointments/registering-for-a-coronavirus-vaccine" target="_blank">Click here to get the Vaccine!</a>
               <div className="injection">
                  < GiLoveInjection />
              </div>
