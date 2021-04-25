@@ -15,6 +15,6 @@ Match people by vaccine type
 Match people by profile information
 Adjust location matching to exact locations
 
-# Things to install
+# Things to install:
 npm i
 npm i react-router-dom
