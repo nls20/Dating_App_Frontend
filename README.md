@@ -17,7 +17,9 @@ Match people by profile information, e.g gender, location etc
 Allow users to upload multiple images
 
 # Things to install:
+
 npm i
+
 npm i react-router-dom
 
 ![datingapp](https://user-images.githubusercontent.com/75388411/116069040-dc7beb00-a682-11eb-9061-95d3c4785608.png)
